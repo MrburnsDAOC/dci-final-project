@@ -1,7 +1,7 @@
 import React from "react";
-import dummyImageOne from "../../src/assets/home/dummyImageCarouselOne.png";
-import dummyImageTwo from "../../src/assets/home/dummyImageCarouselTwo.png";
-import dummyImageThree from "../../src/assets/home/dummyImageCarouselThree.png";
+import dummyImageOne from "../assets/dummyImageCarouselOne.png";
+// import dummyImageTwo from "../assets/dummyImageCarouselTwo.png";
+// import dummyImageThree from "../assets/dummyImageCarouselThree.png";
 
 const Carousel = () => {
   return (
