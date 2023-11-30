@@ -8,7 +8,7 @@ import dummyImageThree from "../assets/dummyImageCarouselThree.png";
 
 export function CarouselImages() {
   return (
-    <Carousel className="rounded-xl">
+    <Carousel transition={{ duration: 1 }} loop="true" className="rounded-xl">
       <img
         src={dummyImageOne}
         alt="image 1"
