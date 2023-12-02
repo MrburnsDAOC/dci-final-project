@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
+import withMT from "@material-tailwind/react/utils/withMT";
 export default withMT({
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      mainBg: "#0EA5E9",
+      secondBg: "#ffffff",
+      mainText: "#777777",
+      secondText: "#ffffff",
+    },
     extend: {},
   },
   plugins: [],

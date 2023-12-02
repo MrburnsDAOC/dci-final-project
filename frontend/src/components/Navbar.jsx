@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBrand } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 function Navbar() {
@@ -7,23 +7,27 @@ function Navbar() {
   const [showBtn, setShowBtn] = useState(false);
 
   const handleClick = () => {
-    //klick auf Burgermenu => zeigt die Navlinks
+    //click on burger icon => show me nav links
     setShowLinks(!showLinks);
   };
 
   //"media queries"
+  //listen to it when we drag the screen larger or smaller
   window.addEventListener("resize", (e) => {
     if (e.target.innerWidth > 768) {
-      //großer Bildschirm => Navbar
+      //big screen => nav links
       setShowBtn(false);
       setShowLinks(true);
     } else {
-      //kleiner Bildschirm => Burger menu
+      //small screen => burger icon
       setShowBtn(true);
       setShowLinks(false);
     }
   });
 
+  //dependency array [] => what it should listen to
+  //run at least once a mount
+  //listen to it when we open the website
   useEffect(() => {
     if (window.innerWidth > 768) {
       setShowBtn(false);
@@ -40,8 +44,10 @@ function Navbar() {
         <button>Spenden</button>
       </div>
       <div>Logo</div>
+      {/* if showBtn true => we see the burger menu */}
       {showBtn && <FontAwesomeIcon icon={faBars} onClick={handleClick} />}
 
+      {/* if showLinks true => we see the nav links */}
       {showLinks && (
         <div>
           <a href="#home">Home</a>
