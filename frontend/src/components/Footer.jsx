@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import Tierschutzbund from "../assets/Deutscher-Tierschutzbund.png";
@@ -6,7 +5,7 @@ import Bayern from "../assets/Tierschutzbund-Bayern.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-mainBg text-white flex py-5 justify-center">
+    <footer className="bg-mainBg text-white flex py-5 justify-center w-full ">
       <div className="container ml-4 flex flex-col sm:flex-row justify-around ">
         <div className="mb-1.5">
           <a
@@ -22,6 +21,7 @@ const Footer = () => {
             href="https://www.facebook.com/search/top/?q=tierheim%20dachau&epa=SEARCH_BOX"
             target="_blank"
             className="text-white hover:underline text-lg sm:text-sm lg:text-lg"
+            rel="noreferrer"
           >
             Social Media <FontAwesomeIcon icon={faFacebook} />
           </a>
@@ -42,6 +42,7 @@ const Footer = () => {
             href="https://www.tierschutzbund.de/"
             target="_blank"
             className="mr-2"
+            rel="noreferrer"
           >
             <img
               src={Tierschutzbund}
@@ -50,7 +51,11 @@ const Footer = () => {
             />
           </a>
 
-          <a href="https://www.tierschutz-bayern.de/" target="_blank">
+          <a
+            href="https://www.tierschutz-bayern.de/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={Bayern}
               alt="Deutscher Tierverbund-Bayern"
