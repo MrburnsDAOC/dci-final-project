@@ -1,9 +1,11 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-blue-500 text-white py-6">
-      <div className="container mx-auto flex flex-col items-center justify-center text-center ">
+    <footer className="bg-mainBg text-white py-6">
+      <div className="container mx-auto flex flex-col items-center text-center ">
         <div className="mb-4">
           <div>
             <a href="#" className="text-white hover:underline">
@@ -13,7 +15,7 @@ function Footer() {
 
           <div>
             <a href="#" className="text-white hover:underline">
-              Social Media
+              Social Media <FontAwesomeIcon icon={faFacebook} />
             </a>
           </div>
 
@@ -34,6 +36,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
