@@ -64,9 +64,9 @@ const Home = () => {
               <img className="w-1/2" src={img} alt={img} />
               <div className="border-4 border-green-500 ">
                 <p className="border-4 border-red-500">{date}</p>
-                <h3 className="border-4 border-red-500 mt-4 font-semibold">
+                <h4 className="border-4 border-red-500 mt-1 font-semibold">
                   {title}
-                </h3>
+                </h4>
               </div>
             </div>
           ))}
