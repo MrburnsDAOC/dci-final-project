@@ -15,7 +15,7 @@ const routes = [
   { path: "/termine", element: <Termine />, id: 5 },
   { path: "/kontakt", element: <Kontakt />, id: 6 },
   { path: "/impressum", element: <Impressum />, id: 7 },
-  { path: "*", element: <NotFound />, id: 7 },
+  { path: "*", element: <NotFound />, id: 8 },
 ];
 
 export default routes;
