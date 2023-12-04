@@ -1,7 +1,5 @@
-import React from "react";
 import Carousel from "../../components/Carousel";
-// import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+
 import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
 import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
@@ -30,7 +28,6 @@ const Home = () => {
   ];
   return (
     <>
-      <Navbar />
       <Carousel />
       <section>
         <h1>Tierschutzverein Dachau e.V.</h1>
