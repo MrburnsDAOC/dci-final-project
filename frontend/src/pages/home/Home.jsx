@@ -1,7 +1,5 @@
-import React from "react";
 import Carousel from "../../components/Carousel";
-// import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+
 import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
 import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
@@ -30,7 +28,6 @@ const Home = () => {
   ];
   return (
     <>
-      <Navbar />
       <Carousel />
       <section>
         <h1>Tierschutzverein Dachau e.V.</h1>
@@ -64,9 +61,9 @@ const Home = () => {
               <img className="w-1/2" src={img} alt={img} />
               <div className="border-4 border-green-500 ">
                 <p className="border-4 border-red-500">{date}</p>
-                <h3 className="border-4 border-red-500 mt-4 font-semibold">
+                <h4 className="border-4 border-red-500 mt-1 font-semibold">
                   {title}
-                </h3>
+                </h4>
               </div>
             </div>
           ))}

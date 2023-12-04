@@ -1,8 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const paths = [
+    { name: "Home", to: "/", id: 1 },
+    { name: "Über uns", to: "/über-uns", id: 2 },
+    { name: "Tiervermittlung", to: "/tiervermittlung", id: 3 },
+    { name: "Termine", to: "/termine", id: 4 },
+    { name: "Spenden", to: "/spenden", id: 5 },
+    { name: "Kontakt", to: "/kontakt", id: 6 },
+    { name: "Impressum", to: "/impressum", id: 7 },
+  ];
+
   const [showLinks, setShowLinks] = useState(true);
   const [showBtn, setShowBtn] = useState(false);
 
@@ -39,26 +50,36 @@ function Navbar() {
   }, []);
 
   return (
-    <div>
+    <header className="bg-mainBg flex justify-between ">
       <div>
-        <button>Spenden</button>
+        <button className="bg-red-700">Spenden</button>
       </div>
-      <div>Logo</div>
+      <div>Logo Bild</div>
       {/* if showBtn true => we see the burger menu */}
       {showBtn && <FontAwesomeIcon icon={faBars} onClick={handleClick} />}
 
       {/* if showLinks true => we see the nav links */}
       {showLinks && (
-        <div>
-          <a href="#home">Home</a>
-          <a href="#home">Über uns</a>
-          <a href="#home">Tiervermittlung</a>
-          <a href="#home">Termine</a>
-          <a href="#home">Kontakt</a>
-          <a href="#home">Impressum</a>
-        </div>
+        <nav className="pt-6">
+          <ul>
+            {paths.map((path) => {
+              return (
+                <li key={path.id}>
+                  <NavLink
+                    to={path.to}
+                    style={({ isActive }) => ({
+                      color: isActive ? "black" : "white",
+                    })}
+                  >
+                    {path.name}
+                  </NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       )}
-    </div>
+    </header>
   );
 }
 
