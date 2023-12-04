@@ -1,12 +1,18 @@
-import Navbar from "./components/Navbar.jsx";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layout/Layout";
+import routes from "./components/routes";
 import "./App.css";
-import Home from "./pages/home/Home";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Home />
+      <Layout>
+        <Routes>
+          {routes.map((route) => (
+            <Route key={route.id} {...route} />
+          ))}
+        </Routes>
+      </Layout>
     </>
   );
 }
