@@ -89,8 +89,6 @@ const Home = () => {
         </div>
       </section>
       <BackButton />
-
-      {/* <Footer /> */}
     </>
   );
 };
