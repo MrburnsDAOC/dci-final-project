@@ -1,3 +1,4 @@
+import GoogleMapLocation from "../../layout/GoogleMapLocation";
 import H2 from "../../layout/H2";
 import KontaktData from "../../layout/KontaktData";
 import Section from "../../layout/Section";
@@ -22,8 +23,8 @@ const Kontakt = () => {
           </p>
         </div>
         <KontaktData />
+        <GoogleMapLocation />
       </Section>
-      <Section></Section>
     </>
   );
 };
