@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Carousel from "../../components/Carousel";
 
 import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
