@@ -10,6 +10,7 @@ export default withMT({
       secondBg: "#ffffff",
       mainText: "#777777",
       secondText: "#ffffff",
+      alertText: "#ff0000",
     },
     fontFamily: {
       sans: ["Asap Condensed", "ui-sans-serif", "system-ui"],
