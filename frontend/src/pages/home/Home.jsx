@@ -63,7 +63,9 @@ const Home = () => {
           finanzieller Lage „stückweise" weitergebaut und 1994 endgültig fertig
           gestellt.
         </p>
-        <button>erfahre mehr</button>
+        <button className=" block mx-auto mt-2 w-fit bg-mainBg  border-white border-2 text-secondText p-3 rounded-full">
+          erfahre mehr
+        </button>
       </section>
 
       {/* Aktuelles: */}
@@ -71,11 +73,11 @@ const Home = () => {
         <div className="px-8">
           <H2>Aktuelle Meldungen</H2>
         </div>
-        <div className=" grid grid-cols-1 gap-2 ">
+        <div className="grid grid-cols-1 gap-2 ">
           {news.map(({ id, img, date, title }) => (
             <div
               key={id}
-              className={`min-w-full min-h-[200px] bg- flex justify-around py-1 `}
+              className={`min-w-full min-h-[200px] flex justify-around py-1 `}
             >
               <img className="w-1/2 object-cover" src={img} alt={img} />
               <div className=" w-1/2 p-2 shadow-inner">
@@ -87,6 +89,7 @@ const Home = () => {
         </div>
       </section>
       <BackButton />
+
       {/* <Footer /> */}
     </>
   );
