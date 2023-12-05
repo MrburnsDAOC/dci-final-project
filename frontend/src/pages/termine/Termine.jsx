@@ -1,5 +1,9 @@
 const Termine = () => {
-  return <div>Termine</div>;
+  return (
+    <div>
+      <p>Termine</p>
+    </div>
+  );
 };
 
 export default Termine;

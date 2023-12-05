@@ -4,11 +4,11 @@ import Navbar from "../components/Navbar";
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="text-mainText text-lg font-sans bg-mainBg font-normal leading-6">
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   );
 };
 
