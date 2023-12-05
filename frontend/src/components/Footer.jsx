@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import Tierschutzbund from "../assets/Deutscher-Tierschutzbund.png";
@@ -6,12 +5,12 @@ import Bayern from "../assets/Tierschutzbund-Bayern.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-mainBg text-white flex py-5 justify-center">
+    <footer className="bg-mainBg text-white flex py-5 justify-center ">
       <div className="container ml-4 flex flex-col sm:flex-row justify-around ">
         <div className="mb-1.5">
           <a
             href="#"
-            className="text-white hover:underline text-lg sm:text-sm lg:text-lg "
+            className="text-white hover:underline text-lg sm:text-md lg:text-lg "
           >
             Kontakt
           </a>
@@ -21,7 +20,8 @@ const Footer = () => {
           <a
             href="https://www.facebook.com/search/top/?q=tierheim%20dachau&epa=SEARCH_BOX"
             target="_blank"
-            className="text-white hover:underline text-lg sm:text-sm lg:text-lg"
+            className="text-white hover:underline text-lg sm:text-md lg:text-lg"
+            rel="noopener noreferrer"
           >
             Social Media <FontAwesomeIcon icon={faFacebook} />
           </a>
@@ -30,17 +30,18 @@ const Footer = () => {
         <div className="mb-1.5">
           <a
             href="#"
-            className="text-white hover:underline text-lg sm:text-sm lg:text-lg"
+            className="text-white hover:underline text-lg sm:text-md lg:text-lg"
           >
             Mitglied werden
           </a>
         </div>
 
-        <div className="text-lg flex mb-1.5 sm:text-sm lg:text-lg">
+        <div className="text-lg flex mb-1.5 sm:text-md lg:text-lg">
           <p className="mr-2">Dachverbände</p>
           <a
             href="https://www.tierschutzbund.de/"
             target="_blank"
+            rel="noopener noreferrer"
             className="mr-2"
           >
             <img
@@ -50,7 +51,11 @@ const Footer = () => {
             />
           </a>
 
-          <a href="https://www.tierschutz-bayern.de/" target="_blank">
+          <a
+            href="https://www.tierschutz-bayern.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src={Bayern}
               alt="Deutscher Tierverbund-Bayern"
@@ -62,7 +67,7 @@ const Footer = () => {
         <div>
           <a
             href="#"
-            className="text-white hover:underline text-lg sm:text-sm lg:text-lg"
+            className="text-white hover:underline text-lg sm:text-md lg:text-lg"
           >
             Impressum und Datenschutz
           </a>
