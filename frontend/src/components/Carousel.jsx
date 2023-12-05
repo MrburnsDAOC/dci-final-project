@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Carousel } from "@material-tailwind/react";
 
 import ImageOne from "../assets/dummyImageCarouselOne.png";
@@ -8,7 +6,7 @@ import ImageThree from "../assets/dummyImageCarouselThree.png";
 
 export function CarouselImages() {
   return (
-    <Carousel transition={{ duration: 1 }} loop={true}>
+    <Carousel transition={{ duration: 1 }} loop={true} className="z-0">
       <img
         src={ImageOne}
         alt="image 1"
