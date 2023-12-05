@@ -20,7 +20,7 @@ const KontaktData = () => {
       <a
         href="https://www.facebook.com/search/top/?q=tierheim%20dachau&epa=SEARCH_BOX"
         target="_blank"
-        className="text-mainText text-2xl"
+        className=" text-[#3b5998] text-2xl"
         rel="noreferrer"
       >
         <FontAwesomeIcon icon={faFacebook} className="my-2" />
