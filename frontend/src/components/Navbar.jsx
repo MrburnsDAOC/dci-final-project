@@ -30,7 +30,7 @@ function Navbar() {
   //"media queries"
   //listen to it when we drag the screen larger or smaller
   window.addEventListener("resize", (e) => {
-    if (e.target.innerWidth > 768) {
+    if (e.target.innerWidth >= 768) {
       //big screen => nav links
       setBurgerMenu(false);
       setNavLinks(true);
@@ -45,7 +45,7 @@ function Navbar() {
   //run at least once a mount
   //listen to it when we open the website
   useEffect(() => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       setBurgerMenu(false);
       setNavLinks(true);
     } else {
@@ -54,61 +54,64 @@ function Navbar() {
     }
   }, []);
 
-  //closes the open burger menu when click outside
-  const handleClickOutside = (e) => {
-    let header = document.getElementById("header");
-    let clickedItem = e.target;
-    if (showBurgerMenu && showNavLinks && !header.contains(clickedItem)) {
-      console.log("wird ausgeführt");
-      setNavLinks(false);
-    }
-  };
-
   useEffect(() => {
+    //closes the open burger menu when click outside
+    const handleClickOutside = (e) => {
+      let header = document.getElementById("header");
+      let clickedItem = e.target;
+      if (showBurgerMenu && showNavLinks && !header.contains(clickedItem)) {
+        console.log("wird ausgeführt");
+        setNavLinks(false);
+      }
+    };
+
     window.addEventListener("click", handleClickOutside, true);
     return () => {
       window.removeEventListener("click", handleClickOutside, true);
     };
-  }, [handleClickOutside]);
+  }, [showBurgerMenu, showNavLinks]);
 
   return (
     <header
       id="header"
-      className="bg-mainBg h-15 py-3 px-3 flex justify-between items-center sticky top-0 z-50"
+      className="bg-mainBg h-15 py-3 px-3 flex justify-between items-center sticky top-0 z-50 tablet:justify-end"
     >
       <button
-        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-white rounded-lg cursor-pointer	"
+        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer"
         onClick={() => navigate("/spenden")}
       >
         Spenden
       </button>
 
-      <div className="w-[55px] h-[55px] bg-white rounded-full flex justify-center cursor-pointer	">
+      <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer">
         <img
           src={tierschutzDachauLogo}
           alt="Tierschutz Dachau e.V."
           className="w-12 h-12 rounded-2xl self-center"
-          onClick={() => navigate("/")}
+          onClick={() => {
+            navigate("/");
+            window.scrollTo(0, 0);
+          }}
         />
       </div>
-      <div className="w-[95px] h-10 flex  justify-end">
+      <div className="w-[95px] h-10 flex justify-end">
         {/* if showBurgerMenu true => we see the burger menu */}
         {showBurgerMenu && (
           <FontAwesomeIcon
             icon={showNavLinks ? faXmark : faBars}
             onClick={handleNavClick}
-            className="text-white text-3xl self-center cursor-pointer"
+            className="text-secondText text-3xl self-center cursor-pointer"
           />
         )}
         {/* if showNavLinks true => we see the nav links */}
         {showNavLinks && (
-          <nav className="bg-mainBg h-fit w-full absolute left-0 top-[70px] text-2xl">
-            <ul>
+          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[70px] text-2xl tablet:relative tablet:h-auto tablet:w-auto tablet:top-0">
+            <ul className="tablet:flex">
               {paths.map((path) => {
                 return (
                   <li
                     key={path.id}
-                    className="py-2 px-8 border-solid border-t-2 border-white"
+                    className="py-2 px-8 border-solid border-t-2 border-secondBg tablet:border-none"
                     onClick={handleNavClick}
                   >
                     <NavLink
@@ -116,7 +119,7 @@ function Navbar() {
                       style={({ isActive }) => ({
                         color: isActive ? "black" : "white",
                       })}
-                      className="block"
+                      className="block tablet:inline"
                     >
                       {path.name}
                     </NavLink>
