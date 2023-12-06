@@ -60,7 +60,6 @@ function Navbar() {
       let header = document.getElementById("header");
       let clickedItem = e.target;
       if (showBurgerMenu && showNavLinks && !header.contains(clickedItem)) {
-        console.log("wird ausgeführt");
         setNavLinks(false);
       }
     };
@@ -74,7 +73,7 @@ function Navbar() {
   return (
     <header
       id="header"
-      className="bg-mainBg h-15 py-3 px-3 flex justify-between items-center sticky top-0 z-50 tablet:justify-end"
+      className="bg-mainBg py-3 px-3 flex justify-between items-center sticky top-0 z-50 tablet:justify-center tablet:flex-row-reverse tablet:flex-wrap tablet:gap-x-60 tablet:gap-y-3"
     >
       <button
         className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer"
@@ -83,7 +82,7 @@ function Navbar() {
         Spenden
       </button>
 
-      <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer">
+      <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer tablet:hidden">
         <img
           src={tierschutzDachauLogo}
           alt="Tierschutz Dachau e.V."
@@ -94,7 +93,7 @@ function Navbar() {
           }}
         />
       </div>
-      <div className="w-[95px] h-10 flex justify-end">
+      <div className="w-[95px] h-10 flex justify-end tablet:w-fit">
         {/* if showBurgerMenu true => we see the burger menu */}
         {showBurgerMenu && (
           <FontAwesomeIcon
@@ -105,13 +104,13 @@ function Navbar() {
         )}
         {/* if showNavLinks true => we see the nav links */}
         {showNavLinks && (
-          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[70px] text-2xl tablet:relative tablet:h-auto tablet:w-auto tablet:top-0">
-            <ul className="tablet:flex">
+          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[70px] text-2xl tablet:relative tablet:h-auto tablet:top-0">
+            <ul className="tablet:flex tablet:justify-start">
               {paths.map((path) => {
                 return (
                   <li
                     key={path.id}
-                    className="py-2 px-8 border-solid border-t-2 border-secondBg tablet:border-none"
+                    className="py-2 px-8 border-solid border-t-2 border-secondBg tablet:border-none tablet:py-1 tablet:min-w-fit tablet:px-2"
                     onClick={handleNavClick}
                   >
                     <NavLink
