@@ -24,7 +24,7 @@ function UeberUnsText() {
   return (
     <div>
       <NextButton />
-      <Section>
+      <div>
         <p id="Geschichtliches"></p>
         <H2>Geschichtliches</H2>
         <p className="mb-2">
@@ -50,7 +50,7 @@ function UeberUnsText() {
           ihren jährlichen Beitrag und teilweise auch ehrenamtliche Mitarbeit
           unterstützen.
         </p>
-      </Section>
+      </div>
 
       <Section>
         <p id="Unser-Anliegen"></p>
