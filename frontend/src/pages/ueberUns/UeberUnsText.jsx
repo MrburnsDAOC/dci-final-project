@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+/* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
 import Vorstand from "../../assets/Vorstand 2018_M.jpg";
 import BackButton from "../../layout/BackButton";
 import Section from "../../layout/Section";
@@ -24,7 +25,7 @@ function UeberUnsText() {
   return (
     <div>
       <NextButton />
-      <Section>
+      <div className="bg-secondBg px-8 py-3">
         <p id="Geschichtliches"></p>
         <H2>Geschichtliches</H2>
         <p className="mb-2">
@@ -50,7 +51,7 @@ function UeberUnsText() {
           ihren jährlichen Beitrag und teilweise auch ehrenamtliche Mitarbeit
           unterstützen.
         </p>
-      </Section>
+      </div>
 
       <Section>
         <p id="Unser-Anliegen"></p>
@@ -90,7 +91,7 @@ function UeberUnsText() {
         </p>
         <p className="mb-2">
           Um einen optimalen Service zu bieten, betreiben wir einen 7 x 24
-          Stunden – also „Rund-um-die-Uhr“- Notdienst. Selbstverständlich
+          Stunden - also „Rund-um-die-Uhr“- Notdienst. Selbstverständlich
           versuchen wir uns um alle tierschutzrelevanten Themen im Landkreis zu
           kümmern. Hierunter fallen z.B. Kontrollen schlechter Tierhaltungen und
           Abschaffung der Missstände, dieses oft in Zusammenarbeit mit dem
