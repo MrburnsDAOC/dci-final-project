@@ -3,6 +3,11 @@ import withMT from "@material-tailwind/react/utils/withMT";
 export default withMT({
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      tablet: "768px",
+      laptop: "1024px",
+      desktop: "1280px",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
