@@ -47,7 +47,7 @@ const UeberUns = () => {
         <div className="ml-4 mb-2">
           <H2>Informationen</H2>
         </div>
-        <nav className="bg-mainBg  m-auto">
+        <nav className="bg-mainBg m-auto">
           <ul>
             {paths.map((path) => {
               return (
