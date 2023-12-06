@@ -1,13 +1,31 @@
-import React from "react";
-import H2 from "../../layout/H2";
-import Section from "../../layout/Section";
+import React, { useEffect } from "react";
 import Vorstand from "../../assets/Vorstand 2018_M.jpg";
 import BackButton from "../../layout/BackButton";
+import Section from "../../layout/Section";
+import H2 from "../../layout/H2";
+import NextButton from "../../layout/NextButton";
 
 function UeberUnsText() {
+  useEffect(() => {
+    const url = window.location.href;
+    const hash = url.substring(url.indexOf("#") + 1);
+    const element = document.getElementById(hash);
+    if (element) {
+      if (element) {
+        const yPos = element.getBoundingClientRect().top + window.scrollY - 90; // Vendosni vlerën që dëshironi për të kontrolluar shkallëzimin më tej poshtë
+        window.scroll({
+          top: yPos,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
+
   return (
     <div>
+      <NextButton />
       <Section>
+        <p id="Geschichtliches"></p>
         <H2>Geschichtliches</H2>
         <p className="mb-2">
           Der Tierschutzverein wurde im Jahre 1981 unter dem Namen
@@ -33,7 +51,9 @@ function UeberUnsText() {
           unterstützen.
         </p>
       </Section>
+
       <Section>
+        <p id="Unser-Anliegen"></p>
         <H2>Unser Anliegen</H2>
         <p className="mb-2">
           Tiere haben keine Lobby“ heißt es. Unser Anliegen ist es, dies zu
@@ -54,7 +74,9 @@ function UeberUnsText() {
           Überweisungsträger.
         </p>
       </Section>
+
       <Section>
+        <p id="Unsere-Aufgaben"></p>
         <H2>Unsere Aufgaben</H2>
         <p className="mb-2">
           Unsere Hauptaufgabe besteht im Betrieb und der Unterhaltung unseres
@@ -77,6 +99,7 @@ function UeberUnsText() {
       </Section>
 
       <Section>
+        <p id="Unser-Tierheim"></p>
         <H2>Unser Tierheim</H2>
         <p className="mb-2">
           Bereits bei Vereinsgründung wurde als ein Hauptziel des Vereins der
@@ -189,6 +212,7 @@ function UeberUnsText() {
           dem Gemeinderat Ihres Vertrauens!
         </p>
       </Section>
+
       <Section>
         <h1 id="Unser-Vorstand"></h1>
         <H2>Unser Vorstand</H2>
@@ -204,6 +228,7 @@ function UeberUnsText() {
           Hofheinz, Schriftführer
         </p>
       </Section>
+
       <BackButton />
     </div>
   );

@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import tierschutzDachauLogo from "../assets/tierschutzDachauLogo.jpeg";
 
 function Navbar() {
   const paths = [
@@ -14,12 +15,16 @@ function Navbar() {
     { name: "Impressum", to: "/impressum", id: 7 },
   ];
 
+  const navigate = useNavigate();
+
   const [showLinks, setShowLinks] = useState(true);
   const [showBtn, setShowBtn] = useState(false);
 
-  const handleClick = () => {
+  const handleNavClick = () => {
     //click on burger icon => show me nav links
-    setShowLinks(!showLinks);
+    if (showBtn) {
+      setShowLinks(!showLinks);
+    }
   };
 
   //"media queries"
@@ -49,36 +54,75 @@ function Navbar() {
     }
   }, []);
 
-  return (
-    <header className="bg-mainBg flex justify-between ">
-      <div>
-        <button className="bg-red-700">Spenden</button>
-      </div>
-      <div>Logo Bild</div>
-      {/* if showBtn true => we see the burger menu */}
-      {showBtn && <FontAwesomeIcon icon={faBars} onClick={handleClick} />}
+  //close Navbar when click outside
+  window.addEventListener("click", (e) => {
+    let header = document.getElementById("header");
+    // console.log(e.target);
+    let clickedItem = e.target;
+    if (showBtn && showLinks && !header.contains(clickedItem)) {
+      // setShowLinks(!showLinks);
+      console.log("e.target", e.target);
+      console.log("wird ausgeführt");
+      setShowLinks(false);
+    }
+  });
 
-      {/* if showLinks true => we see the nav links */}
-      {showLinks && (
-        <nav className="pt-6">
-          <ul>
-            {paths.map((path) => {
-              return (
-                <li key={path.id}>
-                  <NavLink
-                    to={path.to}
-                    style={({ isActive }) => ({
-                      color: isActive ? "black" : "white",
-                    })}
+  return (
+    <header
+      id="header"
+      className="bg-mainBg h-15 py-3 px-3 flex justify-between items-center sticky top-0 z-50"
+    >
+      <button
+        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-white rounded-lg"
+        onClick={() => navigate("/spenden")}
+      >
+        Spenden
+      </button>
+
+      <div className="w-[55px] h-[55px] bg-white rounded-full flex justify-center">
+        <img
+          src={tierschutzDachauLogo}
+          alt="Tierschutz Dachau e.V."
+          className="w-12 h-12 rounded-2xl self-center"
+          onClick={() => navigate("/")}
+        />
+      </div>
+      <div className="w-[95px] h-10 flex  justify-end">
+        {/* if showBtn true => we see the burger menu */}
+        {showBtn && (
+          <FontAwesomeIcon
+            icon={showLinks ? faXmark : faBars}
+            onClick={handleNavClick}
+            className="text-white text-3xl self-center"
+          />
+        )}
+        {/* if showLinks true => we see the nav links */}
+        {showLinks && (
+          <nav className="bg-mainBg h-fit w-screen absolute left-0 top-[70px] text-2xl">
+            <ul>
+              {paths.map((path) => {
+                return (
+                  <li
+                    key={path.id}
+                    className="py-2 px-8 border-solid border-t-2 border-white"
+                    onClick={handleNavClick}
                   >
-                    {path.name}
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      )}
+                    <NavLink
+                      to={path.to}
+                      style={({ isActive }) => ({
+                        color: isActive ? "black" : "white",
+                      })}
+                      className="block"
+                    >
+                      {path.name}
+                    </NavLink>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        )}
+      </div>
     </header>
   );
 }

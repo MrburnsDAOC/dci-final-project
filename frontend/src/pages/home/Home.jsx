@@ -1,10 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import Carousel from "../../components/Carousel";
 
 import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
 import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
 import H2 from "../../layout/H2";
-import Section from "../../layout/Section";
 import H5 from "../../layout/H5";
 import BackButton from "../../layout/BackButton";
 
@@ -29,12 +29,20 @@ const Home = () => {
       title: "Headline news 3",
       date: "23.11.2023",
     },
+    // {
+    //   id: 1,
+    //   wann: "Sa, 09.12.2023 14:00h"
+    //   was: "Jahreshauptversammlung nach mehreren Verschiebungen neuer Termin!",
+    //   wo: "Vereinsheim der Hundefreunde Dachau,Roßwachtstr. 35, 85221 Dachau",
+    // },
   ];
   return (
     <>
       <Carousel />
       <section className=" mt-0 bg-secondBg p-3 px-8 mb-2 text-justify">
-        <h1 className=" text-4xl leading-10">Tierschutzverein Dachau e.V.</h1>
+        <h1 className=" py-3 text-4xl leading-10">
+          Tierschutzverein Dachau e.V.
+        </h1>
         {/* Infotext Tierschutzverein Dachau e.V.: */}
         <p>
           Bereits bei Vereinsgründung wurde als ein Hauptziel des Vereins der
@@ -56,7 +64,9 @@ const Home = () => {
           finanzieller Lage „stückweise" weitergebaut und 1994 endgültig fertig
           gestellt.
         </p>
-        <button>erfahre mehr</button>
+        <button className=" block mx-auto mt-2 w-fit bg-mainBg  border-white border-2 text-secondText p-3 rounded-full">
+          erfahre mehr
+        </button>
       </section>
 
       {/* Aktuelles: */}
@@ -64,14 +74,14 @@ const Home = () => {
         <div className="px-8">
           <H2>Aktuelle Meldungen</H2>
         </div>
-        <div className=" grid grid-cols-1 gap-2 ">
+        <div className="grid grid-cols-1 gap-2 ">
           {news.map(({ id, img, date, title }) => (
             <div
               key={id}
-              className={`min-w-full min-h-[200px] bg- flex justify-around py-1 rounded-lg`}
+              className={`min-w-full min-h-[200px] flex justify-around py-1 `}
             >
-              <img className="w-1/2" src={img} alt={img} />
-              <div className=" w-1/2 p-2">
+              <img className="w-1/2 object-cover" src={img} alt={img} />
+              <div className=" w-1/2 p-2 shadow-inner">
                 <p>{date}</p>
                 <H5>{title}</H5>
               </div>
@@ -80,7 +90,6 @@ const Home = () => {
         </div>
       </section>
       <BackButton />
-      {/* <Footer /> */}
     </>
   );
 };
