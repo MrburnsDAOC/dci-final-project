@@ -1,5 +1,3 @@
-import React from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
@@ -8,7 +6,7 @@ const KontaktData = () => {
   // &ndash; selbiges mit "-"
   return (
     <div>
-      <p className=" font-bold">Tierschutzverein&nbsp;Dachau&nbsp;e.&nbsp;V.</p>
+      <p className="font-bold">Tierschutzverein&nbsp;Dachau&nbsp;e.&nbsp;V.</p>
       <p className="leading-4">Tierheim&nbsp;und&nbsp;Geschäftsstelle:</p>
       <p>Roßwachtstr&nbsp;33,&nbsp;D&ndash;85221&nbsp;Dachau</p>
       <p className="mt-2">
