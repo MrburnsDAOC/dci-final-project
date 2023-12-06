@@ -17,13 +17,13 @@ function Navbar() {
 
   const navigate = useNavigate();
 
-  const [showLinks, setShowLinks] = useState(true);
-  const [showBtn, setShowBtn] = useState(false);
+  const [showNavLinks, setNavLinks] = useState(true);
+  const [showBurgerMenu, setBurgerMenu] = useState(false);
 
   const handleNavClick = () => {
     //click on burger icon => show me nav links
-    if (showBtn) {
-      setShowLinks(!showLinks);
+    if (showBurgerMenu) {
+      setNavLinks(!showNavLinks);
     }
   };
 
@@ -32,12 +32,12 @@ function Navbar() {
   window.addEventListener("resize", (e) => {
     if (e.target.innerWidth > 768) {
       //big screen => nav links
-      setShowBtn(false);
-      setShowLinks(true);
+      setBurgerMenu(false);
+      setNavLinks(true);
     } else {
       //small screen => burger icon
-      setShowBtn(true);
-      setShowLinks(false);
+      setBurgerMenu(true);
+      setNavLinks(false);
     }
   });
 
@@ -46,26 +46,30 @@ function Navbar() {
   //listen to it when we open the website
   useEffect(() => {
     if (window.innerWidth > 768) {
-      setShowBtn(false);
-      setShowLinks(true);
+      setBurgerMenu(false);
+      setNavLinks(true);
     } else {
-      setShowBtn(true);
-      setShowLinks(false);
+      setBurgerMenu(true);
+      setNavLinks(false);
     }
   }, []);
 
-  //close Navbar when click outside
-  window.addEventListener("click", (e) => {
+  //closes the open burger menu when click outside
+  const handleClickOutside = (e) => {
     let header = document.getElementById("header");
-    // console.log(e.target);
     let clickedItem = e.target;
-    if (showBtn && showLinks && !header.contains(clickedItem)) {
-      // setShowLinks(!showLinks);
-      console.log("e.target", e.target);
+    if (showBurgerMenu && showNavLinks && !header.contains(clickedItem)) {
       console.log("wird ausgeführt");
-      setShowLinks(false);
+      setNavLinks(false);
     }
-  });
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutside, true);
+    return () => {
+      window.removeEventListener("click", handleClickOutside, true);
+    };
+  }, [handleClickOutside]);
 
   return (
     <header
@@ -73,13 +77,13 @@ function Navbar() {
       className="bg-mainBg h-15 py-3 px-3 flex justify-between items-center sticky top-0 z-50"
     >
       <button
-        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-white rounded-lg"
+        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-white rounded-lg cursor-pointer	"
         onClick={() => navigate("/spenden")}
       >
         Spenden
       </button>
 
-      <div className="w-[55px] h-[55px] bg-white rounded-full flex justify-center">
+      <div className="w-[55px] h-[55px] bg-white rounded-full flex justify-center cursor-pointer	">
         <img
           src={tierschutzDachauLogo}
           alt="Tierschutz Dachau e.V."
@@ -88,17 +92,17 @@ function Navbar() {
         />
       </div>
       <div className="w-[95px] h-10 flex  justify-end">
-        {/* if showBtn true => we see the burger menu */}
-        {showBtn && (
+        {/* if showBurgerMenu true => we see the burger menu */}
+        {showBurgerMenu && (
           <FontAwesomeIcon
-            icon={showLinks ? faXmark : faBars}
+            icon={showNavLinks ? faXmark : faBars}
             onClick={handleNavClick}
-            className="text-white text-3xl self-center"
+            className="text-white text-3xl self-center cursor-pointer"
           />
         )}
-        {/* if showLinks true => we see the nav links */}
-        {showLinks && (
-          <nav className="bg-mainBg h-fit w-screen absolute left-0 top-[70px] text-2xl">
+        {/* if showNavLinks true => we see the nav links */}
+        {showNavLinks && (
+          <nav className="bg-mainBg h-fit w-full absolute left-0 top-[70px] text-2xl">
             <ul>
               {paths.map((path) => {
                 return (
