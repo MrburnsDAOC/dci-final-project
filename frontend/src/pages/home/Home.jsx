@@ -40,7 +40,7 @@ const Home = () => {
     <>
       <Carousel />
       <section className=" mt-0 bg-secondBg p-3 px-8 mb-2 text-justify">
-        <h1 className=" py-3 text-4xl leading-10">
+        <h1 className="text-left py-3 text-2xl leading-10 font-bold">
           Tierschutzverein Dachau e.V.
         </h1>
         {/* Infotext Tierschutzverein Dachau e.V.: */}
