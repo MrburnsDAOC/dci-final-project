@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import tierschutzDachauLogo from "../assets/tierschutzDachauLogo.jpeg";
+import tierschutzDachauLogo from "../../assets/tierschutzDachauLogo.jpeg";
 
 function Navbar() {
   const paths = [
@@ -76,7 +76,7 @@ function Navbar() {
       className="bg-mainBg py-3 px-3 flex justify-between items-center sticky top-0 z-50 tablet:justify-center tablet:flex-row-reverse tablet:flex-wrap tablet:gap-x-60 tablet:gap-y-3"
     >
       <button
-        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer"
+        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer tablet:hover:shadow-md"
         onClick={() => navigate("/spenden")}
       >
         Spenden
@@ -118,7 +118,7 @@ function Navbar() {
                       style={({ isActive }) => ({
                         color: isActive ? "black" : "white",
                       })}
-                      className="block tablet:inline"
+                      className="block tablet:inline tablet:hover:drop-shadow-md"
                     >
                       {path.name}
                     </NavLink>
