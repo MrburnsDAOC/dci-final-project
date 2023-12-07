@@ -10,7 +10,7 @@ const UeberUns = () => {
   const paths = [
     {
       name: "Satzung (PDF Datei)",
-      to: "über-uns/satzung",
+      to: "/über-uns/satzung-pdf",
       id: 1,
     },
     { name: "Geschichtliches", to: "/über-uns/text/#Geschichtliches", id: 2 },
@@ -26,16 +26,19 @@ const UeberUns = () => {
       id: 1,
       img: imgAktuellesOne,
       title: "Tages-/Wochenpresse",
+      to: "/über-uns/presse/#Pressestimmen",
     },
     {
       id: 2,
       img: imgAktuellesTwo,
       title: "Sonstige Medien",
+      to: "/über-uns/presse/#Sonstige-Medien",
     },
     {
       id: 3,
       img: imgAktuellesThree,
       title: "DATZ",
+      to: "/über-uns/presse/#DATZ",
     },
   ];
 
@@ -69,14 +72,16 @@ const UeberUns = () => {
           <H2>Presse</H2>
         </div>
         <div className=" grid grid-cols-1 gap-2 ">
-          {presse.map(({ id, img, title }) => (
+          {presse.map(({ id, img, title, to }) => (
             <div
               key={id}
               className={`min-w-full min-h-[200px] bg- flex justify-around py-1 rounded-lg`}
             >
               <img className="w-1/2" src={img} alt={img} />
               <div className=" w-1/2 p-2 my-auto">
-                <H5>{title}</H5>
+                <Link to={to}>
+                  <H5>{title}</H5>
+                </Link>
               </div>
             </div>
           ))}
