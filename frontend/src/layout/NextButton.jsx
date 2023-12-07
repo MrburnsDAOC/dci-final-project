@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -24,7 +24,7 @@ function NextButton() {
     }
   };
   return (
-    <div className="fixed top-1/2 transform -translate-y-1/2 text-right mr-1">
+    <div className="fixed top-1/2 right-0 -translate-y-1/2 text-right mr-1">
       <button
         onClick={scrollToNextSection}
         className="w-7 h-7 border rounded-full shadow-md"
