@@ -126,6 +126,32 @@ const Home = () => {
         />
       </Section>
 
+      <Section>
+        <H2>Wieder störungsfrei online!</H2>
+        <p className="mb-2">
+          {" "}
+          Die Datenschutzbestimmungen (DSGVO) und die weltweiten Bestrebungen
+          das Internet sicherer zu machen hatten dazu geführt, dass die
+          Internet-Browser unsere Seite in den letzten Wochen nur noch
+          widerwillig öffnen wollten.
+        </p>
+        <p className="mb-2">
+          Dank des Einsatzes des{" "}
+          <a
+            href="https://www.dachau.net/website/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Bürgernetzes Dachau
+          </a>
+          , das die Seiten dankenswerterweise hostet, konnten jetzt die
+          erforderlichen Zertifikate bereitgestellt werden. Herzlichen Dank an
+          Thomas Wagner!
+        </p>
+        <p>Wir bitten die Unannehmlichkeiten zu entschuldigen.</p>
+      </Section>
+
       {/* Link zu HP Monika Weigler */}
       <Section>
         <p>
