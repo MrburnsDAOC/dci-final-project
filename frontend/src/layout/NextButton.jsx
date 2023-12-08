@@ -11,7 +11,7 @@ function NextButton() {
 
   const scrollToNextSection = () => {
     const currentScroll = window.scrollY;
-    for (let i = 0; i < sectionsRef.current.length; i++) {
+    for (let i = 1; i < sectionsRef.current.length; i++) {
       const section = sectionsRef.current[i];
       // console.log(sectionsRef.current[0]);
       const sectionTop = section.offsetTop - 70;
