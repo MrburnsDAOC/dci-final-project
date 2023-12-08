@@ -25,7 +25,7 @@ function UeberUnsText() {
   return (
     <div>
       <NextButton />
-      <Section className="bg-secondBg px-8 py-3">
+      <Section>
         <p id="Geschichtliches"></p>
         <H2>Geschichtliches</H2>
         <p className="mb-2">

@@ -1,15 +1,12 @@
 import BackButton from "../../../layout/BackButton";
 import Section from "../../../layout/Section";
-import H2 from "../../../layout/H2";
 
 import hanne from "../../../assets/tiervermittlung/emergency/Hanne.jpg";
 import hanne2 from "../../../assets/tiervermittlung/emergency/Hanne2.jpg";
 import katzenkinder from "../../../assets/tiervermittlung/emergency/Katzenkinder.jpg";
 import katzenkinder2 from "../../../assets/tiervermittlung/emergency/Katzenkinder2.jpg";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import NotfalltierKarte from "./NotfalltierKarte";
 
 const NotfallVermittlung = () => {
   const animals = [
@@ -37,80 +34,71 @@ const NotfallVermittlung = () => {
     },
   ];
 
-  const [showSection, setSection] = useState(false);
-  const [sectionId, setSectionId] = useState(null);
-
-  const handleShowMoreOrLessBtn = (id) => {
-    let sectionId = id;
-    setSectionId(sectionId);
-
-    if (!showSection) {
-      setSection(true);
-    } else {
-      setSection(false);
-    }
-  };
-
   return (
     <Section>
-      {animals.map((animal) => {
-        return (
-          <div key={animal.id} className="grid grid-cols-1">
-            <div>
-              <H2>{animal.name}</H2>
-              <h3 className=" text-2xl">{animal.breed}</h3>
-              <h3 className=" text-2xl">Geboren: {animal.dateOfBirth}</h3>
-              <h3 className=" text-2xl">
-                {animal.sex},{" "}
-                {animal.castrated ? "kastriert" : "nicht kastriert"}
-              </h3>
-            </div>
-            <div className="mt-2 h-fit">
-              {animal.images.map((image) => {
-                return (
-                  <img
-                    className=" h-1/3 w-full object-cover object-top"
-                    key={image}
-                    src={image}
-                    alt={image}
-                  />
-                );
-              })}
-            </div>
-
-            <button
-              onClick={() => {
-                handleShowMoreOrLessBtn(animal.id);
-              }}
-              className="bg-mainBg text-secondText p-1 cursor-pointer text-2xl"
-            >
-              {sectionId == animal.id && showSection
-                ? "weniger Informationen"
-                : "weitere Informationen"}
-              <FontAwesomeIcon
-                icon={
-                  sectionId == animal.id && showSection
-                    ? faCaretUp
-                    : faCaretDown
-                }
-                className="block m-auto"
-              />
-            </button>
-
-            <section
-              className={
-                showSection && sectionId == animal.id ? "visible" : "hidden"
-              }
-            >
-              <p className=" p-2 bg-mainBg text-secondText text-justify">
-                {animal.description}
-              </p>
-            </section>
-          </div>
-        );
-      })}
+      <h1>es geht los!</h1>
+      <div>
+        {animals.map((animal) => (
+          <NotfalltierKarte key={animal.id} {...animal} />
+        ))}
+      </div>
       <BackButton />
     </Section>
+
+    // return (
+    //   <div key={animal.id} className="grid grid-cols-1">
+    //     <div>
+    //       <H2>{animal.name}</H2>
+    //       <h3 className=" text-2xl">{animal.breed}</h3>
+    //       <h3 className=" text-2xl">Geboren: {animal.dateOfBirth}</h3>
+    //       <h3 className=" text-2xl">
+    //         {animal.sex},{" "}
+    //         {animal.castrated ? "kastriert" : "nicht kastriert"}
+    //       </h3>
+    //     </div>
+    //     <div className="mt-2 h-fit">
+    //       {animal.images.map((image) => {
+    //         return (
+    //           <img
+    //             className=" h-1/3 w-full object-cover object-top"
+    //             key={image}
+    //             src={image}
+    //             alt={image}
+    //           />
+    //         );
+    //       })}
+    //     </div>
+
+    //     <button
+    //       onClick={() => {
+    //         handleShowMoreOrLessBtn(animal.id);
+    //       }}
+    //       className="bg-mainBg text-secondText p-1 cursor-pointer text-2xl"
+    //     >
+    //       {sectionId == animal.id && showSection
+    //         ? "weniger Informationen"
+    //         : "weitere Informationen"}
+    //       <FontAwesomeIcon
+    //         icon={
+    //           sectionId == animal.id && showSection
+    //             ? faCaretUp
+    //             : faCaretDown
+    //         }
+    //         className="block m-auto"
+    //       />
+    //     </button>
+
+    //     <section
+    //       className={
+    //         showSection && sectionId == animal.id ? "visible" : "hidden"
+    //       }
+    //     >
+    //       <p className=" p-2 bg-mainBg text-secondText text-justify">
+    //         {animal.description}
+    //       </p>
+    //     </section>
+    //   </div>
+    // );
   );
 };
 
