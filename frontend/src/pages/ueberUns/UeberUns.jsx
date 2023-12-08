@@ -5,20 +5,16 @@ import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
 import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
 import Section from "../../layout/Section";
+import satzungPdf from "../../assets/Satzung-pdf.pdf";
+import mitglied from "../../assets/Beitritt-Neu.pdf";
 
 const UeberUns = () => {
   const paths = [
-    {
-      name: "Satzung (PDF Datei)",
-      to: "/über-uns/satzung-pdf",
-      id: 1,
-    },
     { name: "Geschichtliches", to: "/über-uns/text/#Geschichtliches", id: 2 },
     { name: "Unser Anliegen", to: "/über-uns/text/#Unser-Anliegen", id: 3 },
     { name: "Unsere Aufgaben", to: "/über-uns/text/#Unsere-Aufgaben", id: 4 },
     { name: "Unser Tierheim", to: "/über-uns/text/#Unser-Tierheim", id: 5 },
     { name: "Unser Vorstand", to: "/über-uns/text/#Unser-Vorstand", id: 6 },
-    { name: "Mitglied werden", to: "/über-uns/mitglied-werden", id: 7 },
   ];
 
   const presse = [
@@ -45,13 +41,17 @@ const UeberUns = () => {
   return (
     <div>
       {/* Informationen */}
-
       <Section>
         <div className="ml-4 mb-2">
           <H2>Informationen</H2>
         </div>
         <nav className="bg-mainBg m-auto">
           <ul>
+            <li className="text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+              <a href={satzungPdf} target="_blank" rel="noopener noreferrer">
+                Satzung-pdf
+              </a>
+            </li>
             {paths.map((path) => {
               return (
                 <li
@@ -62,6 +62,11 @@ const UeberUns = () => {
                 </li>
               );
             })}
+            <li className="text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+              <a href={mitglied} target="_blank" rel="noopener noreferrer">
+                Mitglied werden
+              </a>
+            </li>
           </ul>
         </nav>
       </Section>
