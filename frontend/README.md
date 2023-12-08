@@ -41,7 +41,7 @@ Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend.
 
 ## Beitragende
 
-- Ksenia (Backend Lead)
-- Hendri (Frontend Lead)
-- Ahmad (Workflow Lead)
-- David (Project Lead)
+- [Ksenia (Backend Lead)]()
+- [Hendri (Frontend Lead)]()
+- [Ahmad (Workflow Lead)]()
+- [David (Project Lead)](https://github.com/MrburnsDAOC)
