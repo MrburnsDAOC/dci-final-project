@@ -1,7 +1,6 @@
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
 import H3 from "../../layout/H3";
-import H4 from "../../layout/H4";
 import NextButton from "../../layout/NextButton";
 import Btn from "../../assets/btn.png";
 import Paypal from "../../assets/paypal.png";
