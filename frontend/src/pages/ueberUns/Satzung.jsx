@@ -1,9 +1,12 @@
-import React from 'react'
+import pdfFile from "../../assets/Beitritt-Neu.pdf";
 
 function Satzung() {
+
   return (
-    <div>Satzung</div>
-  )
+    <div>
+        <a href={pdfFile} target="_blank" rel="noopener noreferrer" className="underline">Beitritt-pdf</a>
+    </div>
+  );
 }
 
-export default Satzung
+export default Satzung;
