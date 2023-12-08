@@ -4,9 +4,13 @@ import Carousel from "../../components/Carousel";
 import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
 import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
+import tierschutzpreis from "../../assets/tierschutzpreis.jpg";
+import bannerMonikaWeigler from "../../assets/banner_wegler_katzen.jpg";
+
 import H2 from "../../layout/H2";
 import H5 from "../../layout/H5";
-import BackButton from "../../layout/BackButton";
+import Section from "../../layout/Section";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   // Dummy data "Aktuelles":
@@ -64,9 +68,11 @@ const Home = () => {
           finanzieller Lage „stückweise" weitergebaut und 1994 endgültig fertig
           gestellt.
         </p>
-        <button className=" block mx-auto mt-2 w-fit bg-mainBg  border-white border-2 text-secondText p-3 rounded-full">
-          erfahre mehr
-        </button>
+        <Link to={"/über-uns"}>
+          <button className=" block mx-auto mt-2 w-fit bg-mainBg  border-white border-2 text-secondText p-3 rounded-full">
+            mehr erfahren
+          </button>
+        </Link>
       </section>
 
       {/* Aktuelles: */}
@@ -89,7 +95,76 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <BackButton />
+
+      {/* Tierpfleger/in gesucht! */}
+      {/* <div className="text-alertText"> */}
+      <Section>
+        <H2>Tierpfleger/in gesucht!</H2>
+        <Link to={"/kontakt"} className="underline">
+          Bewerbungen bitte an unser Tierheim.
+        </Link>
+      </Section>
+      {/* </div> */}
+
+      {/* Bayer.Tierschutzpreis */}
+      <Section>
+        <H2>Bayer.Tierschutzpreis 2018</H2>
+        <p>
+          Unser Tierheim hat am 21.06.2018 den Tierschutzpreis der Bayerischen
+          Staatsregierung erhalten!&nbsp;
+          <a
+            href="https://www.stmuv.bayern.de/themen/tiergesundheit_tierschutz/tierschutz/tierschutzpreis/2018.htm"
+            className=" underline"
+          >
+            mehr...
+          </a>
+        </p>
+        <img
+          src={tierschutzpreis}
+          alt="Tierschutzpreis 2018"
+          className=" mt-2"
+        />
+      </Section>
+
+      <Section>
+        <H2>Wieder störungsfrei online!</H2>
+        <p className="mb-2">
+          {" "}
+          Die Datenschutzbestimmungen (DSGVO) und die weltweiten Bestrebungen
+          das Internet sicherer zu machen hatten dazu geführt, dass die
+          Internet-Browser unsere Seite in den letzten Wochen nur noch
+          widerwillig öffnen wollten.
+        </p>
+        <p className="mb-2">
+          Dank des Einsatzes des{" "}
+          <a
+            href="https://www.dachau.net/website/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Bürgernetzes Dachau
+          </a>
+          , das die Seiten dankenswerterweise hostet, konnten jetzt die
+          erforderlichen Zertifikate bereitgestellt werden. Herzlichen Dank an
+          Thomas Wagner!
+        </p>
+        <p>Wir bitten die Unannehmlichkeiten zu entschuldigen.</p>
+      </Section>
+
+      {/* Link zu HP Monika Weigler */}
+      <Section>
+        <p>
+          Besuchen Sie unbedingt auch einmal die Seite der Autorin und
+          Tierfotografin Monika Weigler!
+        </p>
+        <a href="https://www.wegler.de/" target="_blank">
+          <img
+            src={bannerMonikaWeigler}
+            alt="Banner Monika Wegler, Fotografin und Autorin"
+          />
+        </a>
+      </Section>
     </>
   );
 };

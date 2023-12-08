@@ -7,12 +7,15 @@ import Kontakt from "../pages/kontakt/Kontakt";
 import Impressum from "../pages/impressum/Impressum";
 import NotFound from "../pages/notFound/NotFound";
 import UeberUnsText from "../pages/ueberUns/UeberUnsText.jsx";
-
+import Presse from "../pages/ueberUns/Presse.jsx";
+import Satzung from "../pages/ueberUns/Satzung.jsx";
 
 const routes = [
   { path: "/", element: <Home />, id: 1 },
   { path: "/über-uns", element: <UeberUns />, id: 2 },
   { path: "/über-uns/text", element: <UeberUnsText />, id: 2.1 },
+  { path: "/über-uns/presse", element: <Presse />, id: 2.2 },
+  { path: "/über-uns/satzung-pdf", element: <Satzung />, id: 2.3 },
   { path: "/tiervermittlung", element: <Tiervermittlung />, id: 3 },
   { path: "/spenden", element: <Spenden />, id: 4 },
   { path: "/termine", element: <Termine />, id: 5 },
