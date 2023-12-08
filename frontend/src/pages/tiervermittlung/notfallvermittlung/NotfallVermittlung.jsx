@@ -38,9 +38,12 @@ const NotfallVermittlung = () => {
   ];
 
   const [showSection, setSection] = useState(false);
+  const [sectionId, setSectionId] = useState(null);
 
-  const handleShowMoreOrLessBtn = () => {
-    console.log(parent);
+  const handleShowMoreOrLessBtn = (id) => {
+    let sectionId = id;
+    setSectionId(sectionId);
+
     if (!showSection) {
       setSection(true);
     } else {
@@ -76,19 +79,28 @@ const NotfallVermittlung = () => {
             </div>
 
             <button
-              onClick={handleShowMoreOrLessBtn}
+              onClick={() => {
+                handleShowMoreOrLessBtn(animal.id);
+              }}
               className="bg-mainBg text-secondText p-1 cursor-pointer text-2xl"
             >
-              {!showSection ? "weitere Informationen" : "weniger Informationen"}
+              {sectionId == animal.id && showSection
+                ? "weniger Informationen"
+                : "weitere Informationen"}
               <FontAwesomeIcon
-                icon={!showSection ? faCaretDown : faCaretUp}
+                icon={
+                  sectionId == animal.id && showSection
+                    ? faCaretUp
+                    : faCaretDown
+                }
                 className="block m-auto"
               />
             </button>
 
             <section
-              id={animal.name + animal.id}
-              className={!showSection ? "hidden" : "visible"}
+              className={
+                showSection && sectionId == animal.id ? "visible" : "hidden"
+              }
             >
               <p className=" p-2 bg-mainBg text-secondText text-justify">
                 {animal.description}
