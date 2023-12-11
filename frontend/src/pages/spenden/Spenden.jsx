@@ -228,7 +228,7 @@ const Spenden = () => {
 
           <p className="mb-4 font-bold">
             Ansonsten dürfen wir z.B. auf folgende Verwertungsmöglichkeiten
-            hinweisen:{" "}
+            hinweisen:
             <a
               href="https://www.verschenkmarkt-dachau.de"
               target="_blank"
@@ -240,7 +240,6 @@ const Spenden = () => {
           </p>
         </div>
       </Section>
-      <BackButton />
     </div>
   );
 };
