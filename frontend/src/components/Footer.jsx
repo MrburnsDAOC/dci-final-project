@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import Tierschutzbund from "../assets/Deutscher-Tierschutzbund.png";
 import Bayern from "../assets/Tierschutzbund-Bayern.png";
+import Kontakt from "../pages/kontakt/Kontakt.jsx";
+import Mitglied from "../assets/ueber-uns/Beitritt-Neu.pdf";
+import Impressum from "../pages/impressum/Impressum.jsx";
 
 const Footer = () => {
   return (
@@ -9,7 +12,7 @@ const Footer = () => {
       <div className="container ml-4 flex flex-col sm:flex-row justify-around ">
         <div className="my-1">
           <a
-            href="#"
+            href="/kontakt"
             className="text-white hover:underline  text-xl sm:text-base lg:text-xl "
           >
             Kontakt
@@ -29,8 +32,10 @@ const Footer = () => {
 
         <div className="my-1">
           <a
-            href="#"
+            href={Mitglied}
+            target="_blank"
             className="text-white hover:underline text-xl sm:text-base lg:text-xl"
+            rel="noopener noreferrer"
           >
             Mitglied werden
           </a>
@@ -59,14 +64,14 @@ const Footer = () => {
             <img
               src={Bayern}
               alt="Deutscher Tierverbund-Bayern"
-              className="w-6 h-6 "
+              className="w-6 h-6 rounded-full "
             />
           </a>
         </div>
 
         <div className="my-1">
           <a
-            href="#"
+            href="/impressum"
             className=" text-white hover:underline text-xl sm:text-base lg:text-xl"
           >
             Impressum und Datenschutz

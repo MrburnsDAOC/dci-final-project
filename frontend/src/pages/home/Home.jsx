@@ -12,6 +12,8 @@ import H5 from "../../layout/H5";
 import Section from "../../layout/Section";
 import { Link } from "react-router-dom";
 
+import NextBtn from "../../layout/NextButton";
+
 const Home = () => {
   // Dummy data "Aktuelles":
   const news = [
@@ -33,17 +35,12 @@ const Home = () => {
       title: "Headline news 3",
       date: "23.11.2023",
     },
-    // {
-    //   id: 1,
-    //   wann: "Sa, 09.12.2023 14:00h"
-    //   was: "Jahreshauptversammlung nach mehreren Verschiebungen neuer Termin!",
-    //   wo: "Vereinsheim der Hundefreunde Dachau,Roßwachtstr. 35, 85221 Dachau",
-    // },
   ];
   return (
     <>
       <Carousel />
-      <section className=" mt-0 bg-secondBg p-3 px-8 mb-2 text-justify">
+      <NextBtn />
+      <section className=" mt-0 bg-secondBg p-3 px-8 mb-1 text-justify">
         <h1 className="text-left py-3 text-2xl leading-10 font-bold">
           Tierschutzverein Dachau e.V.
         </h1>
@@ -76,7 +73,7 @@ const Home = () => {
       </section>
 
       {/* Aktuelles: */}
-      <section className="mt-0 bg-secondBg py-3 mb-2">
+      <section className="mt-0 bg-secondBg py-3 mb-0.5">
         <div className="px-8">
           <H2>Aktuelle Meldungen</H2>
         </div>
@@ -158,7 +155,7 @@ const Home = () => {
           Besuchen Sie unbedingt auch einmal die Seite der Autorin und
           Tierfotografin Monika Weigler!
         </p>
-        <a href="https://www.wegler.de/" target="_blank">
+        <a href="https://www.wegler.de/" target="_blank" rel="noreferrer">
           <img
             src={bannerMonikaWeigler}
             alt="Banner Monika Wegler, Fotografin und Autorin"

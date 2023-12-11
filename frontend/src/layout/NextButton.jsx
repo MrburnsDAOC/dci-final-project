@@ -11,9 +11,8 @@ function NextButton() {
 
   const scrollToNextSection = () => {
     const currentScroll = window.scrollY;
-    for (let i = 0; i < sectionsRef.current.length; i++) {
+    for (let i = 1; i < sectionsRef.current.length; i++) {
       const section = sectionsRef.current[i];
-      // console.log(sectionsRef.current[0]);
       const sectionTop = section.offsetTop - 70;
       if (sectionTop > currentScroll) {
         window.scrollTo({
@@ -28,7 +27,7 @@ function NextButton() {
     <div className="fixed top-1/2 right-0 -translate-y-1/2 text-right mr-1">
       <button
         onClick={scrollToNextSection}
-        className="w-7 h-7 border rounded-full shadow-md"
+        className="w-7 h-7 border rounded-full shadow-md bg-secondBg"
       >
         <FontAwesomeIcon icon={faAnglesDown}></FontAwesomeIcon>
       </button>
