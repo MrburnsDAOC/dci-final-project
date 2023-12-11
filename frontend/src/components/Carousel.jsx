@@ -1,25 +1,41 @@
 import { Carousel } from "@material-tailwind/react";
 
-import ImageOne from "../assets/dummyImageCarouselOne.png";
-import ImageTwo from "../assets/dummyImageCarouselTwo.png";
-import ImageThree from "../assets/dummyImageCarouselThree.png";
+import ImageOne from "../assets/home/dogs01.jpeg";
+import ImageTwo from "../assets/home/cats01.jpeg";
+import ImageThree from "../assets/home/guineaPigs01.jpeg";
+import ImageFour from "../assets/home/dogs02.jpeg";
+import ImageFive from "../assets/home/cats02.jpeg";
 
 export function CarouselImages() {
   return (
-    <Carousel transition={{ duration: 1 }} loop={true} className="z-0">
+    <Carousel
+      transition={{ duration: 1 }}
+      loop={true}
+      className="z-0 h-[50vh] mx-auto "
+    >
       <img
         src={ImageOne}
-        alt="image 1"
-        className="h-full w-full object-cover"
+        alt="Four dogs looking happy from the top of a wall."
+        className="h-[50vh] w-full object-cover object-center"
       />
       <img
         src={ImageTwo}
-        alt="image 2"
-        className="h-full w-full object-cover"
+        alt="A cat that wants to be picked up."
+        className="h-full w-full object-cover object-top"
       />
       <img
         src={ImageThree}
-        alt="image 3"
+        alt="Guinea pigs eating"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src={ImageFour}
+        alt="A happy dog looking into the camera"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src={ImageFive}
+        alt="A cat with their two kittens outside."
         className="h-full w-full object-cover"
       />
     </Carousel>

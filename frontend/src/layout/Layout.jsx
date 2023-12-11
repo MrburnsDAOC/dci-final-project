@@ -5,7 +5,7 @@ import ScrollToTop from "../components/navigation/ScrollToTop";
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
   return (
-    <div className="text-mainText text-lg font-sans bg-mainBg font-normal leading-6">
+    <div className="text-mainText text-lg font-sans bg-mainBg font-normal leading-6 md:px-20">
       <ScrollToTop />
       <Navbar />
       {children}
