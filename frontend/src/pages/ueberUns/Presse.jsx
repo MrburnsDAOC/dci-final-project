@@ -101,7 +101,6 @@ function Presse() {
         </p>
 
         <div className="bg-white break-words ">
-          {/* md:w-375 md:h-812 md:m-auto */}
           <div className="grid grid-cols-3 pt-4 ">
             <div className="bg-mainBg text-white border p-3">
               <p className="text-lg font-semibold">Datum</p>

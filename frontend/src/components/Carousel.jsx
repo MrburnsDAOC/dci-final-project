@@ -1,10 +1,10 @@
 import { Carousel } from "@material-tailwind/react";
 
-import ImageOne from "../assets/home/dogs01.jpeg";
-import ImageTwo from "../assets/home/cats01.jpeg";
-import ImageThree from "../assets/home/guineaPigs01.jpeg";
-import ImageFour from "../assets/home/dogs02.jpeg";
-import ImageFive from "../assets/home/cats02.jpeg";
+import ImageOne from "../assets/home/carousel/dogs01.jpeg";
+import ImageTwo from "../assets/home/carousel/cats01.jpeg";
+import ImageThree from "../assets/home/carousel/guineaPigs01.jpeg";
+import ImageFour from "../assets/home/carousel/dogs02.jpeg";
+import ImageFive from "../assets/home/carousel/cats02.jpeg";
 
 export function CarouselImages() {
   return (
