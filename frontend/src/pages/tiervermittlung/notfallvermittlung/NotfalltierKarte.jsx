@@ -40,7 +40,7 @@ const NotfalltierKarte = ({
           {images.map((image) => {
             return (
               <img
-                className="w-[49.5%] object-cover "
+                className="w-[49.5%] object-cover"
                 key={image}
                 src={image}
                 alt={image}
