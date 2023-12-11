@@ -88,7 +88,7 @@ const UeberUns = () => {
                 key={id}
                 className={`min-w-full min-h-[200px] max-h-[400px] bg- flex justify-around py-1 rounded-lg`}
               >
-                <img className="w-1/2 object-cover" src={img} alt={img} />
+                <img className="w-1/2 h-52 object-cover" src={img} alt={img} />
                 <div className=" w-1/2 p-2 my-auto">
                   <H5>{title}</H5>
                 </div>
