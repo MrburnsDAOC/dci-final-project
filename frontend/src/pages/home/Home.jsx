@@ -35,12 +35,6 @@ const Home = () => {
       title: "Headline news 3",
       date: "23.11.2023",
     },
-    // {
-    //   id: 1,
-    //   wann: "Sa, 09.12.2023 14:00h"
-    //   was: "Jahreshauptversammlung nach mehreren Verschiebungen neuer Termin!",
-    //   wo: "Vereinsheim der Hundefreunde Dachau,Roßwachtstr. 35, 85221 Dachau",
-    // },
   ];
   return (
     <>
