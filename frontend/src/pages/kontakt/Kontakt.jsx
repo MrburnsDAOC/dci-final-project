@@ -3,10 +3,12 @@ import H2 from "../../layout/H2";
 import H3 from "../../layout/H3";
 import KontaktData from "../../components/KontaktData";
 import Section from "../../layout/Section";
+import NextBtn from "../../layout/NextButton";
 
 const Kontakt = () => {
   return (
     <>
+      <NextBtn />
       <Section>
         <H2>Kontakt</H2>
         <div id="coronaHinweis" className="text-alertText my-3">

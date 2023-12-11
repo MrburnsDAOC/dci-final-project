@@ -4,7 +4,6 @@ import H3 from "../../layout/H3";
 import NextButton from "../../layout/NextButton";
 import Btn from "../../assets/btn.png";
 import Paypal from "../../assets/paypal.png";
-import BackButton from "../../layout/BackButton";
 
 const Spenden = () => {
   const openPaypalLink = () => {

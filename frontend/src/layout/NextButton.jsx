@@ -24,7 +24,7 @@ function NextButton() {
     }
   };
   return (
-    <div className="fixed top-1/2 right-0 -translate-y-1/2 text-right mr-1">
+    <div className="fixed top-3/4 right-0 -translate-y-1/2 text-right mr-1">
       <button
         onClick={scrollToNextSection}
         className="w-7 h-7 border rounded-full shadow-md bg-secondBg"
