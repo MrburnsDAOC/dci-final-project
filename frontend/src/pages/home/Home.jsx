@@ -158,7 +158,7 @@ const Home = () => {
           Besuchen Sie unbedingt auch einmal die Seite der Autorin und
           Tierfotografin Monika Weigler!
         </p>
-        <a href="https://www.wegler.de/" target="_blank">
+        <a href="https://www.wegler.de/" target="_blank" rel="noreferrer">
           <img
             src={bannerMonikaWeigler}
             alt="Banner Monika Wegler, Fotografin und Autorin"
