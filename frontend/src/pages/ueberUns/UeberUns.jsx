@@ -83,9 +83,8 @@ const UeberUns = () => {
         </div>
         <div className=" grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
           {presse.map(({ id, img, title, to }) => (
-            <Link to={to}>
+            <Link to={to} key={id}>
               <div
-                key={id}
                 className={`min-w-full min-h-[200px] max-h-[400px] bg- flex justify-around py-1 rounded-lg`}
               >
                 <img className="w-1/2 h-52 object-cover" src={img} alt={img} />
