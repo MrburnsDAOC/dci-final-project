@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
 import NextButton from "../../layout/NextButton";
-import DatzHead from "../../assets/datz_head.jpg";
+import DatzHead from "../../assets/ueber-uns/datz_head.jpg";
 import BackButton from "../../layout/BackButton";
+import datz2023 from "../../assets/ueber-uns/DATZ_2023_Nov.pdf";
+import datz2022 from "../../assets/ueber-uns/DATZ-2022_Nov.pdf";
+import datz2021 from "../../assets/ueber-uns/DATZ-2021_Nov.pdf";
+import datz2020 from "../../assets/ueber-uns/DATZ-2020_Nov.pdf";
+import datz2019 from "../../assets/ueber-uns/DATZ-2019_Nov.pdf";
 
 function Presse() {
   const pressestimmen = [
@@ -215,24 +220,59 @@ function Presse() {
               <p className="text-lg font-semibold">DATZ</p>
             </div>
             <div className="border p-3">
-              <p>DATZ-2023</p>
+              <a
+                href={datz2023}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                DATZ-2023
+              </a>
             </div>
             <div className="border p-3">
-              <p>DATZ-2022</p>
+              <a
+                href={datz2022}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                DATZ-2022
+              </a>
             </div>
             <div className="border p-3">
-              <p>DATZ-2021-1</p>
+              <a
+                href={datz2021}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                DATZ-2021-1
+              </a>
             </div>
             <div className="border p-3">
-              <p>DATZ-2020-1</p>
+              <a
+                href={datz2020}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                DATZ-2020-1
+              </a>
             </div>
             <div className="border p-3">
-              <p>DATZ-2019-2</p>
+              <a
+                href={datz2019}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                DATZ-2019-2
+              </a>
             </div>
           </div>
         </div>
       </Section>
-      <BackButton/>
+      <BackButton />
     </div>
   );
 }

@@ -5,38 +5,38 @@ import Bayern from "../assets/Tierschutzbund-Bayern.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-mainBg text-white flex py-5 justify-center w-full ">
+    <footer className="bg-mainBg text-white py-2 flex  justify-center item-center w-full mt-auto">
       <div className="container ml-4 flex flex-col sm:flex-row justify-around ">
-        <div className="mb-1.5">
+        <div className="my-1">
           <a
             href="#"
-            className="text-white hover:underline text-lg sm:text-md lg:text-lg "
+            className="text-white hover:underline  text-xl sm:text-base lg:text-xl "
           >
             Kontakt
           </a>
         </div>
 
-        <div className="mb-1.5">
+        <div className="my-1">
           <a
             href="https://www.facebook.com/search/top/?q=tierheim%20dachau&epa=SEARCH_BOX"
             target="_blank"
-            className="text-white hover:underline text-lg sm:text-md lg:text-lg"
+            className="text-white hover:underline text-xl sm:text-base lg:text-xl"
             rel="noopener noreferrer"
           >
             Social Media <FontAwesomeIcon icon={faFacebook} />
           </a>
         </div>
 
-        <div className="mb-1.5">
+        <div className="my-1">
           <a
             href="#"
-            className="text-white hover:underline text-lg sm:text-md lg:text-lg"
+            className="text-white hover:underline text-xl sm:text-base lg:text-xl"
           >
             Mitglied werden
           </a>
         </div>
 
-        <div className="text-lg flex mb-1.5 sm:text-md lg:text-lg">
+        <div className="text-lg flex my-1 text-xl sm:text-base lg:text-xl">
           <p className="mr-2">Dachverbände</p>
           <a
             href="https://www.tierschutzbund.de/"
@@ -64,10 +64,10 @@ const Footer = () => {
           </a>
         </div>
 
-        <div>
+        <div className="my-1">
           <a
             href="#"
-            className="text-white hover:underline text-lg sm:text-md lg:text-lg"
+            className=" text-white hover:underline text-xl sm:text-base lg:text-xl"
           >
             Impressum und Datenschutz
           </a>
