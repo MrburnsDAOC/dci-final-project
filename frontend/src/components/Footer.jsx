@@ -5,7 +5,8 @@ import Bayern from "../assets/Tierschutzbund-Bayern.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-mainBg text-white flex py-5 justify-center w-full ">
+    // <footer className="bg-mainBg text-white flex py-5 justify-center w-full">
+    <footer className="bg-mainBg text-white py-5 mt-auto flex justify-center">
       <div className="container ml-4 flex flex-col sm:flex-row justify-around ">
         <div className="mb-1.5">
           <a
