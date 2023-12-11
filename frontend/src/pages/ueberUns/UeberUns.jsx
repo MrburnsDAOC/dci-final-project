@@ -5,8 +5,8 @@ import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
 import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
 import Section from "../../layout/Section";
-import satzungPdf from "../../assets/Satzung-pdf.pdf";
-import mitglied from "../../assets/Beitritt-Neu.pdf";
+import satzungPdf from "../../assets/ueber-uns/Satzung-pdf.pdf";
+import mitglied from "../../assets/ueber-uns/Beitritt-Neu.pdf";
 
 const UeberUns = () => {
   const paths = [
