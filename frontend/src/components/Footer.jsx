@@ -2,9 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import Tierschutzbund from "../assets/Deutscher-Tierschutzbund.png";
 import Bayern from "../assets/Tierschutzbund-Bayern.png";
-import Kontakt from "../pages/kontakt/Kontakt.jsx";
 import Mitglied from "../assets/ueber-uns/Beitritt-Neu.pdf";
-import Impressum from "../pages/impressum/Impressum.jsx";
 
 const Footer = () => {
   return (
