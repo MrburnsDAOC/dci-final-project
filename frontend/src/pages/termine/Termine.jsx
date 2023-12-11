@@ -1,4 +1,5 @@
 import H2 from "../../layout/H2";
+
 const events = [
   {
     id: 1,
