@@ -73,16 +73,16 @@ function Navbar() {
   return (
     <header
       id="header"
-      className="bg-mainBg py-3 px-3 flex justify-between items-center sticky top-0 z-50 tablet:justify-center tablet:flex-row-reverse tablet:flex-wrap tablet:gap-x-60 tablet:gap-y-3"
+      className="bg-mainBg py-3 px-3 flex justify-between items-center sticky top-0 z-50 md:justify-center md:flex-row-reverse md:flex-wrap md:gap-x-60 md:gap-y-3"
     >
       <button
-        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer tablet:hover:shadow-md"
+        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer md:hover:shadow-md"
         onClick={() => navigate("/spenden")}
       >
         Spenden
       </button>
 
-      <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer tablet:hidden">
+      <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer md:hidden">
         <img
           src={tierschutzDachauLogo}
           alt="Tierschutz Dachau e.V."
@@ -93,7 +93,7 @@ function Navbar() {
           }}
         />
       </div>
-      <div className="w-[95px] h-10 flex justify-end tablet:w-fit">
+      <div className="w-[95px] h-10 flex justify-end md:w-fit">
         {/* if showBurgerMenu true => we see the burger menu */}
         {showBurgerMenu && (
           <FontAwesomeIcon
@@ -104,13 +104,13 @@ function Navbar() {
         )}
         {/* if showNavLinks true => we see the nav links */}
         {showNavLinks && (
-          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[70px] text-2xl tablet:relative tablet:h-auto tablet:top-0">
-            <ul className="tablet:flex tablet:justify-start">
+          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[70px] text-2xl md:relative md:h-auto md:top-0">
+            <ul className="md:flex md:justify-start">
               {paths.map((path) => {
                 return (
                   <li
                     key={path.id}
-                    className="py-2 px-8 border-solid border-t-2 border-secondBg tablet:border-none tablet:py-1 tablet:min-w-fit tablet:px-2"
+                    className="py-2 px-8 border-solid border-t-2 border-secondBg md:border-none md:py-1 md:min-w-fit md:px-2"
                     onClick={handleNavClick}
                   >
                     <NavLink
@@ -118,7 +118,7 @@ function Navbar() {
                       style={({ isActive }) => ({
                         color: isActive ? "black" : "white",
                       })}
-                      className="block tablet:inline tablet:hover:drop-shadow-md"
+                      className="block md:inline md:hover:drop-shadow-md"
                     >
                       {path.name}
                     </NavLink>
