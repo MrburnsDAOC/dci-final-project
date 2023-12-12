@@ -5,9 +5,9 @@ import H5 from "../../layout/H5";
 // import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 // import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
 
-import imgWochenpresse from "../../assets/ueberUns/newImg.jpeg";
-import imgSonstigeMedien from "../../assets/ueberUns/sonstigeNewsImg.webp";
-import imgDatz from "../../assets/ueberUns/datzImg.png";
+import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
+import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
+import imgDatz from "../../assets/ueber-uns/datzImg.png";
 
 import Section from "../../layout/Section";
 import satzungPdf from "../../assets/ueber-uns/Satzung-pdf.pdf";

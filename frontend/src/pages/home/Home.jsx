@@ -40,7 +40,7 @@ const Home = () => {
     <>
       <Carousel />
       <NextBtn />
-      <section className=" mt-0 bg-secondBg p-3 px-8 mb-1 text-justify">
+      <section className=" mt-0 bg-secondBg p-3 px-8 mb-1 text-justify xl:px-36">
         <h1 className="text-left py-3 text-2xl leading-10 font-bold">
           Tierschutzverein Dachau e.V.
         </h1>
@@ -73,12 +73,12 @@ const Home = () => {
       </section>
 
       {/* Aktuelles: */}
-      <section className="mt-0 bg-secondBg py-3 mb-0.5">
-        <div className="px-8">
+      <section className="px-8 mt-0 bg-secondBg py-3 mb-0.5 xl:px-36">
+        <div>
           <H2>Aktuelle Meldungen</H2>
         </div>
         <Link to="/termine">
-          <div className="px-8 grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
             {news.map(({ id, img, date, title }) => (
               <div
                 key={id}
