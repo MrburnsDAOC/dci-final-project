@@ -115,7 +115,7 @@ function Presse() {
         </div>
 
         {pressestimmen.map((stimmen) => (
-          <div key={stimmen.id} className="grid grid-cols-3  col-span-3 ">
+          <div key={stimmen.id} className="grid grid-cols-3  col-span-3">
             <div className="border p-3 col-span-1 ">
               <p>{stimmen.datum}</p>
             </div>
