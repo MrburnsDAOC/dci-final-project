@@ -28,14 +28,13 @@ const NotfalltierKarte = ({
   return (
     <Section>
       <div key={id} className="grid grid-cols-1">
-        <div>
-          <H2>{name}</H2>
-          <h3 className=" text-2xl">{breed}</h3>
-          <h3 className=" text-2xl">Geboren: {dateOfBirth}</h3>
-          <h3 className=" text-2xl">
-            {sex} {castrated}
-          </h3>
-        </div>
+        <H2>{name}</H2>
+        <h3 className="text-2xl">{breed}</h3>
+        <h3 className="text-2xl">Geboren: {dateOfBirth}</h3>
+        <h3 className="text-2xl">
+          {sex} {castrated}
+        </h3>
+
         <div className="`min-w-full min-h-[200px] flex justify-between py-1">
           {images.map((image) => {
             return (
