@@ -4,7 +4,6 @@ import H3 from "../../layout/H3";
 import NextButton from "../../layout/NextButton";
 import Btn from "../../assets/btn.png";
 import Paypal from "../../assets/paypal.png";
-import BackButton from "../../layout/BackButton";
 
 const Spenden = () => {
   const openPaypalLink = () => {
@@ -228,7 +227,7 @@ const Spenden = () => {
 
           <p className="mb-4 font-bold">
             Ansonsten dürfen wir z.B. auf folgende Verwertungsmöglichkeiten
-            hinweisen:{" "}
+            hinweisen:
             <a
               href="https://www.verschenkmarkt-dachau.de"
               target="_blank"
@@ -240,7 +239,6 @@ const Spenden = () => {
           </p>
         </div>
       </Section>
-      <BackButton />
     </div>
   );
 };

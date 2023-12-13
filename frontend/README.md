@@ -14,11 +14,28 @@ Als Thematik des finalen Teamprojekts unserer einjährigen DCI-Umschulung zu Ful
 
 ![originalSite-home](./src/assets/readme/originalSite-home.png)
 
-Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines Gantt Chart Projektplanes, welcher die verschiedenen Phasen des Projektes abbildete. Die Gliederung
+Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines ![Gantt Chart Projektplanes](https://shorturl.at/fzIPS), welcher die verschiedenen Phasen des Projektes abbildete, darunter vor allem die folgenden wesentlichen Blöcke:
 
-erfolgte die Erstellung des Layouts. Die Erstellung der Designs erfolgte in Figma. Der Fokus lag zunächst auf dem bekannte "mobile-first" Ansatz. Basierend darauf wurden die Designs für die Ansichten von Pads, Laptop und Desktop via der in Tailwind CSS verfügbaren Mediaqueries erweitern.
+1. Scope & Goal Setting
+2. Set up Workflow
+3. FRONTEND: Layout & Mockup
+4. FRONTEND: Component Planning
+5. FRONTEND: Build
+6. FRONTEND: Testing
+7. BACKEND: Endpoint Planning
+8. BACKEND: Build
+9. BACKEND: Testing
+10. BACKEND & FRONTEND: Combining
+11. Presentation
 
-Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend.
+![figmaDesign](./src/assets/readme/figmaDesign.png)
+Die Erstellung der Designs erfolgte in Figma. Der Fokus lag zunächst auf dem bekannte "Mobile-first"-Ansatz. Basierend darauf wurden die Designs für die Ansichten von Pads, Laptop und Desktop via der in Tailwind CSS verfügbaren Mediaqueries erweitern.
+
+Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Aufteilung der Tasks erfolgte via des in Github integrierten Projektboards. Nach der Erstellung der "Mobile-first"-Ansicht fing die Hälfte des Teams mit der Erstellung des Backend an, während die andere Hälfte via Tailwind CSS Mediaqueries die Desktop Ansicht erstellte.
+
+Je zum Ende der Frontend- und Backend-Phase wurde eine intensievere Testphase veranschlagt.
+
+Zuletzt erfolgte die Verbindung des Front- mit dem Backend sowie die Erstellung der ABschlusspräsentation.
 
 <!-- ## Installation
 

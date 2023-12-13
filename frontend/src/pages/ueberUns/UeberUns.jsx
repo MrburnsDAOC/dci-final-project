@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import H2 from "../../layout/H2";
 import H5 from "../../layout/H5";
-import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
-import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
-import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
+// import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
+// import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
+// import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
+
+import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
+import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
+import imgDatz from "../../assets/ueber-uns/datzImg.png";
+
 import Section from "../../layout/Section";
-import satzungPdf from "../../assets/Satzung-pdf.pdf";
-import mitglied from "../../assets/Beitritt-Neu.pdf";
+import satzungPdf from "../../assets/ueber-uns/Satzung-pdf.pdf";
+import mitglied from "../../assets/ueber-uns/Beitritt-Neu.pdf";
 
 const UeberUns = () => {
   const paths = [
@@ -20,19 +25,19 @@ const UeberUns = () => {
   const presse = [
     {
       id: 1,
-      img: imgAktuellesOne,
+      img: imgWochenpresse,
       title: "Tages-/Wochenpresse",
       to: "/über-uns/presse/#Pressestimmen",
     },
     {
       id: 2,
-      img: imgAktuellesTwo,
+      img: imgSonstigeMedien,
       title: "Sonstige Medien",
       to: "/über-uns/presse/#Sonstige-Medien",
     },
     {
       id: 3,
-      img: imgAktuellesThree,
+      img: imgDatz,
       title: "DATZ",
       to: "/über-uns/presse/#DATZ",
     },
@@ -76,19 +81,18 @@ const UeberUns = () => {
         <div className="ml-4 mb-2">
           <H2>Presse</H2>
         </div>
-        <div className=" grid grid-cols-1 gap-2 ">
+        <div className=" grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
           {presse.map(({ id, img, title, to }) => (
-            <div
-              key={id}
-              className={`min-w-full min-h-[200px] bg- flex justify-around py-1 rounded-lg`}
-            >
-              <img className="w-1/2" src={img} alt={img} />
-              <div className=" w-1/2 p-2 my-auto">
-                <Link to={to}>
+            <Link to={to} key={id}>
+              <div
+                className={`min-w-full min-h-[200px] max-h-[400px] bg- flex justify-around py-1 rounded-lg`}
+              >
+                <img className="w-1/2 h-52 object-cover" src={img} alt={img} />
+                <div className=" w-1/2 p-2 my-auto">
                   <H5>{title}</H5>
-                </Link>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </Section>
