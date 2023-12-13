@@ -21,20 +21,22 @@ const Tiervermittlung = () => {
     { id: 6, name: "Vermittelte Tiere", image: adopted },
   ];
   return (
-    <div>
+    <div className="md:flex md:gap-5 md:flex-wrap md:justify-center md:my-10">
       {sections.map((section) => {
         return (
-          <Link key={section.id} to={section.to} className=" cursor-pointer">
-            <div className="flex flex-col mb-2 relative">
-              <img
-                src={section.image}
-                alt={section.name}
-                className="w-fit h-fit self-center"
-              />
-              <h2 className="self-center absolute bottom-0 text-secondText text-2xl mb-1">
-                {section.name}
-              </h2>
-            </div>
+          <Link
+            key={section.id}
+            to={section.to}
+            className="flex flex-col mb-2 relative cursor-pointer md:max-w-[500px]  "
+          >
+            <img
+              src={section.image}
+              alt={section.name}
+              className="w-fit h-full self-center md:object-cover md:border-2 md:rounded-md "
+            />
+            <h2 className="self-center absolute bottom-0 text-secondText text-2xl mb-1">
+              {section.name}
+            </h2>
           </Link>
         );
       })}
