@@ -33,10 +33,8 @@ const archivEvents = [
 
 const Termine = () => {
   return (
-    <div>
-      {/* <div className="bg-white break-words p-4"> */}
+    <>
       <Section>
-        {/* md:w-375 md:h-812 md:m-auto */}
         <H2>Aktuelle Termine</H2>
         <div className="grid grid-cols-3">
           <div className="bg-mainBg text-white border p-3">
@@ -63,12 +61,9 @@ const Termine = () => {
             </div>
           ))}
         </div>
-        {/* </div> */}
       </Section>
 
       <Section>
-        {/* <div> */}
-        {/* <div className="bg-white my-2 break-words p-4"> */}
         <H2>Archiv</H2>
         <div className="grid grid-cols-2">
           <div className="bg-mainBg text-white border p-3">
@@ -90,9 +85,7 @@ const Termine = () => {
           ))}
         </div>
       </Section>
-      {/* </div> */}
-      {/* </div> */}
-    </div>
+    </>
   );
 };
 
