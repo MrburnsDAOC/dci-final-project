@@ -6,7 +6,7 @@ import Mitglied from "../assets/ueber-uns/Beitritt-Neu.pdf";
 
 const Footer = () => {
   return (
-    <footer className="bg-mainBg text-white py-2 flex  justify-center item-center w-full mt-auto">
+    <footer className="bg-mainBg text-white py-2 flex justify-center item-center w-full  mt-auto  border-t-2 border-secondBg">
       <div className="container ml-4 flex flex-col sm:flex-row justify-around ">
         <div className="my-1">
           <a

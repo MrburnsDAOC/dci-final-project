@@ -87,9 +87,8 @@ function Presse() {
   return (
     <div>
       <NextButton />
-
-      {/* Pressestimmen */}
-      <div className="bg-secondBg px-8 py-3">
+      <Section>
+        {/* Pressestimmen */}
         <p id="Pressestimmen"></p>
         <H2>Pressestimmen</H2>
         <p>
@@ -101,7 +100,6 @@ function Presse() {
         </p>
 
         <div className="bg-white break-words ">
-          {/* md:w-375 md:h-812 md:m-auto */}
           <div className="grid grid-cols-3 pt-4 ">
             <div className="bg-mainBg text-white border p-3">
               <p className="text-lg font-semibold">Datum</p>
@@ -116,7 +114,7 @@ function Presse() {
         </div>
 
         {pressestimmen.map((stimmen) => (
-          <div key={stimmen.id} className="grid grid-cols-3  col-span-3 ">
+          <div key={stimmen.id} className="grid grid-cols-3 col-span-3">
             <div className="border p-3 col-span-1 ">
               <p>{stimmen.datum}</p>
             </div>
@@ -128,9 +126,9 @@ function Presse() {
             </div>
           </div>
         ))}
-      </div>
+      </Section>
 
-      {/* Sontige-Medien */}
+      {/* Sontige-Medienberichte */}
       <Section>
         <p id="Sonstige-Medien"></p>
 
@@ -165,7 +163,7 @@ function Presse() {
         </div>
       </Section>
 
-      {/* DATZ */}
+      {/*Mitgliederzeitschrift DATZ */}
       <Section>
         <p id="DATZ"></p>
 
@@ -182,13 +180,13 @@ function Presse() {
         <p className="mb-2">
           Die DATZ liegt an öffentlichen Stellen (u.a. an unseren{" "}
           <a
-            href="../spenden/Spenden.jsx"
+            href="/spenden#Futterspenden"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-800 underline hover:cursor-pointer"
           >
             Futterspendenboxen
-          </a>{" "}
+          </a>
           , den Rathäusern, den Sparkassen und Volksbanken im Landkreis) aus.
         </p>
         <p className="mb-2">

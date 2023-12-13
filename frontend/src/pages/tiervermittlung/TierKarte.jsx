@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import Section from "../../../layout/Section";
+import Section from "../../layout/Section";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
-import H2 from "../../../layout/H2";
+import H2 from "../../layout/H2";
 import { useState } from "react";
 
 const NotfalltierKarte = ({
@@ -28,19 +28,18 @@ const NotfalltierKarte = ({
   return (
     <Section>
       <div key={id} className="grid grid-cols-1">
-        <div>
-          <H2>{name}</H2>
-          <h3 className=" text-2xl">{breed}</h3>
-          <h3 className=" text-2xl">Geboren: {dateOfBirth}</h3>
-          <h3 className=" text-2xl">
-            {sex} {castrated}
-          </h3>
-        </div>
+        <H2>{name}</H2>
+        <h3 className="text-2xl">{breed}</h3>
+        <h3 className="text-2xl">Geboren: {dateOfBirth}</h3>
+        <h3 className="text-2xl">
+          {sex} {castrated}
+        </h3>
+
         <div className="`min-w-full min-h-[200px] flex justify-between py-1">
           {images.map((image) => {
             return (
               <img
-                className="w-[49.5%] object-cover"
+                className="object-cover w-[49.5%] "
                 key={image}
                 src={image}
                 alt={image}

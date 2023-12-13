@@ -1,13 +1,16 @@
 import BackButton from "../../../layout/BackButton";
 
-import hanne from "../../../assets/tiervermittlung/emergency/Hanne.jpg";
-import hanne2 from "../../../assets/tiervermittlung/emergency/Hanne2.jpg";
-import katzenkinder from "../../../assets/tiervermittlung/emergency/Katzenkinder.jpg";
-import katzenkinder2 from "../../../assets/tiervermittlung/emergency/Katzenkinder2.jpg";
+import hanne from "../../../assets/tiervermittlung/notfaelle/Hanne.jpg";
+import hanne2 from "../../../assets/tiervermittlung/notfaelle/Hanne2.jpg";
+import katzenkinder from "../../../assets/tiervermittlung/notfaelle/Katzenkinder.jpg";
+import katzenkinder2 from "../../../assets/tiervermittlung/notfaelle/Katzenkinder2.jpg";
 
-import NotfalltierKarte from "./NotfalltierKarte";
+import TierKarte from "../TierKarte";
 
 import NextButton from "../../../layout/NextButton";
+
+import Section from "../../../layout/Section";
+import H2 from "../../../layout/H2";
 
 const NotfallVermittlung = () => {
   const animals = [
@@ -37,10 +40,19 @@ const NotfallVermittlung = () => {
 
   return (
     <>
+      <Section>
+        <H2>Notfall-Vermittlung</H2>
+        <p>
+          Auf dieser Seite versuchen wir Tiere unserer Mitglieder, die auf Grund
+          eines Notfalls abgegeben werden müssen, möglichst schnell wieder in
+          gute Hände zu vermitteln. Der Kontakt mit dem Tierbesitzer kann immer
+          auch über das Tierheim hergestellt werden.
+        </p>
+      </Section>
       <NextButton />
 
       {animals.map((animal) => (
-        <NotfalltierKarte key={animal.id} {...animal} />
+        <TierKarte key={animal.id} {...animal} />
       ))}
       <BackButton />
     </>
