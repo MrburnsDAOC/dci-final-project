@@ -9,8 +9,8 @@ const Kontakt = () => {
   return (
     <>
       <NextBtn />
-      <div className=" bg-secondBg break-words xl:flex">
-        <section>
+      <div className="break-words min-h-[89vh] xl:flex bg-secondBg ">
+        <section className="xl:w-4/5 ">
           <Section>
             <H2>Kontakt</H2>
             <div id="coronaHinweis" className="text-alertText my-3">
@@ -29,7 +29,7 @@ const Kontakt = () => {
           </Section>
         </section>
 
-        <aside className=" px-10 xl:bg-thirdBg  xl:sticky xl:top-0 xl:w-1/5">
+        <aside className=" px-10  xl:bg-thirdBg  xl:sticky xl:top-0 xl:w-1/5  ">
           {/* Container content to stick text: */}
           <div className="xl:sticky xl:top-1/4">
             <section>

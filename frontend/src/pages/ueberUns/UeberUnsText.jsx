@@ -1,6 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useEffect } from "react";
-import Vorstand from "../../assets/Vorstand 2018_M.jpg";
+import Vorstand from "../../assets/ueber-uns/imgUnserVorstand.jpg";
 import BackButton from "../../layout/BackButton";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";

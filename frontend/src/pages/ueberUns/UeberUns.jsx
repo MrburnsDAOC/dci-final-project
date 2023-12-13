@@ -12,6 +12,14 @@ import imgDatz from "../../assets/ueber-uns/datzImg.png";
 import Section from "../../layout/Section";
 import satzungPdf from "../../assets/ueber-uns/Satzung-pdf.pdf";
 import mitglied from "../../assets/ueber-uns/Beitritt-Neu.pdf";
+import imgGeschichtliches from "../../assets/ueber-uns/imgGeschichtliches.jpg";
+import imgUnserAnliegen from "../../assets/ueber-uns/imgUnserAnliegen.jpg";
+import imgUnsereAufgaben from "../../assets/ueber-uns/imgUnsereAufgaben.jpg";
+import imgUnserTierheim from "../../assets/ueber-uns/imgUnserTierheim.jpg";
+import imgUnserVorstand from "../../assets/ueber-uns/imgUnserVorstand.jpg";
+import imgSatzung from "../../assets/ueber-uns/imgSatzung.jpg";
+import imgMitglied from "../../assets/ueber-uns/imgMitglied.jpg";
+import imgDefault from "../../assets/ueber-uns/datz_head.jpg";
 
 const UeberUns = () => {
   const paths = [
@@ -21,6 +29,22 @@ const UeberUns = () => {
     { name: "Unser Tierheim", to: "/über-uns/text/#Unser-Tierheim", id: 5 },
     { name: "Unser Vorstand", to: "/über-uns/text/#Unser-Vorstand", id: 6 },
   ];
+
+  const determineImageForPath = (id) => {
+    if (id === 2) {
+      return imgGeschichtliches;
+    } else if (id === 3) {
+      return imgUnserAnliegen;
+    } else if (id === 4) {
+      return imgUnsereAufgaben;
+    } else if (id === 5) {
+      return imgUnserTierheim;
+    } else if (id === 6) {
+      return imgUnserVorstand;
+    } else {
+      return imgDefault;
+    }
+  };
 
   const presse = [
     {
@@ -50,30 +74,65 @@ const UeberUns = () => {
         <div className="ml-4 mb-2">
           <H2>Informationen</H2>
         </div>
-        <nav className="bg-mainBg m-auto">
-          <ul>
-            <li className="text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
-              <a href={satzungPdf} target="_blank" rel="noopener noreferrer">
-                Satzung-pdf
-              </a>
-            </li>
-            {paths.map((path) => {
-              return (
-                <li
-                  key={path.id}
-                  className="text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800"
+
+        <div className="m-auto bg-mainBg sm:flex sm:flex-wrap sm:justify-between sm:bg-secondBg ">
+          <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:my-4 sm:w-[47%]  lg:w-[30%]">
+            <a
+              href={satzungPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
+            >
+              <img
+                src={imgSatzung}
+                alt="Image for Satzung"
+                className=" w-full h-full hidden object-cover sm:block hover:opacity-75 transition duration-200 ease-in-out"
+              />
+              <h2 className="sm:self-center sm:absolute sm:bottom-3 text-xl sm:text-2xl">
+                Satzung-Pdf
+              </h2>
+            </a>
+          </div>
+
+          {paths.map((path) => {
+            const imageSource = determineImageForPath(path.id);
+            return (
+              <div className="text-white p-2 sm:p-0 text-xl sm:my-4 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:w-[47%] lg:w-[30%]">
+                <Link
+                  to={path.to}
+                  className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
                 >
-                  <Link to={path.to}>{path.name}</Link>
-                </li>
-              );
-            })}
-            <li className="text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
-              <a href={mitglied} target="_blank" rel="noopener noreferrer">
-                Mitglied werden
-              </a>
-            </li>
-          </ul>
-        </nav>
+                  <img
+                    src={imageSource}
+                    alt={`Image for ${path.name}`}
+                    className="w-full h-full hidden sm:block hover:opacity-75 transition duration-200 ease-in-out"
+                  />
+                  <h2 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
+                    {path.name}
+                  </h2>
+                </Link>
+              </div>
+            );
+          })}
+
+          <div className="text-white p-2 sm:m-auto sm:p-0 text-xl sm:my-4 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:w-[47%] lg:w-[30%]">
+            <a
+              href={mitglied}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full  "
+            >
+              <img
+                src={imgMitglied}
+                alt="Image for Mitglied-Werden"
+                className=" w-full h-full hidden sm:block hover:opacity-75 transition duration-200 ease-in-out"
+              />
+              <h2 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
+                Mitglied Werden
+              </h2>
+            </a>
+          </div>
+        </div>
       </Section>
 
       {/* Presse: */}
@@ -83,6 +142,7 @@ const UeberUns = () => {
         </div>
         <div className=" grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
           {presse.map(({ id, img, title, to }) => (
+
             <Link to={to} key={id}>
               <div
                 className={`min-w-full min-h-[200px] max-h-[400px] bg- flex justify-around py-1 rounded-lg`}
