@@ -11,8 +11,11 @@ export default withMT({
     colors: {
       transparent: "transparent",
       current: "currentColor",
+      // BG
       mainBg: "#0EA5E9",
       secondBg: "#ffffff",
+      thirdBg: "#F0F9FF",
+      // TEXT
       mainText: "#777777",
       secondText: "#ffffff",
       alertText: "#ff0000",
