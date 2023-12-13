@@ -10,7 +10,7 @@ const Kontakt = () => {
     <>
       <NextBtn />
       <div className=" bg-secondBg break-words xl:flex">
-        <section>
+        <section className="xl:w-4/5">
           <Section>
             <H2>Kontakt</H2>
             <div id="coronaHinweis" className="text-alertText my-3">
