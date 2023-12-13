@@ -9,6 +9,9 @@ import TierKarte from "../TierKarte";
 
 import NextButton from "../../../layout/NextButton";
 
+import Section from "../../../layout/Section";
+import H2 from "../../../layout/H2";
+
 const NotfallVermittlung = () => {
   const animals = [
     {
@@ -37,6 +40,15 @@ const NotfallVermittlung = () => {
 
   return (
     <>
+      <Section>
+        <H2>Notfall-Vermittlung</H2>
+        <p>
+          Auf dieser Seite versuchen wir Tiere unserer Mitglieder, die auf Grund
+          eines Notfalls abgegeben werden müssen, möglichst schnell wieder in
+          gute Hände zu vermitteln. Der Kontakt mit dem Tierbesitzer kann immer
+          auch über das Tierheim hergestellt werden.
+        </p>
+      </Section>
       <NextButton />
 
       {animals.map((animal) => (
