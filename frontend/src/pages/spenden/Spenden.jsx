@@ -49,24 +49,21 @@ const Spenden = () => {
           Oder alternativ einfach per PayPal spenden:
         </p>
 
-        <div className="mb-4">
+        <div className="flex flex-col mb-4 w-40 h-15 mx-auto sm:mx-0">
           <img
             src={Paypal}
             alt="paypal"
-            className="w-40 h-15 cursor-pointer mx-auto"
+            className=" cursor-pointer mx-auto md:mx-0 py-2"
             onClick={openPaypalLink}
           />
-        </div>
-
-        <div>
           <img
             src={Btn}
             alt="spenden"
-            className="w-30 h-15 cursor-pointer mx-auto"
+            className=" cursor-pointer mx-auto py-2 md:mx-0"
             onClick={openDonateLink}
           />
-          <p className="mt-4 font-bold">Vielen Dank für Ihre Unterstützung!</p>
         </div>
+        <p className="mt-4 font-bold">Vielen Dank für Ihre Unterstützung!</p>
       </Section>
 
       <Section>
