@@ -12,7 +12,7 @@ const Spenden = () => {
 
   const openDonateLink = () => {
     window.open(
-      "https://www.paypal.com/donate?token=hc7jAEcDwdw4P1GEM86_6vU_LdS6l7K308OduZ7DoqqNDSIH73I-5AlMowHyVCu3AZBOw_fZWR4v4wtb",
+      "https://www.paypal.com/donate?token=1ZkDWHHt2n8Mg7JDRAFXSPFjsgsR3F5FDlUpRvNx7NsQEFTixDcXkEk3UTXqhzhCsI30eyyzv5kVtMQu",
       "_blank"
     );
   };
@@ -23,51 +23,50 @@ const Spenden = () => {
 
       <aside className="px-8 xl:px-20 xl:bg-thirdBg  xl:sticky xl:top-0  xl:w-2/5  ">
         <div className="xl:sticky xl:top-1/4">
-        <H2>Spenden</H2>
-        <p className="mb-4 font-bold">
-          Bitte helfen Sie mit Ihrer Spende für den Tierschutz!
-        </p>
+          <H2>Spenden</H2>
+          <p className="mb-4 font-bold">
+            Bitte helfen Sie mit Ihrer Spende für den Tierschutz!
+          </p>
 
-        <p className="mb-4 font-bold">Unsere Spendenkonten:</p>
+          <p className="mb-4 font-bold">Unsere Spendenkonten:</p>
 
-        <div className="mb-4 text-left">
-          <div className="mb-2">
-            <p className="font-bold">Sparkasse Dachau</p>
-            BIC: BYLADEM1DAH
-            <br />
-            IBAN: DE17 7005 1540 0080 8664 86
+          <div className="mb-4 text-left">
+            <div className="mb-2">
+              <p className="font-bold">Sparkasse Dachau</p>
+              BIC: BYLADEM1DAH
+              <br />
+              IBAN: DE17 7005 1540 0080 8664 86
+            </div>
+
+            <div>
+              <strong>Volksbank Dachau</strong>
+              <br />
+              BIC: GENODEF1DCA
+              <br />
+              IBAN: DE90 7009 1500 0000 2700 08
+            </div>
           </div>
 
-          <div>
-            <strong>Volksbank Dachau</strong>
-            <br />
-            BIC: GENODEF1DCA
-            <br />
-            IBAN: DE90 7009 1500 0000 2700 08
+          <p className="mb-4 font-bold">
+            Oder alternativ einfach per PayPal spenden:
+          </p>
+
+          <div className="flex flex-col mb-4 w-40 h-15 mx-auto sm:mx-0">
+            <img
+              src={Paypal}
+              alt="paypal"
+              className=" cursor-pointer mx-auto md:mx-0 py-2"
+              onClick={openPaypalLink}
+            />
+            <img
+              src={Btn}
+              alt="spenden"
+              className=" cursor-pointer mx-auto py-2 md:mx-0"
+              onClick={openDonateLink}
+            />
           </div>
+          <p className="mt-4 font-bold">Vielen Dank für Ihre Unterstützung!</p>
         </div>
-
-        <p className="mb-4 font-bold">
-          Oder alternativ einfach per PayPal spenden:
-        </p>
-
-        <div className="flex flex-col mb-4 w-40 h-15 mx-auto sm:mx-0">
-          <img
-            src={Paypal}
-            alt="paypal"
-            className=" cursor-pointer mx-auto md:mx-0 py-2"
-            onClick={openPaypalLink}
-          />
-          <img
-            src={Btn}
-            alt="spenden"
-            className=" cursor-pointer mx-auto py-2 md:mx-0"
-            onClick={openDonateLink}
-          />
-        </div>
-        <p className="mt-4 font-bold">Vielen Dank für Ihre Unterstützung!</p>
-      
-      </div>
       </aside>
       <div className="xl:w-3/5 bg-secondBg ">
         <section>
