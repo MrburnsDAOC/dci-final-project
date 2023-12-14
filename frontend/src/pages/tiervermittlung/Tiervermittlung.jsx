@@ -53,7 +53,7 @@ const Tiervermittlung = () => {
               <img
                 src={section.image}
                 alt={section.name}
-                className="h-full self-center md:object-cover md:rounded-md hover:brightness-100 brightness-90"
+                className="h-full self-center md:object-cover md:rounded-md hover:opacity-75 brightness-90"
               />
               <h2 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1 ">
                 {section.name}
