@@ -50,7 +50,7 @@ const UeberUns = () => {
     {
       id: 1,
       img: imgWochenpresse,
-      title: "Tages-/Wochenpresse",
+      title: "Tages-/ Wochenpresse",
       to: "/über-uns/presse/#Pressestimmen",
     },
     {
@@ -76,7 +76,7 @@ const UeberUns = () => {
         </div>
 
         <div className="m-auto bg-mainBg sm:flex sm:flex-wrap sm:justify-between sm:bg-secondBg ">
-          <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:my-1 sm:w-[49.5%]  lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
+          <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:my-1 sm:w-[49.5%]  lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
             <a
               href={satzungPdf}
               target="_blank"
@@ -86,7 +86,7 @@ const UeberUns = () => {
               <img
                 src={imgSatzung}
                 alt="Image for Satzung"
-                className=" w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+                className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
               />
               <h2 className="sm:self-center sm:absolute sm:bottom-3 text-xl sm:text-2xl">
                 Satzung-Pdf
@@ -97,7 +97,10 @@ const UeberUns = () => {
           {paths.map((path) => {
             const imageSource = determineImageForPath(path.id);
             return (
-              <div className="text-white p-2 sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] 2xl:h-[370px]">
+              <div
+                key={path.id}
+                className="text-white p-2 sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]"
+              >
                 <Link
                   to={path.to}
                   className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
@@ -105,7 +108,7 @@ const UeberUns = () => {
                   <img
                     src={imageSource}
                     alt={`Image for ${path.name}`}
-                    className="w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+                    className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
                   />
                   <h2 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
                     {path.name}
@@ -115,7 +118,7 @@ const UeberUns = () => {
             );
           })}
 
-          <div className="text-white p-2 sm:m-auto sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
+          <div className="text-white p-2 sm:m-auto sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
             <a
               href={mitglied}
               target="_blank"
@@ -125,10 +128,12 @@ const UeberUns = () => {
               <img
                 src={imgMitglied}
                 alt="Image for Mitglied-Werden"
-                className=" w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+                className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+
+                // className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
               />
               <h2 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
-                Mitglied Werden
+                Mitglied werden
               </h2>
             </a>
           </div>
