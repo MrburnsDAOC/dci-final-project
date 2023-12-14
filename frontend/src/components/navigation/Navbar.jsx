@@ -73,7 +73,7 @@ function Navbar() {
   return (
     <header
       id="header"
-      className="bg-mainBg py-3 px-3 flex justify-between items-center sticky top-0 z-50 md:justify-center md:flex-row-reverse md:flex-wrap md:gap-x-60 md:gap-y-3"
+      className="bg-mainBg py-3 px-3 flex justify-between items-center sticky top-0 z-50 md:justify-center md:flex-row-reverse md:flex-wrap md:gap-x-60 md:gap-y-3 text-secondText"
     >
       <button
         className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer md:hover:shadow-md"
@@ -116,7 +116,7 @@ function Navbar() {
                     <NavLink
                       to={path.to}
                       style={({ isActive }) => ({
-                        color: isActive ? "black" : "white",
+                        textDecoration: isActive ? "underline" : "none",
                       })}
                       className="block md:inline md:hover:drop-shadow-md"
                     >
