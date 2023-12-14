@@ -96,14 +96,12 @@ const Home = () => {
       </section>
 
       {/* Tierpfleger/in gesucht! */}
-      {/* <div className="text-alertText"> */}
       <Section>
         <H2>Tierpfleger/in gesucht!</H2>
         <Link to={"/kontakt"} className="underline">
           Bewerbungen bitte an unser Tierheim.
         </Link>
       </Section>
-      {/* </div> */}
 
       {/* Bayer.Tierschutzpreis */}
       <Section>

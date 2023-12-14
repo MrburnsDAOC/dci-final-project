@@ -20,7 +20,7 @@ const Spenden = () => {
   return (
     <div>
       <NextButton />
-      <Section className="bg-secondBg px-8 py-3 my-2">
+      <Section>
         <H2>Spenden</H2>
         <p className="mb-4 font-bold">
           Bitte helfen Sie mit Ihrer Spende für den Tierschutz!
