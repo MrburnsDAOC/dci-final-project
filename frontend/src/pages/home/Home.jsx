@@ -72,7 +72,7 @@ const Home = () => {
         </Link>
       </section>
 
-      {/* Aktuelles: */}
+      {/* Aktuelle Meldungen: */}
       <section className="px-8 mt-2 bg-secondBg py-3 xl:mx-36">
         <div>
           <H2>Aktuelle Meldungen</H2>
