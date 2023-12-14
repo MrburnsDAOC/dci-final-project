@@ -6,6 +6,7 @@ import guineaPig from "../../assets/tiervermittlung/main/guinea-pig.jpg";
 import adopted from "../../assets/tiervermittlung/main/adopted.jpg";
 import { Link } from "react-router-dom";
 import Section from "../../layout/Section";
+import H2 from "../../layout/H2";
 
 const Tiervermittlung = () => {
   const sections = [
@@ -22,8 +23,9 @@ const Tiervermittlung = () => {
     { id: 6, name: "Vermittelte Tiere", image: adopted },
   ];
   return (
-    <div className="md:flex md:gap-5 md:flex-wrap md:justify-center md:my-10">
+    <>
       <Section>
+        <H2>Tiervermittlung</H2>
         <p>Hier können Sie sehen, welche Tiere wir gerade beherbergen.</p>
         <p>
           Alle suchen ein neues Zuhause. Vielleicht bei Ihnen? Bitte beachten
@@ -40,25 +42,27 @@ const Tiervermittlung = () => {
         </p>
       </Section>
 
-      {sections.map((section) => {
-        return (
-          <Link
-            key={section.id}
-            to={section.to}
-            className="flex flex-col mb-2 relative cursor-pointer md:max-w-[500px]"
-          >
-            <img
-              src={section.image}
-              alt={section.name}
-              className="w-fit h-full self-center md:object-cover md:border-2 md:rounded-md "
-            />
-            <h2 className="self-center absolute bottom-0 text-secondText text-2xl mb-1">
-              {section.name}
-            </h2>
-          </Link>
-        );
-      })}
-    </div>
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 md:my-6 xl:mx-36 bg-mainBg md:bg-thirdBg">
+        {sections.map((section) => {
+          return (
+            <Link
+              key={section.id}
+              to={section.to}
+              className="relative shadow-2xl"
+            >
+              <img
+                src={section.image}
+                alt={section.name}
+                className="h-full self-center md:object-cover md:rounded-md hover:brightness-100 brightness-90"
+              />
+              <h2 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1 ">
+                {section.name}
+              </h2>
+            </Link>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

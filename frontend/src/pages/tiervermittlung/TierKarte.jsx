@@ -35,11 +35,12 @@ const NotfalltierKarte = ({
           {sex} {castrated}
         </h3>
 
-        <div className="`min-w-full min-h-[200px] flex justify-between py-1">
+        {/* <div className="min-w-full min-h-[200px] flex justify-between py-1"> */}
+        <div className="flex">
           {images.map((image) => {
             return (
               <img
-                className="object-cover w-[49.5%] "
+                className="object-cover w-1/2"
                 key={image}
                 src={image}
                 alt={image}
@@ -58,7 +59,7 @@ const NotfalltierKarte = ({
           />
         </button>
         <section className={showSection ? "visible" : "hidden"}>
-          <p className=" p-2 bg-mainBg text-secondText text-justify">
+          <p className="p-2 bg-mainBg text-secondText text-justify">
             {description}
           </p>
         </section>
