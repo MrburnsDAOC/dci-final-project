@@ -10,7 +10,7 @@ const Kontakt = () => {
     <>
       <NextBtn />
       <div className="break-words min-h-[89vh] xl:flex bg-secondBg ">
-        <section className="xl:w-4/5 ">
+        <section className="xl:w-4/5">
           <Section>
             <H2>Kontakt</H2>
             <div id="coronaHinweis" className="text-alertText my-3">
@@ -19,7 +19,7 @@ const Kontakt = () => {
                 gezwungen das Tierheim Dachau bis auf weiteres für Besucher
                 geschlossen zu halten.
               </p>
-              <p className="mt-3">
+              <p className="mt-3 xl:w-">
                 Tiervermittlungen finden jedoch statt allerdings nur mit
                 terminlicher Absprache.
               </p>
@@ -29,7 +29,7 @@ const Kontakt = () => {
           </Section>
         </section>
 
-        <aside className=" px-10  xl:bg-thirdBg  xl:sticky xl:top-0 xl:w-1/5  ">
+        <aside className="px-10 xl:bg-thirdBg xl:sticky xl:top-0 xl:w-1/5">
           {/* Container content to stick text: */}
           <div className="xl:sticky xl:top-1/4">
             <section>

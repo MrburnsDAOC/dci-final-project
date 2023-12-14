@@ -20,6 +20,7 @@ const Spenden = () => {
   return (
     <div className="xl:flex xl:flex-row-reverse">
       <NextButton />
+
       <aside className="px-8 xl:px-20 xl:bg-thirdBg  xl:sticky xl:top-0  xl:w-2/5  ">
         <div className="xl:sticky xl:top-1/4">
         <H2>Spenden</H2>
