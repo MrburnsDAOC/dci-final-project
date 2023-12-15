@@ -10,24 +10,22 @@ const Kontakt = () => {
     <>
       <NextBtn />
       <div className="break-words min-h-[89vh] xl:flex bg-secondBg ">
-        <section className="xl:w-4/5">
-          <Section>
-            <H2>Kontakt</H2>
-            <div id="coronaHinweis" className="text-alertText my-3">
-              <p>
-                Aufgrund der anhaltenden Corona-Situation sehen wir uns leider
-                gezwungen das Tierheim Dachau bis auf weiteres für Besucher
-                geschlossen zu halten.
-              </p>
-              <p className="mt-3 xl:w-">
-                Tiervermittlungen finden jedoch statt allerdings nur mit
-                terminlicher Absprache.
-              </p>
-            </div>
-            <KontaktData />
-            <GoogleMapLocation />
-          </Section>
-        </section>
+        <Section className="xl:w-4/5">
+          <H2>Kontakt</H2>
+          <div id="coronaHinweis" className="text-alertText my-3">
+            <p>
+              Aufgrund der anhaltenden Corona-Situation sehen wir uns leider
+              gezwungen das Tierheim Dachau bis auf weiteres für Besucher
+              geschlossen zu halten.
+            </p>
+            <p className="mt-3 xl:w-">
+              Tiervermittlungen finden jedoch statt allerdings nur mit
+              terminlicher Absprache.
+            </p>
+          </div>
+          <KontaktData />
+          <GoogleMapLocation />
+        </Section>
 
         <aside className="px-10 xl:bg-thirdBg xl:sticky xl:top-0 xl:w-1/5">
           {/* Container content to stick text: */}

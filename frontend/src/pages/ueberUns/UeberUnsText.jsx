@@ -25,7 +25,7 @@ function UeberUnsText() {
     <div>
       <NextButton />
       <Section>
-        <p id="Geschichtliches"></p>
+        <a id="Geschichtliches" />
         <H2>Geschichtliches</H2>
         <p className="mb-2">
           Der Tierschutzverein wurde im Jahre 1981 unter dem Namen
@@ -53,7 +53,7 @@ function UeberUnsText() {
       </Section>
 
       <Section>
-        <p id="Unser-Anliegen"></p>
+        <a id="Unser-Anliegen" />
         <H2>Unser Anliegen</H2>
         <p className="mb-2">
           Tiere haben keine Lobby“ heißt es. Unser Anliegen ist es, dies zu
@@ -76,7 +76,7 @@ function UeberUnsText() {
       </Section>
 
       <Section>
-        <p id="Unsere-Aufgaben"></p>
+        <a id="Unsere-Aufgaben" />
         <H2>Unsere Aufgaben</H2>
         <p className="mb-2">
           Unsere Hauptaufgabe besteht im Betrieb und der Unterhaltung unseres
@@ -99,7 +99,7 @@ function UeberUnsText() {
       </Section>
 
       <Section>
-        <p id="Unser-Tierheim"></p>
+        <a id="Unser-Tierheim" />
         <H2>Unser Tierheim</H2>
         <p className="mb-2">
           Bereits bei Vereinsgründung wurde als ein Hauptziel des Vereins der
@@ -144,7 +144,7 @@ function UeberUnsText() {
             className="text-blue-600 underline"
           >
             Dachau, Roßwachtstr. 33.
-          </a>{" "}
+          </a>
           Dort bringen wir den Großteil der von uns betreuten Tiere unter. Den
           Tieren stehen im Tierheim
         </p>
@@ -214,7 +214,7 @@ function UeberUnsText() {
       </Section>
 
       <Section>
-        <h1 id="Unser-Vorstand"></h1>
+        <a id="Unser-Vorstand" />
         <H2>Unser Vorstand</H2>
         <p className="mb-2">
           Seit den letzten Wahlen im Rahmen der Jahreshauptversammlung am

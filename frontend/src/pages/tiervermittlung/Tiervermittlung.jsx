@@ -55,9 +55,9 @@ const Tiervermittlung = () => {
                 alt={section.name}
                 className="h-full self-center md:object-cover md:rounded-md  brightness-90"
               />
-              <h2 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1 ">
+              <h6 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1 ">
                 {section.name}
-              </h2>
+              </h6>
             </Link>
           );
         })}
