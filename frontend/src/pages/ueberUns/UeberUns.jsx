@@ -71,10 +71,7 @@ const UeberUns = () => {
     <div>
       {/* Informationen */}
       <Section>
-        <div className="ml-4 mb-2">
-          <H2>Informationen</H2>
-        </div>
-
+        <H2>Informationen</H2>
         <div className="m-auto bg-mainBg sm:flex sm:flex-wrap sm:justify-between sm:bg-secondBg ">
           <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:my-1 sm:w-[49.5%]  lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
             <a
@@ -88,9 +85,9 @@ const UeberUns = () => {
                 alt="Image for Satzung"
                 className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
               />
-              <h2 className="sm:self-center sm:absolute sm:bottom-3 text-xl sm:text-2xl">
+              <h6 className="sm:self-center sm:absolute sm:bottom-3 text-xl sm:text-2xl">
                 Satzung-Pdf
-              </h2>
+              </h6>
             </a>
           </div>
 
@@ -110,9 +107,9 @@ const UeberUns = () => {
                     alt={`Image for ${path.name}`}
                     className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
                   />
-                  <h2 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
+                  <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
                     {path.name}
-                  </h2>
+                  </h6>
                 </Link>
               </div>
             );
@@ -132,9 +129,9 @@ const UeberUns = () => {
 
                 // className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
               />
-              <h2 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
+              <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
                 Mitglied werden
-              </h2>
+              </h6>
             </a>
           </div>
         </div>
@@ -142,9 +139,7 @@ const UeberUns = () => {
 
       {/* Presse: */}
       <Section>
-        <div className="ml-4 mb-2">
-          <H2>Presse</H2>
-        </div>
+        <H2>Presse</H2>
         <div className=" grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
           {presse.map(({ id, img, title, to }) => (
             <Link to={to} key={id}>
