@@ -1,7 +1,14 @@
 // eslint-disable-next-line react/prop-types
-const Section = ({ children }) => {
+const Section = ({ children, className = "", bg = "bg-secondBg", mt = 2 }) => {
   return (
-    <section className="bg-secondBg px-8 py-3 mt-2 break-words xl:mx-36">
+    <section
+      className={[
+        "px-8 py-3 break-words xl:mx-36",
+        className,
+        bg,
+        `mt-${mt}`,
+      ].join(" ")}
+    >
       {children}
     </section>
   );

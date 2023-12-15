@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import H2 from "../../layout/H2";
 import { useState } from "react";
+import H3 from "../../layout/H3";
 
 const NotfalltierKarte = ({
   id,
@@ -29,11 +30,11 @@ const NotfalltierKarte = ({
     <Section>
       <div key={id} className="grid grid-cols-1">
         <H2>{name}</H2>
-        <h3 className="text-2xl">{breed}</h3>
-        <h3 className="text-2xl">Geboren: {dateOfBirth}</h3>
-        <h3 className="text-2xl">
+        <H3 py={0}>{breed}</H3>
+        <H3 py={0}>Geboren: {dateOfBirth}</H3>
+        <H3 py={0}>
           {sex} {castrated}
-        </h3>
+        </H3>
 
         {/* <div className="min-w-full min-h-[200px] flex justify-between py-1"> */}
         <div className="flex">
@@ -58,11 +59,11 @@ const NotfalltierKarte = ({
             className="block m-auto"
           />
         </button>
-        <section className={showSection ? "visible" : "hidden"}>
+        <article className={showSection ? "visible" : "hidden"}>
           <p className="p-2 bg-mainBg text-secondText text-justify">
             {description}
           </p>
-        </section>
+        </article>
       </div>
     </Section>
   );

@@ -40,7 +40,7 @@ const Home = () => {
     <>
       <Carousel />
       <NextBtn />
-      <section className=" mt-0 bg-secondBg p-3 px-8 text-justify xl:mx-36">
+      <Section mt={0}>
         <h1 className="text-left py-3 text-2xl leading-10 font-bold">
           Tierschutzverein Dachau e.V.
         </h1>
@@ -70,13 +70,11 @@ const Home = () => {
             mehr erfahren
           </button>
         </Link>
-      </section>
+      </Section>
 
       {/* Aktuelle Meldungen: */}
-      <section className="px-8 mt-2 bg-secondBg py-3 xl:mx-36">
-        <div>
-          <H2>Aktuelle Meldungen</H2>
-        </div>
+      <Section>
+        <H2>Aktuelle Meldungen</H2>
         <Link to="/termine">
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
             {news.map(({ id, img, date, title }) => (
@@ -93,7 +91,7 @@ const Home = () => {
             ))}
           </div>
         </Link>
-      </section>
+      </Section>
 
       {/* Tierpfleger/in gesucht! */}
       <Section>
