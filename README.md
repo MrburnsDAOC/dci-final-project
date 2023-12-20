@@ -14,7 +14,7 @@ Als Thematik des finalen Teamprojekts unserer einjährigen DCI-Umschulung zu Ful
 
 ![originalSite-home](./frontend/src/assets/readme/originalSite-home.png)
 
-Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines ![Gantt Chart Projektplanes](https://shorturl.at/fzIPS), welcher die verschiedenen Phasen des Projektes abbildete, darunter vor allem die folgenden wesentlichen Blöcke:
+Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines Gantt Chart Projektplanes, welcher die verschiedenen Phasen des Projektes abbildete, darunter vor allem die folgenden wesentlichen Blöcke:
 
 1. Scope & Goal Setting
 2. Set up Workflow
