@@ -10,12 +10,12 @@ import H3 from "../../layout/H3";
 const NotfalltierKarte = ({
   id,
   name,
-  breed,
-  dateOfBirth,
-  sex,
-  castrated,
-  description,
-  images,
+  rasse,
+  geschlecht,
+  geboren,
+  kastration,
+  bilder,
+  informationen,
 }) => {
   const [showSection, setSection] = useState(false);
 
@@ -30,21 +30,23 @@ const NotfalltierKarte = ({
     <Section>
       <div key={id} className="grid grid-cols-1">
         <H2>{name}</H2>
-        <H3 py={0}>{breed}</H3>
-        <H3 py={0}>Geboren: {dateOfBirth}</H3>
+        <H3 py={0}>{rasse}</H3>
+        <H3 py={0}>Geboren: {geboren}</H3>
         <H3 py={0}>
-          {sex} {castrated}
+          {geschlecht}, {kastration}
         </H3>
 
         {/* <div className="min-w-full min-h-[200px] flex justify-between py-1"> */}
+
+        {/* Bilder */}
         <div className="flex">
-          {images.map((image) => {
+          {bilder.map((bild) => {
             return (
               <img
                 className="object-cover w-1/2"
-                key={image}
-                src={image}
-                alt={image}
+                key={bild.url}
+                src={bild.url}
+                alt={bild.name}
               />
             );
           })}
@@ -60,9 +62,10 @@ const NotfalltierKarte = ({
           />
         </button>
         <article className={showSection ? "visible" : "hidden"}>
-          <p className="p-2 bg-mainBg text-secondText text-justify">
-            {description}
-          </p>
+          <p
+            className="p-2 bg-mainBg text-secondText text-justify"
+            dangerouslySetInnerHTML={{ __html: informationen }}
+          ></p>
         </article>
       </div>
     </Section>
