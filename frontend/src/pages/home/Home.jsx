@@ -113,16 +113,22 @@ const Home = () => {
           Staatsregierung erhalten!&nbsp;
           <a
             href="https://www.stmuv.bayern.de/themen/tiergesundheit_tierschutz/tierschutz/tierschutzpreis/2018.htm"
+            target="_blank"
             className=" underline"
           >
             mehr...
           </a>
         </p>
-        <img
-          src={tierschutzpreis}
-          alt="Tierschutzpreis 2018"
-          className=" mt-2"
-        />
+        <a
+          href="https://www.stmuv.bayern.de/themen/tiergesundheit_tierschutz/tierschutz/tierschutzpreis/2018.htm"
+          target="_blank"
+        >
+          <img
+            src={tierschutzpreis}
+            alt="Tierschutzpreis 2018"
+            className=" mt-2"
+          />
+        </a>
       </Section>
 
       <Section>
