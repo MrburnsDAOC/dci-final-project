@@ -80,10 +80,14 @@ const Home = () => {
             {news.map(({ id, img, date, title }) => (
               <div
                 key={id}
-                className={`min-w-full min-h-[200px] flex justify-around py-1 `}
+                className={`min-w-full min-h-[200px] flex justify-around   rounded-md`}
               >
-                <img className="w-1/2 object-cover" src={img} alt={img} />
-                <div className=" w-1/2 p-2 shadow-inner">
+                <img
+                  className="w-1/2 object-cover rounded-md"
+                  src={img}
+                  alt={img}
+                />
+                <div className=" w-1/2 p-2">
                   <p>{date}</p>
                   <H5>{title}</H5>
                 </div>
