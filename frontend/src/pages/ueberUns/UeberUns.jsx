@@ -68,74 +68,74 @@ const UeberUns = () => {
   ];
 
   return (
-    <div>
+    <>
       {/* Informationen */}
       <Section>
         <H2>Informationen</H2>
-        <div className="m-auto bg-mainBg sm:flex sm:flex-wrap sm:justify-between sm:bg-secondBg ">
-          <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:my-1 sm:w-[49.5%]  lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
-            <a
-              href={satzungPdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
-            >
-              <img
-                src={imgSatzung}
-                alt="Image for Satzung"
-                className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
-              />
-              <h6 className="sm:self-center sm:absolute sm:bottom-3 text-xl sm:text-2xl">
-                Satzung-Pdf
-              </h6>
-            </a>
-          </div>
-
-          {paths.map((path) => {
-            const imageSource = determineImageForPath(path.id);
-            return (
-              <div
-                key={path.id}
-                className="text-white p-2 sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]"
-              >
-                <Link
-                  to={path.to}
-                  className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
-                >
-                  <img
-                    src={imageSource}
-                    alt={`Image for ${path.name}`}
-                    className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
-                  />
-                  <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
-                    {path.name}
-                  </h6>
-                </Link>
-              </div>
-            );
-          })}
-
-          <div className="text-white p-2 sm:m-auto sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
-            <a
-              href={mitglied}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full  "
-            >
-              <img
-                src={imgMitglied}
-                alt="Image for Mitglied-Werden"
-                className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
-
-                // className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
-              />
-              <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
-                Mitglied werden
-              </h6>
-            </a>
-          </div>
-        </div>
       </Section>
+      <div className="m-auto bg-mainBg sm:flex sm:flex-wrap sm:justify-between sm:bg-thirdBg md:my-6 xl:mx-36">
+        <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:my-1 sm:w-[49.5%]  lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
+          <a
+            href={satzungPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
+          >
+            <img
+              src={imgSatzung}
+              alt="Image for Satzung"
+              className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+            />
+            <h6 className="sm:self-center sm:absolute sm:bottom-3 text-xl sm:text-2xl">
+              Satzung-Pdf
+            </h6>
+          </a>
+        </div>
+
+        {paths.map((path) => {
+          const imageSource = determineImageForPath(path.id);
+          return (
+            <div
+              key={path.id}
+              className="text-white p-2 sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]"
+            >
+              <Link
+                to={path.to}
+                className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
+              >
+                <img
+                  src={imageSource}
+                  alt={`Image for ${path.name}`}
+                  className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+                />
+                <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
+                  {path.name}
+                </h6>
+              </Link>
+            </div>
+          );
+        })}
+
+        <div className="text-white p-2 sm:m-auto sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
+          <a
+            href={mitglied}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full  "
+          >
+            <img
+              src={imgMitglied}
+              alt="Image for Mitglied-Werden"
+              className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+
+              // className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+            />
+            <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
+              Mitglied werden
+            </h6>
+          </a>
+        </div>
+      </div>
 
       {/* Presse: */}
       <Section>
@@ -155,7 +155,7 @@ const UeberUns = () => {
           ))}
         </div>
       </Section>
-    </div>
+    </>
   );
 };
 
