@@ -68,11 +68,12 @@ const UeberUns = () => {
   ];
 
   return (
-    <>
+    <div>
       {/* Informationen */}
       <Section>
         <H2>Informationen</H2>
       </Section>
+
       <div className="m-auto bg-mainBg sm:flex sm:flex-wrap sm:justify-between sm:bg-thirdBg md:my-6 xl:mx-36">
         <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:my-1 sm:w-[49.5%]  lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
           <a
@@ -155,7 +156,7 @@ const UeberUns = () => {
           ))}
         </div>
       </Section>
-    </>
+    </div>
   );
 };
 
