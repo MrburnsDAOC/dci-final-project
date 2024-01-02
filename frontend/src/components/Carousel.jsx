@@ -16,27 +16,27 @@ export function CarouselImages() {
       <img
         src={ImageOne}
         alt="Four dogs looking happy from the top of a wall."
-        className="h-[50vh] w-full object-cover object-center"
+        className="h-[50vh] w-full object-cover object-center rounded-none"
       />
       <img
         src={ImageTwo}
         alt="A cat that wants to be picked up."
-        className="h-full w-full object-cover object-top"
+        className="h-full w-full object-cover object-top rounded-none"
       />
       <img
         src={ImageThree}
         alt="Guinea pigs eating"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover rounded-none"
       />
       <img
         src={ImageFour}
         alt="A happy dog looking into the camera"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover rounded-none"
       />
       <img
         src={ImageFive}
         alt="A cat with their two kittens outside."
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover rounded-none"
       />
     </Carousel>
   );
