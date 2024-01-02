@@ -1,28 +1,14 @@
-import { createDeliveryClient } from "@kontent-ai/delivery-sdk";
-import { useEffect, useState } from "react";
-
 import BackButton from "../../../layout/BackButton";
 import TierKarte from "../TierKarte";
 import NextButton from "../../../layout/NextButton";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
+import { useContext } from "react";
+import DataContext from "../../../components/kontentAi/DataContext";
+
 const NotfallVermittlung = () => {
-  // Kontent.ai data:
-  useEffect(() => {
-    const fetchData = async () => {
-      const deliveryClient = createDeliveryClient({
-        environmentId: "7c1dd9e3-d78e-000f-3f44-b8e746e6fd0f",
-      });
-
-      const response = await deliveryClient.items().type("tier").toPromise();
-      console.log(response.data.items);
-      setAnimals(response.data.items);
-    };
-    fetchData();
-  }, []);
-
-  const [animals, setAnimals] = useState();
+  const { data } = useContext(DataContext);
 
   return (
     <>
@@ -36,24 +22,25 @@ const NotfallVermittlung = () => {
         </p>
       </Section>
       <NextButton />
-      {animals &&
-        animals.map((animal) => {
+      {data &&
+        data.map((entry) => {
           if (
+            entry.system.type.toLowerCase() === "tier" &&
             // ? => if value undefined --> toLowerCase not working
-            animal.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
-            "ja"
+            entry.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
+              "ja"
           ) {
             return (
               <TierKarte
-                key={animal.system.id}
-                id={animal.system.id}
-                bilder={animal.elements.bilder.value}
-                name={animal.elements.name.value}
-                rasse={animal.elements.rasse.value}
-                geboren={animal.elements.geboren.value}
-                geschlecht={animal.elements.geschlecht.value[0].name}
-                kastration={animal.elements.kastration.value[0].name}
-                informationen={animal.elements.informationen.value}
+                key={entry.system.id}
+                id={entry.system.id}
+                bilder={entry.elements.bilder.value}
+                name={entry.elements.name.value}
+                rasse={entry.elements.rasse.value}
+                geboren={entry.elements.geboren.value}
+                geschlecht={entry.elements.geschlecht.value[0].name}
+                kastration={entry.elements.kastration.value[0].name}
+                informationen={entry.elements.informationen.value}
               />
             );
           }

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-
 function NextButton() {
   const sectionsRef = useRef([]);
   const [isLastSection, setIsLastSection] = useState(false);
@@ -24,7 +23,6 @@ function NextButton() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   const scrollToNextSection = () => {
     const currentScroll = window.scrollY;
     for (let i = 1; i < sectionsRef.current.length; i++) {
@@ -40,7 +38,6 @@ function NextButton() {
       }
     }
   };
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -48,7 +45,6 @@ function NextButton() {
     });
     setIsLastSection(false);
   };
-
   return (
     <div className="fixed top-3/4 right-0 -translate-y-1/2 text-right mr-1 xl:hidden">
       <button
@@ -60,5 +56,4 @@ function NextButton() {
     </div>
   );
 }
-
 export default NextButton;
