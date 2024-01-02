@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { useEffect, useRef } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
@@ -37,6 +38,11 @@
 // }
 
 // export default NextButton;
+=======
+import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+>>>>>>> 2a5d2400394309ae90bf22f90e92d2f02610e108
 
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,9 +50,31 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 function NextButton() {
   const sectionsRef = useRef([]);
   const [isLastSection, setIsLastSection] = useState(false);
+<<<<<<< HEAD
+=======
+
+  const isAtEndOfPage = () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrolledFromTop = window.scrollY;
+    return windowHeight + scrolledFromTop >= documentHeight;
+  };
+
+>>>>>>> 2a5d2400394309ae90bf22f90e92d2f02610e108
   useEffect(() => {
+    const handleScroll = () => {
+      setIsLastSection(isAtEndOfPage());
+    };
+
+    // Update sectionsRef whenever the page changes
     sectionsRef.current = Array.from(document.querySelectorAll("section"));
+<<<<<<< HEAD
     setIsLastSection(false);
+=======
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+>>>>>>> 2a5d2400394309ae90bf22f90e92d2f02610e108
   }, []);
   const scrollToNextSection = () => {
     const currentScroll = window.scrollY;
@@ -63,6 +91,10 @@ function NextButton() {
       }
     }
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2a5d2400394309ae90bf22f90e92d2f02610e108
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -70,6 +102,10 @@ function NextButton() {
     });
     setIsLastSection(false);
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2a5d2400394309ae90bf22f90e92d2f02610e108
   return (
     <div className="fixed top-3/4 right-0 -translate-y-1/2 text-right mr-1 xl:hidden">
       <button

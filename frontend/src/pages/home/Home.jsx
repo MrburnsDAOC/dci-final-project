@@ -14,8 +14,10 @@ import { Link } from "react-router-dom";
 
 import NextBtn from "../../layout/NextButton";
 
+
 const Home = () => {
-  // Dummy data "Aktuelles":
+  // Dummy data "Aktuelles"
+
   const news = [
     {
       id: 1,
@@ -37,7 +39,7 @@ const Home = () => {
     },
   ];
   return (
-    <>
+    <div>
       <Carousel />
       <NextBtn />
       <Section mt={0}>
@@ -170,7 +172,7 @@ const Home = () => {
           />
         </a>
       </Section>
-    </>
+    </div>
   );
 };
 
