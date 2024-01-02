@@ -7,7 +7,7 @@ import NextBtn from "../../layout/NextButton";
 
 const Kontakt = () => {
   return (
-    <>
+    <div>
       <NextBtn />
       <div className="break-words min-h-[89vh] xl:flex bg-secondBg ">
         <Section className="xl:w-4/5">
@@ -54,7 +54,7 @@ const Kontakt = () => {
           </div>
         </aside>
       </div>
-    </>
+    </div>
   );
 };
 

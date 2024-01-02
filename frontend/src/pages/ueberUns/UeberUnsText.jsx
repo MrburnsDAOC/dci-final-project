@@ -12,7 +12,7 @@ function UeberUnsText() {
     const element = document.getElementById(hash);
     if (element) {
       if (element) {
-        const yPos = element.getBoundingClientRect().top + window.scrollY - 90; // Vendosni vlerën që dëshironi për të kontrolluar shkallëzimin më tej poshtë
+        const yPos = element.getBoundingClientRect().top + window.scrollY - 90; 
         window.scroll({
           top: yPos,
           behavior: "smooth",
