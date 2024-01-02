@@ -37,19 +37,27 @@ const NotfallVermittlung = () => {
       </Section>
       <NextButton />
       {animals &&
-        animals.map((animal) => (
-          <TierKarte
-            key={animal.system.id}
-            id={animal.system.id}
-            bilder={animal.elements.bilder.value}
-            name={animal.elements.name.value}
-            rasse={animal.elements.rasse.value}
-            geboren={animal.elements.geboren.value}
-            geschlecht={animal.elements.geschlecht.value[0].name}
-            kastration={animal.elements.kastration.value[0].name}
-            informationen={animal.elements.informationen.value}
-          />
-        ))}
+        animals.map((animal) => {
+          if (
+            // ? => if value undefined --> toLowerCase not working
+            animal.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
+            "ja"
+          ) {
+            return (
+              <TierKarte
+                key={animal.system.id}
+                id={animal.system.id}
+                bilder={animal.elements.bilder.value}
+                name={animal.elements.name.value}
+                rasse={animal.elements.rasse.value}
+                geboren={animal.elements.geboren.value}
+                geschlecht={animal.elements.geschlecht.value[0].name}
+                kastration={animal.elements.kastration.value[0].name}
+                informationen={animal.elements.informationen.value}
+              />
+            );
+          }
+        })}
       <BackButton />
     </>
   );
