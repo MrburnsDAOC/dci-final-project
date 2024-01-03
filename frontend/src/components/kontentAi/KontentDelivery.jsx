@@ -1,32 +1,31 @@
-// import { createDeliveryClient } from "@kontent-ai/delivery-sdk";
-// import { useEffect } from "react";
+import { createDeliveryClient } from "@kontent-ai/delivery-sdk";
+import { useEffect, useState } from "react";
+import DataContext from "./DataContext";
 
-// const KontentDelivery = () => {
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const deliveryClient = createDeliveryClient({
-//         environmentId: "",
-//       });
+// Kontent.ai data:
+// eslint-disable-next-line react/prop-types
+const KontentDelivery = ({ children }) => {
+  const id = import.meta.env.VITE_ENVIRONMENTID;
+  const [data, setData] = useState();
 
-//       const response = await deliveryClient.items().toPromise();
-//       console.log(response.data.items);
-//       setProjectsData(response.data.items);
-//     };
-//     fetchData();
-//   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const deliveryClient = createDeliveryClient({
+        environmentId: id,
+      });
 
-// initialize delivery client
-// const deliveryClient = createDeliveryClient({
-//     environmentId: "<YOUR_ENVIRONMENT_ID>",
-//   });
+      //   const response = await deliveryClient.items().type("tier").toPromise();
+      const response = await deliveryClient.items().toPromise();
 
-//   // fetch items
-//   const response = await deliveryClient.items<Movie>().type('<CONTENT_TYPE_CODENAME>').toPromise();
+      setData(response.data.items);
+    };
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-//   // read data of first item
-//   const movieText = response.data.items[0].elements.title.value;
+  return (
+    <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
+  );
+};
 
-//   return <div>KontentDelivery</div>;
-// };
-
-// export default KontentDelivery;
+export default KontentDelivery;
