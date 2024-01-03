@@ -7,7 +7,7 @@ import H2 from "../../layout/H2";
 import { useState } from "react";
 import H3 from "../../layout/H3";
 
-const NotfalltierKarte = ({
+const TierKarte = ({
   id,
   name,
   rasse,
@@ -33,9 +33,12 @@ const NotfalltierKarte = ({
         <H2>{name ? name : ""}</H2>
         <H3 py={0}>{rasse.toLowerCase() === "keine angabe" ? "" : rasse}</H3>
 
-        <H3 py={0}>{geboren === "Keine Angabe" ? "" : "Geb. " + geboren}</H3>
         <H3 py={0}>
-          {geschlecht === "keine Angabe" ? "" : geschlecht}{" "}
+          {geboren.toLowerCase() === "keine angabe" ? "" : "Geb. " + geboren}
+        </H3>
+        <H3 py={0}>
+          {geschlecht === "keine Angabe" ? "" : geschlecht}
+          {/* Leerstelle, wenn Geschlecht angegeben wird */}
           {geschlecht !== "keine Angabe" ? " " : ""}
           {kastration === "keine Angabe" ? "" : kastration}
         </H3>
@@ -81,4 +84,4 @@ const NotfalltierKarte = ({
   );
 };
 
-export default NotfalltierKarte;
+export default TierKarte;
