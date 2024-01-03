@@ -4,6 +4,7 @@ import dog from "../../assets/tiervermittlung/main/dog.jpg";
 import budgie from "../../assets/tiervermittlung/main/budgie.jpg";
 import guineaPig from "../../assets/tiervermittlung/main/guinea-pig.jpg";
 import adopted from "../../assets/tiervermittlung/main/adopted.jpg";
+import ferret from "../../assets/tiervermittlung/main/ferret.jpg";
 import { Link } from "react-router-dom";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
@@ -16,11 +17,37 @@ const Tiervermittlung = () => {
       image: emergency,
       to: "/tiervermittlung/notfall-vermittlung",
     },
-    { id: 2, name: "Hunde", image: dog },
-    { id: 3, name: "Katzen", image: cat },
-    { id: 4, name: "Nagetiere", image: guineaPig },
-    { id: 5, name: "Wellensittiche", image: budgie },
-    { id: 6, name: "Vermittelte Tiere", image: adopted },
+    {
+      id: 2,
+      name: "Hunde",
+      image: dog,
+      to: "/tiervermittlung/hunde",
+    },
+    { id: 3, name: "Katzen", image: cat, to: "/tiervermittlung/katzen" },
+    {
+      id: 4,
+      name: "Nagetiere",
+      image: guineaPig,
+      to: "/tiervermittlung/nagetiere",
+    },
+    {
+      id: 5,
+      name: "Wellensittiche",
+      image: budgie,
+      to: "/tiervermittlung/wellensittiche",
+    },
+    {
+      id: 6,
+      name: "Sonstige Tiere",
+      image: ferret,
+      to: "/tiervermittlung/sonstige-tiere",
+    },
+    {
+      id: 7,
+      name: "Vermittelte Tiere",
+      image: adopted,
+      to: "/tiervermittlung/vermittelte-tiere",
+    },
   ];
   return (
     <>
