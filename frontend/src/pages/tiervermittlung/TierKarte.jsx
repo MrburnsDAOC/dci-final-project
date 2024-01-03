@@ -29,11 +29,15 @@ const NotfalltierKarte = ({
   return (
     <Section>
       <div key={id} className="grid grid-cols-1">
-        <H2>{name}</H2>
-        <H3 py={0}>{rasse}</H3>
-        <H3 py={0}>Geboren: {geboren}</H3>
+        {/* Angaben zum Tier */}
+        <H2>{name ? name : ""}</H2>
+        <H3 py={0}>{rasse.toLowerCase() === "keine angabe" ? "" : rasse}</H3>
+
+        <H3 py={0}>{geboren === "Keine Angabe" ? "" : "Geb. " + geboren}</H3>
         <H3 py={0}>
-          {geschlecht}, {kastration}
+          {geschlecht === "keine Angabe" ? "" : geschlecht}{" "}
+          {geschlecht !== "keine Angabe" ? " " : ""}
+          {kastration === "keine Angabe" ? "" : kastration}
         </H3>
 
         {/* <div className="min-w-full min-h-[200px] flex justify-between py-1"> */}
@@ -51,16 +55,21 @@ const NotfalltierKarte = ({
             );
           })}
         </div>
-        <button
-          onClick={handleShowMoreOrLessBtn}
-          className="bg-mainBg text-secondText p-1 cursor-pointer text-2xl"
-        >
-          {showSection ? "weniger Informationen" : "weitere Informationen"}
-          <FontAwesomeIcon
-            icon={showSection ? faCaretUp : faCaretDown}
-            className="block m-auto"
-          />
-        </button>
+        {/* show more or less Btn */}
+        {informationen && (
+          <button
+            onClick={handleShowMoreOrLessBtn}
+            className="bg-mainBg text-secondText p-1 cursor-pointer text-2xl"
+          >
+            {showSection ? "weniger Informationen" : "weitere Informationen"}
+            <FontAwesomeIcon
+              icon={showSection ? faCaretUp : faCaretDown}
+              className="block m-auto"
+            />
+          </button>
+        )}
+
+        {/* information */}
         <article className={showSection ? "visible" : "hidden"}>
           <p
             className="p-2 bg-mainBg text-secondText text-justify"

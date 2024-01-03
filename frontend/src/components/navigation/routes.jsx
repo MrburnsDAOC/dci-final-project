@@ -9,6 +9,12 @@ import NotFound from "../../pages/notFound/NotFound";
 import UeberUnsText from "../../pages/ueberUns/UeberUnsText.jsx";
 import NotfallVermittlung from "../../pages/tiervermittlung/notfallvermittlung/NotfallVermittlung";
 import Presse from "../../pages/ueberUns/Presse.jsx";
+import Hunde from "../../pages/tiervermittlung/hunde/Hunde";
+import Katzen from "../../pages/tiervermittlung/katzen/Katzen";
+import Nagetiere from "../../pages/tiervermittlung/nagetiere/Nagetiere";
+import Wellensittiche from "../../pages/tiervermittlung/wellensittiche/Wellensittiche";
+import VermittelteTiere from "../../pages/tiervermittlung/vermittelteTiere/VermittelteTiere";
+import SonstigeTiere from "../../pages/tiervermittlung/sonstigeTiere/SonstigeTiere";
 
 const routes = [
   { path: "/", element: <Home />, id: 1 },
@@ -21,6 +27,36 @@ const routes = [
     path: "/tiervermittlung/notfall-vermittlung",
     element: <NotfallVermittlung />,
     id: 3.1,
+  },
+  {
+    path: "/tiervermittlung/hunde",
+    element: <Hunde />,
+    id: 3.2,
+  },
+  {
+    path: "/tiervermittlung/katzen",
+    element: <Katzen />,
+    id: 3.3,
+  },
+  {
+    path: "/tiervermittlung/nagetiere",
+    element: <Nagetiere />,
+    id: 3.4,
+  },
+  {
+    path: "/tiervermittlung/wellensittiche",
+    element: <Wellensittiche />,
+    id: 3.5,
+  },
+  {
+    path: "/tiervermittlung/sonstige-tiere",
+    element: <SonstigeTiere />,
+    id: 3.6,
+  },
+  {
+    path: "/tiervermittlung/vermittelte-tiere",
+    element: <VermittelteTiere />,
+    id: 3.7,
   },
   { path: "/spenden", element: <Spenden />, id: 4 },
   { path: "/termine", element: <Termine />, id: 5 },
