@@ -1,9 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Carousel from "../../components/Carousel";
 
-import imgAktuellesVersammlung from "../../assets/home/aktuelleMeldungen/versammlungImg.jpeg";
-import imgAktuellesWeihnachtsbasar from "../../assets/home/aktuelleMeldungen/WeihnachtsbasarImg.webp";
-import imgAktuellesAllg from "../../assets/home/aktuelleMeldungen/newsAllgImg.webp";
 import tierschutzpreis from "../../assets/tierschutzpreis.jpg";
 import bannerMonikaWeigler from "../../assets/banner_wegler_katzen.jpg";
 
@@ -14,29 +11,12 @@ import { Link } from "react-router-dom";
 
 import NextBtn from "../../layout/NextButton";
 
-const Home = () => {
-  // Dummy data "Aktuelles"
+import { useContext } from "react";
+import DataContext from "../../components/kontentAi/DataContext";
 
-  const news = [
-    {
-      id: 1,
-      img: imgAktuellesVersammlung,
-      title: "Jahreshauptversammlung",
-      date: "09.12.2023",
-    },
-    {
-      id: 2,
-      img: imgAktuellesWeihnachtsbasar,
-      title: "Weihnachtsbasar",
-      date: "26.11.2023",
-    },
-    {
-      id: 3,
-      img: imgAktuellesAllg,
-      title: "Hofflohmarkt",
-      date: "13.05.2023",
-    },
-  ];
+const Home = () => {
+  const { data } = useContext(DataContext);
+
   return (
     <div>
       <Carousel />
@@ -78,22 +58,28 @@ const Home = () => {
         <H2>Aktuelle Meldungen</H2>
         <Link to="/termine">
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
-            {news.map(({ id, img, date, title }) => (
-              <div
-                key={id}
-                className={`min-w-full min-h-[200px] flex justify-around   rounded-md`}
-              >
-                <img
-                  className="w-1/2 object-cover rounded-md"
-                  src={img}
-                  alt={img}
-                />
-                <div className=" w-1/2 p-2">
-                  <p>{date}</p>
-                  <H5>{title}</H5>
-                </div>
-              </div>
-            ))}
+            {data &&
+              data.map((entry) => {
+                if (entry.system.type.toLowerCase() === "termin") {
+                  return (
+                    <div
+                      key={entry.system.id}
+                      className={`min-w-full min-h-[200px] flex justify-around   rounded-md`}
+                    >
+                      <img
+                        className="w-1/2 object-cover rounded-md"
+                        src={entry.elements.vorschaubild__home_.value[0].url}
+                        alt={entry.elements.was_.value}
+                      />
+
+                      <div className=" w-1/2 p-2">
+                        <p>{entry.elements.wann_.value}</p>
+                        <H5>{entry.elements.was_.value}</H5>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
           </div>
         </Link>
       </Section>
