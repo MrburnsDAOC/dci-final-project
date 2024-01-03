@@ -9,6 +9,7 @@ import DataContext from "../../../components/kontentAi/DataContext";
 
 const Hunde = () => {
   const { data } = useContext(DataContext);
+  console.log(data);
 
   return (
     <>

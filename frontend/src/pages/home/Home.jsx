@@ -102,6 +102,7 @@ const Home = () => {
             href="https://www.stmuv.bayern.de/themen/tiergesundheit_tierschutz/tierschutz/tierschutzpreis/2018.htm"
             target="_blank"
             className=" underline"
+            rel="noreferrer"
           >
             mehr...
           </a>
@@ -109,6 +110,7 @@ const Home = () => {
         <a
           href="https://www.stmuv.bayern.de/themen/tiergesundheit_tierschutz/tierschutz/tierschutzpreis/2018.htm"
           target="_blank"
+          rel="noreferrer"
         >
           <img
             src={tierschutzpreis}
