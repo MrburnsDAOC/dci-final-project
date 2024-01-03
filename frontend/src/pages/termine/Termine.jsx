@@ -33,10 +33,10 @@ const Termine = () => {
                       <p>{entry.elements.wann_.value}</p>
                     </div>
                     <div className="border p-3">
-                      <p className="text-sm">{entry.elements.was_.value}</p>
+                      <p>{entry.elements.was_.value}</p>
                     </div>
                     <div className="border p-3">
-                      <p className="text-sm">{entry.elements.wo_.value}</p>
+                      <p>{entry.elements.wo_.value}</p>
                     </div>
                   </div>
                 );
@@ -69,7 +69,7 @@ const Termine = () => {
                       <p>{entry.elements.wann_.value}</p>
                     </div>
                     <div className="border p-3">
-                      <p className="text-sm">{entry.elements.was_.value}</p>
+                      <p>{entry.elements.was_.value}</p>
                     </div>
                   </div>
                 );
