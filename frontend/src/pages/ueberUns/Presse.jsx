@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
 import NextButton from "../../layout/NextButton";

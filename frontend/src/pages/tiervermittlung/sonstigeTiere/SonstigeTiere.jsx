@@ -13,11 +13,11 @@ const SonstigeTiere = () => {
   let otherAnimalsArr = [];
   if (data) {
     otherAnimalsArr = data.filter(
-      (elment) =>
-        elment.system.type.toLowerCase() === "tier" &&
-        elment.elements.tierart.value[0].name?.toLowerCase() === "anders" &&
-        elment.elements.vermittelt.value[0].name?.toLowerCase() === "nein" &&
-        elment.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
+      (element) =>
+        element.system.type.toLowerCase() === "tier" &&
+        element.elements.tierart.value[0].name?.toLowerCase() === "anders" &&
+        element.elements.vermittelt.value[0].name?.toLowerCase() === "nein" &&
+        element.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
           "nein"
     );
   }
