@@ -19,7 +19,7 @@ const Footer = () => {
 
         <div className="my-1">
           <a
-            href="https://www.facebook.com/search/top/?q=tierheim%20dachau&epa=SEARCH_BOX"
+            href="https://www.facebook.com/tierheim.dachau?ref=hl"
             target="_blank"
             className="text-white hover:underline text-xl sm:text-base lg:text-xl"
             rel="noopener noreferrer"
