@@ -1,73 +1,35 @@
-import React, { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
 import NextButton from "../../layout/NextButton";
 import DatzHead from "../../assets/ueber-uns/datz_head.jpg";
 import BackButton from "../../layout/BackButton";
-import datz2023 from "../../assets/ueber-uns/DATZ_2023_Nov.pdf";
-import datz2022 from "../../assets/ueber-uns/DATZ-2022_Nov.pdf";
-import datz2021 from "../../assets/ueber-uns/DATZ-2021_Nov.pdf";
-import datz2020 from "../../assets/ueber-uns/DATZ-2020_Nov.pdf";
-import datz2019 from "../../assets/ueber-uns/DATZ-2019_Nov.pdf";
+
+import DataContext from "../../components/kontentAi/DataContext";
 
 function Presse() {
-  const pressestimmen = [
-    {
-      id: 1,
-      datum: "24.09.2018",
-      medium: "Kurier Dachau",
-      thema:
-        "	Interview mit Silvia Gruber zum 25-jährigen Jubiläum als 1. Vereinsvorsitzende",
-    },
-    {
-      id: 2,
-      datum: "22.06.2018",
-      medium: "Kurier Dachau",
-      thema: "Ausgezeichnet mit dem Bayerischen Tierschutzpreis 2018",
-    },
-    {
-      id: 3,
-      datum: "05.09.2017",
-      medium: "Süddeutsche Zeitung, Dachau",
-      thema: "Kater unter der (Motor-)Haube die etwas andere Ausreise",
-    },
-    {
-      id: 4,
-      datum: "24.08.2017",
-      medium: "Süddeutsche Zeitung, Dachau",
-      thema: "Flauschige Wegwerfartikel von Christiane Bracht",
-    },
-    {
-      id: 5,
-      datum: "21.08.2017",
-      medium: "Süddeutsche Zeitung, Dachau",
-      thema:
-        "Hundewettbewerb, eine ganz große Versuchung, Mixshow & Gaudiwettkampf 2017",
-    },
-  ];
+  const { data } = useContext(DataContext);
 
-  const sonstige = [
-    {
-      id: 1,
-      datum: "30.05.2016",
-      thema: "Dachau TV Magazin mit einem Beitrag über das Tierheim",
-    },
-    {
-      id: 2,
-      datum: "30.08.2016",
-      thema: "Dachau TV Magazin mit knuddeligen Tierbildern (Einzelbeiträge)",
-    },
-    {
-      id: 3,
-      datum: "20.09.2018",
-      thema: "BR Kurzbericht zur Demo vor der Staatskanzlei in München",
-    },
-    {
-      id: 4,
-      datum: "28.05.2019",
-      thema: "Dachau TV Magazin mit großem Interview mit Silvia Gruber",
-    },
-  ];
+  let pressestimmenData,
+    sonstigeMedienberichteData,
+    datzData = [];
+
+  if (data) {
+    pressestimmenData = data.filter(
+      (element) => element.system.type.toLowerCase() === "pressestimme"
+    );
+
+    sonstigeMedienberichteData = data.filter(
+      (element) =>
+        element.system.type.toLowerCase() === "sonstiger_medienbericht"
+    );
+
+    datzData = data
+      .filter((element) => element.system.type.toLowerCase() === "datz_ausgabe")
+      .reverse();
+  }
+
+  console.log(pressestimmenData);
 
   useEffect(() => {
     const url = window.location.href;
@@ -75,7 +37,7 @@ function Presse() {
     const element = document.getElementById(hash);
     if (element) {
       if (element) {
-        const yPos = element.getBoundingClientRect().top + window.scrollY - 90; // Vendosni vlerën që dëshironi për të kontrolluar shkallëzimin më tej poshtë
+        const yPos = element.getBoundingClientRect().top + window.scrollY - 90;
         window.scroll({
           top: yPos,
           behavior: "smooth",
@@ -89,7 +51,7 @@ function Presse() {
       <NextButton />
       <Section>
         {/* Pressestimmen */}
-        <p id="Pressestimmen"></p>
+        <p id="Pressestimmen" />
         <H2>Pressestimmen</H2>
         <p>
           Diese Beiträge entstammen den Tageszeitungen, die inhaltlich weder mit
@@ -113,24 +75,34 @@ function Presse() {
           </div>
         </div>
 
-        {pressestimmen.map((stimmen) => (
-          <div key={stimmen.id} className="grid grid-cols-3 col-span-3">
-            <div className="border p-3 col-span-1 ">
-              <p>{stimmen.datum}</p>
+        {data &&
+          pressestimmenData.map((stimmen) => (
+            <div
+              key={stimmen.system.id}
+              className="grid grid-cols-3 col-span-3"
+            >
+              <div className="border p-3 col-span-1 ">
+                <p>
+                  {stimmen.elements.datum.value
+                    .slice(0, 10)
+                    .split("-")
+                    .reverse()
+                    .join(".")}
+                </p>
+              </div>
+              <div className="border p-3">
+                <p>{stimmen.elements.medium.value}</p>
+              </div>
+              <div className="border p-3">
+                <p>{stimmen.elements.thema.value}</p>
+              </div>
             </div>
-            <div className="border p-3">
-              <p className="text-sm">{stimmen.medium}</p>
-            </div>
-            <div className="border p-3">
-              <p className="text-sm">{stimmen.thema}</p>
-            </div>
-          </div>
-        ))}
+          ))}
       </Section>
 
       {/* Sontige-Medienberichte */}
       <Section>
-        <p id="Sonstige-Medien"></p>
+        <p id="Sonstige-Medien" />
 
         <H2>Sonstige Medienberichte</H2>
         <p>
@@ -149,24 +121,33 @@ function Presse() {
               <p className="text-lg font-semibold">Thema</p>
             </div>
 
-            {sonstige.map((sonstige) => (
-              <div key={sonstige.id} className="grid grid-cols-2  col-span-2 ">
-                <div className="border p-3">
-                  <p>{sonstige.datum}</p>
+            {data &&
+              sonstigeMedienberichteData.map((sonstige) => (
+                <div
+                  key={sonstige.system.id}
+                  className="grid grid-cols-2  col-span-2 "
+                >
+                  <div className="border p-3">
+                    <p>
+                      {sonstige.elements.datum.value
+                        .slice(0, 10)
+                        .split("-")
+                        .reverse()
+                        .join(".")}
+                    </p>
+                  </div>
+                  <div className="border p-3">
+                    <p>{sonstige.elements.thema.value}</p>
+                  </div>
                 </div>
-                <div className="border p-3">
-                  <p className="text-sm">{sonstige.thema}</p>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </Section>
 
       {/*Mitgliederzeitschrift DATZ */}
       <Section>
-        <p id="DATZ"></p>
-
+        <p id="DATZ" />
         <H2>Mitgliederzeitschrift DATZ</H2>
         <img src={DatzHead} alt="Datz-head" />
         <p className="mb-2 mt-4">
@@ -217,56 +198,19 @@ function Presse() {
             <div className="bg-mainBg border text-white p-3">
               <p className="text-lg font-semibold">DATZ</p>
             </div>
-            <div className="border p-3">
-              <a
-                href={datz2023}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                DATZ-2023
-              </a>
-            </div>
-            <div className="border p-3">
-              <a
-                href={datz2022}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                DATZ-2022
-              </a>
-            </div>
-            <div className="border p-3">
-              <a
-                href={datz2021}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                DATZ-2021-1
-              </a>
-            </div>
-            <div className="border p-3">
-              <a
-                href={datz2020}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                DATZ-2020-1
-              </a>
-            </div>
-            <div className="border p-3">
-              <a
-                href={datz2019}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                DATZ-2019-2
-              </a>
-            </div>
+            {data &&
+              datzData.map((ausgabe) => (
+                <div className="border p-3" key={ausgabe.system.id}>
+                  <a
+                    href={ausgabe.elements.pdf_datei.value[0].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    {ausgabe.elements.name_der_ausgabe.value}
+                  </a>
+                </div>
+              ))}
           </div>
         </div>
       </Section>
