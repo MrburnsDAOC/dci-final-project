@@ -13,11 +13,11 @@ const SonstigeTiere = () => {
   let otherAnimalsArr = [];
   if (data) {
     otherAnimalsArr = data.filter(
-      (elment) =>
-        elment.system.type.toLowerCase() === "tier" &&
-        elment.elements.tierart.value[0].name?.toLowerCase() === "anders" &&
-        elment.elements.vermittelt.value[0].name?.toLowerCase() === "nein" &&
-        elment.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
+      (element) =>
+        element.system.type.toLowerCase() === "tier" &&
+        element.elements.tierart.value[0].name?.toLowerCase() === "anders" &&
+        element.elements.vermittelt.value[0].name?.toLowerCase() === "nein" &&
+        element.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
           "nein"
     );
   }
@@ -41,14 +41,6 @@ const SonstigeTiere = () => {
         </Section>
       ) : (
         otherAnimalsArr.map((entry) => {
-          // if (
-          // entry.system.type.toLowerCase() === "tier" &&
-          // ? => if value undefined --> toLowerCase not working
-          // entry.elements.tierart.value[0].name?.toLowerCase() === "anders" &&
-          // entry.elements.vermittelt.value[0].name?.toLowerCase() === "nein" &&
-          // entry.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
-          //   "nein"
-          // ) {
           return (
             <TierKarte
               key={entry.system.id}
@@ -62,7 +54,6 @@ const SonstigeTiere = () => {
               informationen={entry.elements.informationen.value}
             />
           );
-          // }
         })
       )}
       <BackButton />
