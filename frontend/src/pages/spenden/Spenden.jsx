@@ -12,7 +12,7 @@ const Spenden = () => {
 
   const openDonateLink = () => {
     window.open(
-      "https://www.paypal.com/donate?token=1ZkDWHHt2n8Mg7JDRAFXSPFjsgsR3F5FDlUpRvNx7NsQEFTixDcXkEk3UTXqhzhCsI30eyyzv5kVtMQu",
+      " https://www.paypal.com/donate?token=kS87dcPIslwYt1GZP9yDgt-XVsxlqgAgSd2mUcm513IHz26lzCtHXEpqG4a-xV4EaP-Uj3pxG8zTpkcc",
       "_blank"
     );
   };
