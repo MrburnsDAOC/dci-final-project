@@ -26,6 +26,7 @@ const TierKarte = ({
       setSection(false);
     }
   };
+
   return (
     <Section>
       <div key={id} className="grid grid-cols-1">
@@ -58,8 +59,11 @@ const TierKarte = ({
             );
           })}
         </div>
+
         {/* show more or less Btn */}
-        {informationen && (
+        {/* informationen sollen nicht angezeigt werden, wenn text leer ist */}
+        {/* "<p><br></p>" wird als string ausgegeben */}
+        {informationen !== "<p><br></p>" && (
           <button
             onClick={handleShowMoreOrLessBtn}
             className="bg-mainBg text-secondText p-1 cursor-pointer text-2xl"

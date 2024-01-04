@@ -41,7 +41,7 @@ const VermittelteTiere = () => {
                 geboren={entry.elements.geboren.value}
                 geschlecht={entry.elements.geschlecht.value[0].name}
                 kastration={entry.elements.kastration.value[0].name}
-                informationen={""}
+                informationen={entry.elements.informationen.value}
               />
             );
           }
