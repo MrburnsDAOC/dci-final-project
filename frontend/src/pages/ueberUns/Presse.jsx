@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
 import NextButton from "../../layout/NextButton";
@@ -9,6 +9,7 @@ import DataContext from "../../components/kontentAi/DataContext";
 
 function Presse() {
   const { data } = useContext(DataContext);
+
   let pressestimmenData,
     sonstigeMedienberichteData,
     datzData = [];
@@ -27,9 +28,9 @@ function Presse() {
       .filter((element) => element.system.type.toLowerCase() === "datz_ausgabe")
       .reverse();
   }
-  if (data) {
-    console.log("DATZ:", datzData[0]);
-  }
+
+  console.log(pressestimmenData);
+
   useEffect(() => {
     const url = window.location.href;
     const hash = url.substring(url.indexOf("#") + 1);

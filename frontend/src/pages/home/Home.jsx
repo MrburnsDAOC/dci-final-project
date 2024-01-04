@@ -25,6 +25,9 @@ const Home = () => {
         element.elements.archiv.value[0].name?.toLowerCase() === "aktuell"
     );
   }
+
+  console.log(currentData);
+
   return (
     <div>
       <Carousel />
@@ -74,7 +77,7 @@ const Home = () => {
           <Link to="/termine">
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
               {data &&
-                data.map((entry) => {
+                currentData.map((entry) => {
                   if (entry.system.type.toLowerCase() === "termin") {
                     return (
                       <div
