@@ -16,7 +16,15 @@ import DataContext from "../../components/kontentAi/DataContext";
 
 const Home = () => {
   const { data } = useContext(DataContext);
+  let currentData = [];
 
+  if (data) {
+    currentData = data.filter(
+      (element) =>
+        element.system.type.toLowerCase() === "termin" &&
+        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell"
+    );
+  }
   return (
     <div>
       <Carousel />
@@ -54,35 +62,43 @@ const Home = () => {
       </Section>
 
       {/* Aktuelle Meldungen: */}
-      <Section>
-        <H2>Aktuelle Meldungen</H2>
-        <Link to="/termine">
-          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
-            {data &&
-              data.map((entry) => {
-                if (entry.system.type.toLowerCase() === "termin") {
-                  return (
-                    <div
-                      key={entry.system.id}
-                      className={`min-w-full min-h-[200px] flex justify-around   rounded-md`}
-                    >
-                      <img
-                        className="w-1/2 object-cover rounded-md"
-                        src={entry.elements.vorschaubild__home_.value[0].url}
-                        alt={entry.elements.was_.value}
-                      />
 
-                      <div className=" w-1/2 p-2">
-                        <p>{entry.elements.wann_.value}</p>
-                        <H5>{entry.elements.was_.value}</H5>
+      {data && currentData.length < 1 ? (
+        <Section>
+          <H2>Aktuelle Termine</H2>
+          <p>Derzeit sind keine aktuellen Termine vorhanden.</p>
+        </Section>
+      ) : (
+        <Section>
+          <H2>Aktuelle Meldungen</H2>
+          <Link to="/termine">
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
+              {data &&
+                data.map((entry) => {
+                  if (entry.system.type.toLowerCase() === "termin") {
+                    return (
+                      <div
+                        key={entry.system.id}
+                        className={`min-w-full min-h-[200px] flex justify-around   rounded-md`}
+                      >
+                        <img
+                          className="w-1/2 object-cover rounded-md"
+                          src={entry.elements.vorschaubild__home_.value[0].url}
+                          alt={entry.elements.was_.value}
+                        />
+
+                        <div className=" w-1/2 p-2">
+                          <p>{entry.elements.wann_.value}</p>
+                          <H5>{entry.elements.was_.value}</H5>
+                        </div>
                       </div>
-                    </div>
-                  );
-                }
-              })}
-          </div>
-        </Link>
-      </Section>
+                    );
+                  }
+                })}
+            </div>
+          </Link>
+        </Section>
+      )}
 
       {/* Tierpfleger/in gesucht! */}
       <Section>
