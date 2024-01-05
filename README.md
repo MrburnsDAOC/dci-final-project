@@ -12,7 +12,7 @@
 
 Als Thematik des finalen Teamprojekts unserer einjährigen DCI-Umschulung zu Fullstack Developern (MERN-Stack) haben wir uns dazu entschieden, die bestehende Internetpräsenz des Tierschutzvereins Dachau e.V, `https://www.tierschutz.dachau.net/`, zu überarbeiten.
 
-![originalSite-home](./frontend/src/assets/readme/originalSite-home.png)
+![originalSite-home](./frontend/src/assets/readme/tierschutzDachauNet.png)
 
 Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines Gantt Chart Projektplanes, welcher die verschiedenen Phasen des Projektes abbildete, darunter vor allem die folgenden wesentlichen Blöcke:
 
