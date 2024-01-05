@@ -12,7 +12,7 @@ function UeberUnsText() {
     const element = document.getElementById(hash);
     if (element) {
       if (element) {
-        const yPos = element.getBoundingClientRect().top + window.scrollY - 90; 
+        const yPos = element.getBoundingClientRect().top + window.scrollY - 90;
         window.scroll({
           top: yPos,
           behavior: "smooth",
@@ -138,7 +138,7 @@ function UeberUnsText() {
         <p className="mb-2">
           Unser Tierheim „Franz von Assisi“ befindet sich in{" "}
           <a
-            href="../kontakt/Kontakt.jsx"
+            href="/kontakt"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 underline"

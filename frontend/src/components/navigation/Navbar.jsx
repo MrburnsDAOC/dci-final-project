@@ -11,8 +11,9 @@ function Navbar() {
     { name: "Tiervermittlung", to: "/tiervermittlung", id: 3 },
     { name: "Termine", to: "/termine", id: 4 },
     { name: "Spenden", to: "/spenden", id: 5 },
-    { name: "Kontakt", to: "/kontakt", id: 6 },
-    { name: "Impressum", to: "/impressum", id: 7 },
+    { name: "Presse", to: "/presse", id: 6 },
+    { name: "Kontakt", to: "/kontakt", id: 7 },
+    { name: "Impressum", to: "/impressum", id: 8 },
   ];
 
   const navigate = useNavigate();
