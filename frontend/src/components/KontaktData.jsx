@@ -16,7 +16,7 @@ const KontaktData = () => {
       <p className="leading-4">Telefax:&nbsp;08131&nbsp;/&nbsp;53650 </p>
       <p>Email:&nbsp;tierschutz@dachau.net</p>
       <a
-        href="https://www.facebook.com/search/top/?q=tierheim%20dachau&epa=SEARCH_BOX"
+        href="https://www.facebook.com/tierheim.dachau"
         target="_blank"
         className=" text-[#3b5998] text-2xl"
         rel="noreferrer"
