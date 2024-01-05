@@ -73,12 +73,16 @@ const Spenden = () => {
           <H2>Spenden</H2>
 
           <ul>
-            <li className="bg-mainBg  text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
-              <a href="#Futterspenden">Futterspenden</a>
-            </li>
-            <li className="bg-mainBg  text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
-              <a href="#Sachspenden">Sachspenden</a>
-            </li>
+            <a href="#Futterspenden">
+              <li className="bg-mainBg  text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+                Futterspenden
+              </li>
+            </a>
+            <a href="#Sachspenden">
+              <li className="bg-mainBg  text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+                Sachspenden
+              </li>
+            </a>
           </ul>
         </Section>
 
