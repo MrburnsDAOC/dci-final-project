@@ -58,7 +58,7 @@ Zuletzt erfolgte die Verbindung des Front- mit dem Backend sowie die Erstellung 
 
 ## Beitragende
 
-- [Ksenia (Backend Lead)]()
-- [Hendri (Frontend Lead)]()
-- [Ahmad (Workflow Lead)]()
+- [Ksenia (Backend Lead)](https://github.com/KseniaBr)
+- [Hendri (Frontend Lead)](https://github.com/enozen)
+- [Ahmad (Workflow Lead)](https://github.com/AhmadHoush)
 - [David (Project Lead)](https://github.com/MrburnsDAOC)
