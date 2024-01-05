@@ -14,6 +14,7 @@ Als Thematik des finalen Teamprojekts unserer einjährigen DCI-Umschulung zu Ful
 
 ![originalSite-home](./frontend/src/assets/readme/tierschutzDachauNet.png)
 
+### Workflow
 Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines Gantt Chart Projektplanes, welcher die verschiedenen Phasen des Projektes abbildete, darunter vor allem die folgenden wesentlichen Blöcke:
 
 1. Scope & Goal Setting
@@ -28,33 +29,31 @@ Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines G
 10. BACKEND & FRONTEND: Combining
 11. Presentation
 
+Hier ein Auszug aus dem Gantt  Projektplan:
+![GANTTProjektplan](./frontend/src/assets/readme/GANTTProjektplan.png)
+
+### Design
 ![figmaDesign](./frontend/src/assets/readme/figmaDesign.png)
 Die Erstellung der Designs erfolgte in Figma. Der Fokus lag zunächst auf dem bekannte "Mobile-first"-Ansatz. Basierend darauf wurden die Designs für die Ansichten von Pads, Laptop und Desktop via der in Tailwind CSS verfügbaren Mediaqueries erweitern.
 
+### Frontend
 Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Aufteilung der Tasks erfolgte via des in Github integrierten Projektboards. Nach der Erstellung der "Mobile-first"-Ansicht fing die Hälfte des Teams mit der Erstellung des Backend an, während die andere Hälfte via Tailwind CSS Mediaqueries die Desktop Ansicht erstellte.
 
-Je zum Ende der Frontend- und Backend-Phase wurde eine intensievere Testphase veranschlagt.
+### Backend
+Im Backend galt es zunächste, sich für eine Technologie zu entscheiden. Schnell stand fest, dass wir eine CMS-Lösung der von MongoDB vorziehen, um die einfachere Bedienung und Einstellung von Inhalten durch das Personal des Tierheims zu ermöglichen. Die Wahl viel schließlich auf das CMS von [kontent.ai](https://kontent.ai/) welche alle für das Projekt nötigen Umfänge in der kostenlosen Version zur Verfügung stellt.
 
-Zuletzt erfolgte die Verbindung des Front- mit dem Backend sowie die Erstellung der ABschlusspräsentation.
 
-<!-- ## Installation
+Zuletzt erfolgte die Verbindung des Front- mit dem Backend sowie die Erstellung der Abschlusspräsentation.
 
-1. Klonen Sie das Repository: `git clone <repository-url>`
-2. Wechseln Sie in das Projektverzeichnis: `cd <project-directory>`
-3. Installieren Sie die Abhängigkeiten: `npm install` -->
 
-<!-- ## Verwendung
-
-1. Starten Sie die Entwicklungsserver: `npm start`
-2. Öffnen Sie Ihren Browser und navigieren Sie zu `http://localhost:3000` -->
 
 ## Technologien
 
 - React
+- JavaScript
 - Node.js
-- Express
-- MongoDB
 - Tailwind CSS
+- CMS kontent.ai
 
 ## Beitragende
 
