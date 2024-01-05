@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import H2 from "../../layout/H2";
-import H5 from "../../layout/H5";
+// import H5 from "../../layout/H5";
 // import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
 // import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
 // import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
 
-import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
-import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
-import imgDatz from "../../assets/ueber-uns/datzImg.png";
+// import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
+// import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
+// import imgDatz from "../../assets/ueber-uns/datzImg.png";
 
 import Section from "../../layout/Section";
 import satzungPdf from "../../assets/ueber-uns/Satzung-pdf.pdf";
@@ -46,26 +46,26 @@ const UeberUns = () => {
     }
   };
 
-  const presse = [
-    {
-      id: 1,
-      img: imgWochenpresse,
-      title: "Tages-/ Wochenpresse",
-      to: "/über-uns/presse/#Pressestimmen",
-    },
-    {
-      id: 2,
-      img: imgSonstigeMedien,
-      title: "Sonstige Medien",
-      to: "/über-uns/presse/#Sonstige-Medien",
-    },
-    {
-      id: 3,
-      img: imgDatz,
-      title: "DATZ",
-      to: "/über-uns/presse/#DATZ",
-    },
-  ];
+  // const presse = [
+  //   {
+  //     id: 1,
+  //     img: imgWochenpresse,
+  //     title: "Tages-/ Wochenpresse",
+  //     to: "/über-uns/presse/#Pressestimmen",
+  //   },
+  //   {
+  //     id: 2,
+  //     img: imgSonstigeMedien,
+  //     title: "Sonstige Medien",
+  //     to: "/über-uns/presse/#Sonstige-Medien",
+  //   },
+  //   {
+  //     id: 3,
+  //     img: imgDatz,
+  //     title: "DATZ",
+  //     to: "/über-uns/presse/#DATZ",
+  //   },
+  // ];
 
   return (
     <div>
@@ -139,7 +139,7 @@ const UeberUns = () => {
       </div>
 
       {/* Presse: */}
-      <Section>
+      {/* <Section>
         <H2>Presse</H2>
         <div className=" grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
           {presse.map(({ id, img, title, to }) => (
@@ -155,7 +155,7 @@ const UeberUns = () => {
             </Link>
           ))}
         </div>
-      </Section>
+      </Section> */}
     </div>
   );
 };

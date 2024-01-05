@@ -8,7 +8,7 @@ import Impressum from "../../pages/impressum/Impressum";
 import NotFound from "../../pages/notFound/NotFound";
 import UeberUnsText from "../../pages/ueberUns/UeberUnsText.jsx";
 import NotfallVermittlung from "../../pages/tiervermittlung/notfallvermittlung/NotfallVermittlung";
-import Presse from "../../pages/ueberUns/Presse.jsx";
+import Presse from "../../pages/presse/Presse.jsx";
 import Hunde from "../../pages/tiervermittlung/hunde/Hunde";
 import Katzen from "../../pages/tiervermittlung/katzen/Katzen";
 import Nagetiere from "../../pages/tiervermittlung/nagetiere/Nagetiere";
@@ -48,6 +48,7 @@ const routes = [
     element: <Wellensittiche />,
     id: 3.5,
   },
+
   {
     path: "/tiervermittlung/sonstige-tiere",
     element: <SonstigeTiere />,
@@ -59,10 +60,12 @@ const routes = [
     id: 3.7,
   },
   { path: "/spenden", element: <Spenden />, id: 4 },
-  { path: "/termine", element: <Termine />, id: 5 },
-  { path: "/kontakt", element: <Kontakt />, id: 6 },
-  { path: "/impressum", element: <Impressum />, id: 7 },
-  { path: "*", element: <NotFound />, id: 8 },
+  { path: "/presse", element: <Presse />, id: 5 },
+
+  { path: "/termine", element: <Termine />, id: 6 },
+  { path: "/kontakt", element: <Kontakt />, id: 7 },
+  { path: "/impressum", element: <Impressum />, id: 8 },
+  { path: "*", element: <NotFound />, id: 9 },
 ];
 
 export default routes;
