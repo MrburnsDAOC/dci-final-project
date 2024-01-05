@@ -82,7 +82,7 @@ const Home = () => {
                     return (
                       <div
                         key={entry.system.id}
-                        className={`min-w-full min-h-[200px] flex justify-around   rounded-md`}
+                        className={`min-w-full min-h-[200px] flex justify-around rounded-md`}
                       >
                         <img
                           className="w-1/2 object-cover rounded-md"
