@@ -48,7 +48,6 @@ function Presse() {
 
   return (
     <div>
-      <NextButton />
       <Section>
         {/* Pressestimmen */}
         <p id="Pressestimmen" />
@@ -215,6 +214,7 @@ function Presse() {
         </div>
       </Section>
       <BackButton />
+      {data && <NextButton />}
     </div>
   );
 }

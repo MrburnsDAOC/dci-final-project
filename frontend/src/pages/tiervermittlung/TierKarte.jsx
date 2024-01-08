@@ -3,9 +3,8 @@ import Section from "../../layout/Section";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
-import H2 from "../../layout/H2";
-import { useState } from "react";
 import H3 from "../../layout/H3";
+import { useState } from "react";
 
 const TierKarte = ({
   id,
@@ -31,32 +30,44 @@ const TierKarte = ({
     <Section>
       <div key={id} className="grid grid-cols-1">
         {/* Angaben zum Tier */}
-        <H2>{name ? name : ""}</H2>
-        <H3 py={0}>{rasse.toLowerCase() === "keine angabe" ? "" : rasse}</H3>
+        <H3 className="py-">{name ? name : ""}</H3>
 
-        <H3 py={0}>
-          {geboren.toLowerCase() === "keine angabe" ? "" : "Geb. " + geboren}
-        </H3>
-        <H3 py={0}>
+        <p className="italic">
+          {rasse.toLowerCase() === "keine angabe" ? "" : rasse + " "}
           {geschlecht === "keine Angabe" ? "" : geschlecht}
           {/* Leerstelle, wenn Geschlecht angegeben wird */}
           {geschlecht !== "keine Angabe" ? " " : ""}
           {kastration === "keine Angabe" ? "" : kastration}
-        </H3>
+        </p>
+
+        <p className="italic">
+          {geboren.toLowerCase() === "keine angabe" ? "" : "Geb. " + geboren}
+        </p>
 
         {/* <div className="min-w-full min-h-[200px] flex justify-between py-1"> */}
 
         {/* Bilder */}
-        <div className="flex">
+        <div className="flex mt-1 max-h-[500px] md:max-h-[600px]">
           {bilder.map((bild) => {
-            return (
-              <img
-                className="object-cover w-1/2"
-                key={bild.url}
-                src={bild.url}
-                alt={bild.name}
-              />
-            );
+            if (bilder.length <= 1) {
+              return (
+                <img
+                  className="object-cover w-full rounded-none"
+                  key={bild.url}
+                  src={bild.url}
+                  alt={bild.name}
+                />
+              );
+            } else {
+              return (
+                <img
+                  className="object-cover w-1/2 rounded-none"
+                  key={bild.url}
+                  src={bild.url}
+                  alt={bild.name}
+                />
+              );
+            }
           })}
         </div>
 
