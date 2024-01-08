@@ -1,6 +1,7 @@
 import BackButton from "../../../layout/BackButton";
-import TierKarte from "../TierKarte";
 import NextButton from "../../../layout/NextButton";
+
+import TierKarte from "../TierKarte";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
@@ -20,7 +21,6 @@ const Hunde = () => {
           Interesse haben, kontaktieren Sie uns über Email oder per Telefon.
         </p>
       </Section>
-      <NextButton />
       {data &&
         data.map((entry) => {
           if (
@@ -46,6 +46,7 @@ const Hunde = () => {
             );
           }
         })}
+      {data && <NextButton />}
       <BackButton />
     </>
   );
