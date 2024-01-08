@@ -1,5 +1,5 @@
 # DCI finales Teamprojekt - Tierschutzvereins Dachau e.V
-
+<a name="inhaltsverzeichnis"></a>
 ## Inhaltsverzeichnis
 
 - [Projektbeschreibung](#projektbeschreibung)
@@ -9,7 +9,7 @@
 - [Beitragende](#beitragende)
 
 
-<a name="projektbeschreibung"></a>
+<a id="projektbeschreibung"></a>
 ## Projektbeschreibung
 
 Als Thematik des finalen Teamprojekts unserer einjährigen DCI-Umschulung zu Fullstack Developern (MERN-Stack) haben wir uns dazu entschieden, die bestehende Internetpräsenz des Tierschutzvereins Dachau e.V, `https://www.tierschutz.dachau.net/`, zu überarbeiten.
@@ -42,11 +42,11 @@ Hier ein Auszug aus dem Gantt  Projektplan:
 ![figmaDesign](./frontend/src/assets/readme/figmaDesign.png)
 Die Erstellung der Designs erfolgte in Figma. Der Fokus lag zunächst auf dem bekannte "Mobile-first"-Ansatz. Basierend darauf wurden die Designs für die Ansichten von Pads, Laptop und Desktop via der in Tailwind CSS verfügbaren Mediaqueries erweitern.
 
+[🔼 Back](#inhaltsverzeichnis)
 
 <a name="frontend"></a>
 ### Frontend
 Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Aufteilung der Tasks erfolgte via des in Github integrierten Projektboards. Nach der Erstellung der "Mobile-first"-Ansicht fing die Hälfte des Teams mit der Erstellung des Backend an, während die andere Hälfte via Tailwind CSS Mediaqueries die Desktop Ansicht erstellte.
-
 
 <a name="backend"></a>
 ### Backend
