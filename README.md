@@ -1,19 +1,25 @@
 # DCI finales Teamprojekt - Tierschutzvereins Dachau e.V
-
+<a name="inhaltsverzeichnis"></a>
 ## Inhaltsverzeichnis
 
 - [Projektbeschreibung](#projektbeschreibung)
-  <!-- - [Installation](#installation) -->
-  <!-- - [Verwendung](#verwendung) -->
-  - [Technologien](#technologien)
-  - [Beitragende](#beitragende)
+- [Workflow](#workflow)
+- [Design](#design)
+- [Technologien](#technologien)
+- [Beitragende](#beitragende)
 
+
+<a id="projektbeschreibung"></a>
 ## Projektbeschreibung
 
 Als Thematik des finalen Teamprojekts unserer einjährigen DCI-Umschulung zu Fullstack Developern (MERN-Stack) haben wir uns dazu entschieden, die bestehende Internetpräsenz des Tierschutzvereins Dachau e.V, `https://www.tierschutz.dachau.net/`, zu überarbeiten.
 
-![originalSite-home](./frontend/src/assets/readme/originalSite-home.png)
+![originalSite-home](./frontend/src/assets/readme/tierschutzDachauNet.png)
 
+[🔼 Back to top](#inhaltsverzeichnis)
+
+<a name="workflow"></a>
+### Workflow
 Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines Gantt Chart Projektplanes, welcher die verschiedenen Phasen des Projektes abbildete, darunter vor allem die folgenden wesentlichen Blöcke:
 
 1. Scope & Goal Setting
@@ -28,37 +34,53 @@ Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines G
 10. BACKEND & FRONTEND: Combining
 11. Presentation
 
+Hier ein Auszug aus dem Gantt  Projektplan:
+![GANTTProjektplan](./frontend/src/assets/readme/GANTTProjektplan.png)
+
+[🔼 Back to top](#inhaltsverzeichnis)
+
+<a name="design"></a>
+### Design
 ![figmaDesign](./frontend/src/assets/readme/figmaDesign.png)
 Die Erstellung der Designs erfolgte in Figma. Der Fokus lag zunächst auf dem bekannte "Mobile-first"-Ansatz. Basierend darauf wurden die Designs für die Ansichten von Pads, Laptop und Desktop via der in Tailwind CSS verfügbaren Mediaqueries erweitern.
 
+[🔼 Back to top](#inhaltsverzeichnis)
+
+<a name="frontend"></a>
+### Frontend
 Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Aufteilung der Tasks erfolgte via des in Github integrierten Projektboards. Nach der Erstellung der "Mobile-first"-Ansicht fing die Hälfte des Teams mit der Erstellung des Backend an, während die andere Hälfte via Tailwind CSS Mediaqueries die Desktop Ansicht erstellte.
 
-Je zum Ende der Frontend- und Backend-Phase wurde eine intensievere Testphase veranschlagt.
+[🔼 Back to top](#inhaltsverzeichnis)
 
-Zuletzt erfolgte die Verbindung des Front- mit dem Backend sowie die Erstellung der ABschlusspräsentation.
+<a name="backend"></a>
+### Backend
+Im Backend galt es zunächste, sich für eine Technologie zu entscheiden. Schnell stand fest, dass wir eine CMS-Lösung der von MongoDB vorziehen, um die einfachere Bedienung und Einstellung von Inhalten durch das Personal des Tierheims zu ermöglichen. Die Wahl fiel schließlich auf das CMS von [kontent.ai](https://kontent.ai/) welches alle für das Projekt nötigen Umfänge in der kostenlosen Version zur Verfügung stellt. Die für Änderungen relevantesten Inhalte wurden definiert und jeweils in einer Collection angelegt. Daraus ergaben sich zunächst die folgenden Content Model, welche bei kontent.ai als Vordefinierter Datensatz fungieren:
 
-<!-- ## Installation
+- Termine
+- Pressestimmen
+- Sonstige Medienberichte
+- DATZ
+- Tiere
 
-1. Klonen Sie das Repository: `git clone <repository-url>`
-2. Wechseln Sie in das Projektverzeichnis: `cd <project-directory>`
-3. Installieren Sie die Abhängigkeiten: `npm install` -->
+[🔼 Back to top](#inhaltsverzeichnis)
 
-<!-- ## Verwendung
-
-1. Starten Sie die Entwicklungsserver: `npm start`
-2. Öffnen Sie Ihren Browser und navigieren Sie zu `http://localhost:3000` -->
-
+<a name="technologien"></a>
 ## Technologien
 
 - React
+- JavaScript
 - Node.js
-- Express
-- MongoDB
 - Tailwind CSS
+- CMS kontent.ai
 
+[🔼 Back to top](#inhaltsverzeichnis)
+
+<a name="beitragende"></a>
 ## Beitragende
 
-- [Ksenia (Backend Lead)]()
-- [Hendri (Frontend Lead)]()
-- [Ahmad (Workflow Lead)]()
+- [Ksenia (Backend Lead)](https://github.com/KseniaBr)
+- [Hendri (Frontend Lead)](https://github.com/enozen)
+- [Ahmad (Workflow Lead)](https://github.com/AhmadHoush)
 - [David (Project Lead)](https://github.com/MrburnsDAOC)
+
+[🔼 Back to top](#inhaltsverzeichnis)
