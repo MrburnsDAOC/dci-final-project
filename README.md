@@ -5,6 +5,8 @@
 - [Projektbeschreibung](#projektbeschreibung)
 - [Workflow](#workflow)
 - [Design](#design)
+- [Frontend](#frontend)
+- [Backend](#backend)
 - [Technologien](#technologien)
 - [Beitragende](#beitragende)
 
