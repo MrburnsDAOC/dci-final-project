@@ -9,7 +9,7 @@ import H5 from "../../layout/H5";
 import Section from "../../layout/Section";
 import { Link } from "react-router-dom";
 
-import NextBtn from "../../layout/NextButton";
+import NextBtn from "../../components/buttons/NextButton";
 
 import { useContext } from "react";
 import DataContext from "../../components/kontentAi/DataContext";
@@ -56,7 +56,6 @@ const Home = () => {
   return (
     <div>
       <Carousel />
-      <NextBtn />
       <Section mt={0}>
         <h1 className="text-left py-3 text-2xl leading-10 font-bold">
           Tierschutzverein Dachau e.V.
@@ -222,6 +221,7 @@ const Home = () => {
           />
         </a>
       </Section>
+      {data && <NextBtn />}
     </div>
   );
 };

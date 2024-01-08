@@ -1,11 +1,11 @@
-import BackButton from "../../../layout/BackButton";
 import TierKarte from "../TierKarte";
-import NextButton from "../../../layout/NextButton";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
 import { useContext } from "react";
 import DataContext from "../../../components/kontentAi/DataContext";
+import NextButton from "../../../components/buttons/NextButton";
+import BackButton from "../../../components/buttons/BackButton";
 
 const Hunde = () => {
   const { data } = useContext(DataContext);
@@ -20,7 +20,6 @@ const Hunde = () => {
           Interesse haben, kontaktieren Sie uns über Email oder per Telefon.
         </p>
       </Section>
-      <NextButton />
       {data &&
         data.map((entry) => {
           if (
@@ -46,6 +45,7 @@ const Hunde = () => {
             );
           }
         })}
+      {data && <NextButton />}
       <BackButton />
     </>
   );

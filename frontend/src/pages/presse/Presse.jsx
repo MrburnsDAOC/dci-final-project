@@ -1,9 +1,9 @@
 import { useEffect, useContext, useState } from "react";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
-import NextButton from "../../layout/NextButton";
+import NextButton from "../../components/buttons/NextButton";
 import DatzHead from "../../assets/ueber-uns/datz_head.jpg";
-import BackButton from "../../layout/BackButton";
+import BackButton from "../../components/buttons/BackButton";
 
 import DataContext from "../../components/kontentAi/DataContext";
 
@@ -36,13 +36,35 @@ const Presse = () => {
   const { data } = useContext(DataContext);
   const [datzData, setDatzData] = useState([]);
 
+
   const pressestimmenDataSorted = sortPressestimmenByDate(data);
   const sonstigeMedienberichteDataSorted = sortSonstigeMedienberichteByDate(data);
+
+  let pressestimmenData,
+    sonstigeMedienberichteData,
+    datzData = [];
+
+  if (data) {
+    pressestimmenData = data.filter(
+      (element) => element.system.type.toLowerCase() === "pressestimme"
+    );
+
+    sonstigeMedienberichteData = data.filter(
+      (element) =>
+        element.system.type.toLowerCase() === "sonstiger_medienbericht"
+    );
+
+    datzData = data
+      .filter((element) => element.system.type.toLowerCase() === "datz_ausgabe")
+      .reverse();
+  }
+
 
   useEffect(() => {
     const url = window.location.href;
     const hash = url.substring(url.indexOf("#") + 1);
     const element = document.getElementById(hash);
+
     if (element) {
       const yPos = element.getBoundingClientRect().top + window.scrollY - 90;
       window.scroll({
@@ -63,7 +85,6 @@ const Presse = () => {
 
   return (
     <div>
-      <NextButton />
       <Section>
         {/* Pressestimmen */}
         <p id="Pressestimmen" />
@@ -214,6 +235,7 @@ const Presse = () => {
         </div>
       </Section>
       <BackButton />
+      {data && <NextButton />}
     </div>
   );
 }

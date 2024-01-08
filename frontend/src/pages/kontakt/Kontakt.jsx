@@ -3,12 +3,12 @@ import H2 from "../../layout/H2";
 import H3 from "../../layout/H3";
 import KontaktData from "../../components/KontaktData";
 import Section from "../../layout/Section";
-import NextBtn from "../../layout/NextButton";
+import NextButton from "../../components/buttons/NextButton";
 
 const Kontakt = () => {
   return (
     <div>
-      <NextBtn />
+      <NextButton />
       <div className="break-words min-h-[89vh] xl:flex bg-secondBg ">
         <Section className="xl:w-4/5">
           <H2>Kontakt</H2>
