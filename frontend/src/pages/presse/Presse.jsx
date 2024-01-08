@@ -18,47 +18,49 @@ const compareDates = (a, b) => {
 // Function to sort press articles by date
 const sortPressestimmenByDate = (data) => {
   if (!data) return [];
-  return data.filter(
-    (element) => element.system.type.toLowerCase() === "pressestimme"
-  ).sort(compareDates);
+  return data
+    .filter((element) => element.system.type.toLowerCase() === "pressestimme")
+    .sort(compareDates)
+    .reverse();
 };
 
 // Function to sort other media reports by date
 const sortSonstigeMedienberichteByDate = (data) => {
   if (!data) return [];
-  return data.filter(
-    (element) =>
-      element.system.type.toLowerCase() === "sonstiger_medienbericht"
-  ).sort(compareDates);
+  return data
+    .filter(
+      (element) =>
+        element.system.type.toLowerCase() === "sonstiger_medienbericht"
+    )
+    .sort(compareDates)
+    .reverse();
 };
 
 const Presse = () => {
   const { data } = useContext(DataContext);
   const [datzData, setDatzData] = useState([]);
 
-
   const pressestimmenDataSorted = sortPressestimmenByDate(data);
-  const sonstigeMedienberichteDataSorted = sortSonstigeMedienberichteByDate(data);
+  const sonstigeMedienberichteDataSorted =
+    sortSonstigeMedienberichteByDate(data);
 
-  let pressestimmenData,
-    sonstigeMedienberichteData,
-    datzData = [];
+  // let pressestimmenData, sonstigeMedienberichteData;
+  // datzData = [];
 
-  if (data) {
-    pressestimmenData = data.filter(
-      (element) => element.system.type.toLowerCase() === "pressestimme"
-    );
+  // if (data) {
+  //   pressestimmenData = data.filter(
+  //     (element) => element.system.type.toLowerCase() === "pressestimme"
+  //   );
 
-    sonstigeMedienberichteData = data.filter(
-      (element) =>
-        element.system.type.toLowerCase() === "sonstiger_medienbericht"
-    );
+  //   sonstigeMedienberichteData = data.filter(
+  //     (element) =>
+  //       element.system.type.toLowerCase() === "sonstiger_medienbericht"
+  //   );
 
-    datzData = data
-      .filter((element) => element.system.type.toLowerCase() === "datz_ausgabe")
-      .reverse();
-  }
-
+  //   datzData = data
+  //     .filter((element) => element.system.type.toLowerCase() === "datz_ausgabe")
+  //     .reverse();
+  // }
 
   useEffect(() => {
     const url = window.location.href;
@@ -76,9 +78,11 @@ const Presse = () => {
 
   useEffect(() => {
     if (data) {
-      const datzDataFromContext = data.filter(
-        (element) => element.system.type.toLowerCase() === "datz_ausgabe"
-      ).reverse();
+      const datzDataFromContext = data
+        .filter(
+          (element) => element.system.type.toLowerCase() === "datz_ausgabe"
+        )
+        .reverse();
       setDatzData(datzDataFromContext);
     }
   }, [data]);
@@ -149,7 +153,10 @@ const Presse = () => {
               <p className="text-lg font-semibold">Thema</p>
             </div>
             {sonstigeMedienberichteDataSorted.map((sonstige) => (
-              <div key={sonstige.system.id} className="grid grid-cols-2  col-span-2 ">
+              <div
+                key={sonstige.system.id}
+                className="grid grid-cols-2  col-span-2 "
+              >
                 <div className="border p-3">
                   <p>
                     {sonstige.elements.datum.value
@@ -238,6 +245,6 @@ const Presse = () => {
       {data && <NextButton />}
     </div>
   );
-}
+};
 
 export default Presse;
