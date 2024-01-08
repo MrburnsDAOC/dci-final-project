@@ -16,6 +16,7 @@ Als Thematik des finalen Teamprojekts unserer einjährigen DCI-Umschulung zu Ful
 
 ![originalSite-home](./frontend/src/assets/readme/tierschutzDachauNet.png)
 
+[🔼 Back to top](#inhaltsverzeichnis)
 
 <a name="workflow"></a>
 ### Workflow
@@ -36,22 +37,26 @@ Nach Einrichtung der Arbeitsumgebung erfolgte die Planung und Erstellung eines G
 Hier ein Auszug aus dem Gantt  Projektplan:
 ![GANTTProjektplan](./frontend/src/assets/readme/GANTTProjektplan.png)
 
+[🔼 Back to top](#inhaltsverzeichnis)
 
 <a name="design"></a>
 ### Design
 ![figmaDesign](./frontend/src/assets/readme/figmaDesign.png)
 Die Erstellung der Designs erfolgte in Figma. Der Fokus lag zunächst auf dem bekannte "Mobile-first"-Ansatz. Basierend darauf wurden die Designs für die Ansichten von Pads, Laptop und Desktop via der in Tailwind CSS verfügbaren Mediaqueries erweitern.
 
-[🔼 Back](#inhaltsverzeichnis)
+[🔼 Back to top](#inhaltsverzeichnis)
 
 <a name="frontend"></a>
 ### Frontend
 Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Aufteilung der Tasks erfolgte via des in Github integrierten Projektboards. Nach der Erstellung der "Mobile-first"-Ansicht fing die Hälfte des Teams mit der Erstellung des Backend an, während die andere Hälfte via Tailwind CSS Mediaqueries die Desktop Ansicht erstellte.
 
+[🔼 Back to top](#inhaltsverzeichnis)
+
 <a name="backend"></a>
 ### Backend
 Im Backend galt es zunächste, sich für eine Technologie zu entscheiden. Schnell stand fest, dass wir eine CMS-Lösung der von MongoDB vorziehen, um die einfachere Bedienung und Einstellung von Inhalten durch das Personal des Tierheims zu ermöglichen. Die Wahl viel schließlich auf das CMS von [kontent.ai](https://kontent.ai/) welche alle für das Projekt nötigen Umfänge in der kostenlosen Version zur Verfügung stellt.
 
+[🔼 Back to top](#inhaltsverzeichnis)
 
 <a name="technologien"></a>
 ## Technologien
@@ -62,6 +67,7 @@ Im Backend galt es zunächste, sich für eine Technologie zu entscheiden. Schnel
 - Tailwind CSS
 - CMS kontent.ai
 
+[🔼 Back to top](#inhaltsverzeichnis)
 
 <a name="beitragende"></a>
 ## Beitragende
@@ -70,3 +76,5 @@ Im Backend galt es zunächste, sich für eine Technologie zu entscheiden. Schnel
 - [Hendri (Frontend Lead)](https://github.com/enozen)
 - [Ahmad (Workflow Lead)](https://github.com/AhmadHoush)
 - [David (Project Lead)](https://github.com/MrburnsDAOC)
+
+[🔼 Back to top](#inhaltsverzeichnis)
