@@ -1,11 +1,11 @@
-import BackButton from "../../../layout/BackButton";
 import TierKarte from "../TierKarte";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
 import { useContext } from "react";
 import DataContext from "../../../components/kontentAi/DataContext";
-import NextButton from "../../../layout/NextButton";
+import NextButton from "../../../components/buttons/NextButton";
+import BackButton from "../../../components/buttons/BackButton";
 
 const NotfallVermittlung = () => {
   const { data } = useContext(DataContext);
