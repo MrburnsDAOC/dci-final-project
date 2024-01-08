@@ -86,7 +86,7 @@ function Navbar() {
       {/* <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer md:hidden"> */}
 
       {(!showNavLinks || !showBurgerMenu) && (
-        <div className="w-[70px] h-[70px] xl:w-[85px] xl:h-[85px] bg-secondBg rounded-full flex justify-center cursor-pointer absolute top-[90%] left-1/2 translate-x-[-50%] translate-y-[-50%] md:top-[100%] shadow-xl z-50">
+        <div className="w-[70px] h-[70px] xl:w-[80px] xl:h-[80px] bg-secondBg rounded-full flex justify-center cursor-pointer absolute top-[90%] left-1/2 translate-x-[-50%] translate-y-[-50%] md:top-[100%] shadow-xl z-50">
           <img
             src={tierschutzDachauLogo}
             alt="Tierschutz Dachau e.V."
