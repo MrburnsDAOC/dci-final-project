@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import Vorstand from "../../assets/ueber-uns/imgUnserVorstand.jpg";
-import BackButton from "../../layout/BackButton";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
-import NextButton from "../../layout/NextButton";
+import BackButton from "../../components/buttons/BackButton";
+import NextButton from "../../components/buttons/NextButton";
 
 function UeberUnsText() {
   useEffect(() => {
