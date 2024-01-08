@@ -48,7 +48,9 @@ Die Erstellung der Designs erfolgte in Figma. Der Fokus lag zunächst auf dem be
 
 <a name="frontend"></a>
 ### Frontend
-Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Aufteilung der Tasks erfolgte via des in Github integrierten Projektboards. Nach der Erstellung der "Mobile-first"-Ansicht fing die Hälfte des Teams mit der Erstellung des Backend an, während die andere Hälfte via Tailwind CSS Mediaqueries die Desktop Ansicht erstellte.
+Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Aufteilung der Tasks erfolgte via des in Github integrierten Projektboards. Nach der Erstellung der "Mobile-first"-Ansicht fing die Hälfte des Teams mit der Erstellung des Backend an, während die andere Hälfte via Tailwind CSS Mediaqueries die Desktop Ansicht erstellte. Hier die beispielhaften Ansichten der Homepage auf mobile, tablet und desktop:
+![desktop-home](./frontend/src/assets/readme/desktop-home.png)
+![tablet-home](./frontend/src/assets/readme/tablet-home.png) ![mobile-home](./frontend/src/assets/readme/mobile-home.png)
 
 [🔼 Back to top](#inhaltsverzeichnis)
 
