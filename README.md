@@ -54,7 +54,13 @@ Alle Teammitglieder arbeiteten zunächst an der Erstellung des Frontend. Die Auf
 
 <a name="backend"></a>
 ### Backend
-Im Backend galt es zunächste, sich für eine Technologie zu entscheiden. Schnell stand fest, dass wir eine CMS-Lösung der von MongoDB vorziehen, um die einfachere Bedienung und Einstellung von Inhalten durch das Personal des Tierheims zu ermöglichen. Die Wahl viel schließlich auf das CMS von [kontent.ai](https://kontent.ai/) welche alle für das Projekt nötigen Umfänge in der kostenlosen Version zur Verfügung stellt.
+Im Backend galt es zunächste, sich für eine Technologie zu entscheiden. Schnell stand fest, dass wir eine CMS-Lösung der von MongoDB vorziehen, um die einfachere Bedienung und Einstellung von Inhalten durch das Personal des Tierheims zu ermöglichen. Die Wahl fiel schließlich auf das CMS von [kontent.ai](https://kontent.ai/) welches alle für das Projekt nötigen Umfänge in der kostenlosen Version zur Verfügung stellt. Die für Änderungen relevantesten Inhalte wurden definiert und jeweils in einer Collection angelegt. Daraus ergaben sich zunächst die folgenden Content Model, welche bei kontent.ai als Vordefinierter Datensatz fungieren:
+
+- Termine
+- Pressestimmen
+- Sonstige Medienberichte
+- DATZ
+- Tiere
 
 [🔼 Back to top](#inhaltsverzeichnis)
 
