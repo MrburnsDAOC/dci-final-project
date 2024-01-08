@@ -27,8 +27,9 @@ const TierKarte = ({
   };
 
   return (
-    <Section>
-      <div key={id} className="grid grid-cols-1">
+    <Section className="xl:mx-0">
+      {/* <div key={id} className="grid grid-cols-1"> */}
+      <div key={id} className="grid">
         {/* Angaben zum Tier */}
         <H3 className="py-">{name ? name : ""}</H3>
 
@@ -47,7 +48,7 @@ const TierKarte = ({
         {/* <div className="min-w-full min-h-[200px] flex justify-between py-1"> */}
 
         {/* Bilder */}
-        <div className="flex mt-1 max-h-[500px] md:max-h-[600px]">
+        <div className="flex mt-1 max-h-[500px] md:h-[600px]">
           {bilder.map((bild) => {
             if (bilder.length <= 1) {
               return (
