@@ -1,11 +1,11 @@
-import BackButton from "../../../layout/BackButton";
 import TierKarte from "../TierKarte";
-import NextButton from "../../../layout/NextButton";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
 import { useContext } from "react";
 import DataContext from "../../../components/kontentAi/DataContext";
+import BackButton from "../../../components/buttons/BackButton";
+import NextButton from "../../../components/buttons/NextButton";
 
 const Nagetiere = () => {
   const { data } = useContext(DataContext);
@@ -22,7 +22,6 @@ const Nagetiere = () => {
           Außenhaltung gerüstet.
         </p>
       </Section>
-      <NextButton />
       {data &&
         data.map((entry) => {
           if (
@@ -50,6 +49,7 @@ const Nagetiere = () => {
           }
         })}
       <BackButton />
+      {data && <NextButton />}
     </>
   );
 };
