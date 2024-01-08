@@ -9,7 +9,7 @@ import H5 from "../../layout/H5";
 import Section from "../../layout/Section";
 import { Link } from "react-router-dom";
 
-import NextBtn from "../../layout/NextButton";
+import NextBtn from "../../components/buttons/NextButton";
 
 import { useContext } from "react";
 import DataContext from "../../components/kontentAi/DataContext";

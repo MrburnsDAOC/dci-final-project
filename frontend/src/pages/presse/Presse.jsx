@@ -1,9 +1,9 @@
 import { useEffect, useContext } from "react";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
-import NextButton from "../../layout/NextButton";
+import NextButton from "../../components/buttons/NextButton";
 import DatzHead from "../../assets/ueber-uns/datz_head.jpg";
-import BackButton from "../../layout/BackButton";
+import BackButton from "../../components/buttons/BackButton";
 
 import DataContext from "../../components/kontentAi/DataContext";
 
@@ -29,20 +29,17 @@ function Presse() {
       .reverse();
   }
 
-  console.log(pressestimmenData);
-
   useEffect(() => {
     const url = window.location.href;
     const hash = url.substring(url.indexOf("#") + 1);
     const element = document.getElementById(hash);
+
     if (element) {
-      if (element) {
-        const yPos = element.getBoundingClientRect().top + window.scrollY - 90;
-        window.scroll({
-          top: yPos,
-          behavior: "smooth",
-        });
-      }
+      const yPos = element.getBoundingClientRect().top + window.scrollY - 90;
+      window.scroll({
+        top: yPos,
+        behavior: "smooth",
+      });
     }
   }, []);
 

@@ -1,12 +1,11 @@
-import BackButton from "../../../layout/BackButton";
-import NextButton from "../../../layout/NextButton";
-
 import TierKarte from "../TierKarte";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
 import { useContext } from "react";
 import DataContext from "../../../components/kontentAi/DataContext";
+import NextButton from "../../../components/buttons/NextButton";
+import BackButton from "../../../components/buttons/BackButton";
 
 const Hunde = () => {
   const { data } = useContext(DataContext);
