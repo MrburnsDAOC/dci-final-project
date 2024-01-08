@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import Section from "../../layout/Section";
 import H2 from "../../layout/H2";
 import NextButton from "../../components/buttons/NextButton";
@@ -7,8 +7,38 @@ import BackButton from "../../components/buttons/BackButton";
 
 import DataContext from "../../components/kontentAi/DataContext";
 
-function Presse() {
+// Function to compare dates for sorting
+const compareDates = (a, b) => {
+  const dateA = new Date(a.elements.datum.value);
+  const dateB = new Date(b.elements.datum.value);
+
+  return dateA - dateB;
+};
+
+// Function to sort press articles by date
+const sortPressestimmenByDate = (data) => {
+  if (!data) return [];
+  return data.filter(
+    (element) => element.system.type.toLowerCase() === "pressestimme"
+  ).sort(compareDates);
+};
+
+// Function to sort other media reports by date
+const sortSonstigeMedienberichteByDate = (data) => {
+  if (!data) return [];
+  return data.filter(
+    (element) =>
+      element.system.type.toLowerCase() === "sonstiger_medienbericht"
+  ).sort(compareDates);
+};
+
+const Presse = () => {
   const { data } = useContext(DataContext);
+  const [datzData, setDatzData] = useState([]);
+
+
+  const pressestimmenDataSorted = sortPressestimmenByDate(data);
+  const sonstigeMedienberichteDataSorted = sortSonstigeMedienberichteByDate(data);
 
   let pressestimmenData,
     sonstigeMedienberichteData,
@@ -29,6 +59,7 @@ function Presse() {
       .reverse();
   }
 
+
   useEffect(() => {
     const url = window.location.href;
     const hash = url.substring(url.indexOf("#") + 1);
@@ -43,6 +74,15 @@ function Presse() {
     }
   }, []);
 
+  useEffect(() => {
+    if (data) {
+      const datzDataFromContext = data.filter(
+        (element) => element.system.type.toLowerCase() === "datz_ausgabe"
+      ).reverse();
+      setDatzData(datzDataFromContext);
+    }
+  }, [data]);
+
   return (
     <div>
       <Section>
@@ -56,7 +96,6 @@ function Presse() {
           aller Publikationen und stellt keine Präferenz des Tierschutzvereins
           dar.
         </p>
-
         <div className="bg-white break-words ">
           <div className="grid grid-cols-3 pt-4 ">
             <div className="bg-mainBg text-white border p-3">
@@ -70,36 +109,30 @@ function Presse() {
             </div>
           </div>
         </div>
-
-        {data &&
-          pressestimmenData.map((stimmen) => (
-            <div
-              key={stimmen.system.id}
-              className="grid grid-cols-3 col-span-3"
-            >
-              <div className="border p-3 col-span-1 ">
-                <p>
-                  {stimmen.elements.datum.value
-                    .slice(0, 10)
-                    .split("-")
-                    .reverse()
-                    .join(".")}
-                </p>
-              </div>
-              <div className="border p-3">
-                <p>{stimmen.elements.medium.value}</p>
-              </div>
-              <div className="border p-3">
-                <p>{stimmen.elements.thema.value}</p>
-              </div>
+        {pressestimmenDataSorted.map((stimmen) => (
+          <div key={stimmen.system.id} className="grid grid-cols-3 col-span-3">
+            <div className="border p-3 col-span-1 ">
+              <p>
+                {stimmen.elements.datum.value
+                  .slice(0, 10)
+                  .split("-")
+                  .reverse()
+                  .join(".")}
+              </p>
             </div>
-          ))}
+            <div className="border p-3">
+              <p>{stimmen.elements.medium.value}</p>
+            </div>
+            <div className="border p-3">
+              <p>{stimmen.elements.thema.value}</p>
+            </div>
+          </div>
+        ))}
       </Section>
 
-      {/* Sontige-Medienberichte */}
+      {/* Sonstige-Medienberichte */}
       <Section>
         <p id="Sonstige-Medien" />
-
         <H2>Sonstige Medienberichte</H2>
         <p>
           Die verlinkten Beiträge werden zumeist nur zeitlich befristet
@@ -107,7 +140,6 @@ function Presse() {
           bereits wieder aus dem Angebot der jeweiligen Mediathek genommen
           wurden.
         </p>
-
         <div className="bg-white my-2 break-words">
           <div className="grid grid-cols-2  pt-4 ">
             <div className="bg-mainBg text-white border p-3">
@@ -116,32 +148,27 @@ function Presse() {
             <div className="bg-mainBg text-white border p-3">
               <p className="text-lg font-semibold">Thema</p>
             </div>
-
-            {data &&
-              sonstigeMedienberichteData.map((sonstige) => (
-                <div
-                  key={sonstige.system.id}
-                  className="grid grid-cols-2  col-span-2 "
-                >
-                  <div className="border p-3">
-                    <p>
-                      {sonstige.elements.datum.value
-                        .slice(0, 10)
-                        .split("-")
-                        .reverse()
-                        .join(".")}
-                    </p>
-                  </div>
-                  <div className="border p-3">
-                    <p>{sonstige.elements.thema.value}</p>
-                  </div>
+            {sonstigeMedienberichteDataSorted.map((sonstige) => (
+              <div key={sonstige.system.id} className="grid grid-cols-2  col-span-2 ">
+                <div className="border p-3">
+                  <p>
+                    {sonstige.elements.datum.value
+                      .slice(0, 10)
+                      .split("-")
+                      .reverse()
+                      .join(".")}
+                  </p>
                 </div>
-              ))}
+                <div className="border p-3">
+                  <p>{sonstige.elements.thema.value}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
 
-      {/*Mitgliederzeitschrift DATZ */}
+      {/* Mitgliederzeitschrift DATZ */}
       <Section>
         <p id="DATZ" />
         <H2>Mitgliederzeitschrift DATZ</H2>
@@ -153,7 +180,6 @@ function Presse() {
           sofern diese nicht auf die Zustellung verzichten, um uns Portokosten
           zu sparen.
         </p>
-
         <p className="mb-2">
           Die DATZ liegt an öffentlichen Stellen (u.a. an unseren{" "}
           <a
@@ -188,25 +214,23 @@ function Presse() {
           Viel Spaß beim Lesen, was die Tierschutzarbeit so alles mit sich
           bringt...
         </p>
-
         <div className="grid grid-cols-1">
           <div className="text-center">
             <div className="bg-mainBg border text-white p-3">
               <p className="text-lg font-semibold">DATZ</p>
             </div>
-            {data &&
-              datzData.map((ausgabe) => (
-                <div className="border p-3" key={ausgabe.system.id}>
-                  <a
-                    href={ausgabe.elements.pdf_datei.value[0].url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
-                    {ausgabe.elements.name_der_ausgabe.value}
-                  </a>
-                </div>
-              ))}
+            {datzData.map((ausgabe) => (
+              <div className="border p-3" key={ausgabe.system.id}>
+                <a
+                  href={ausgabe.elements.pdf_datei.value[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  {ausgabe.elements.name_der_ausgabe.value}
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
