@@ -1,11 +1,11 @@
 import BackButton from "../../../layout/BackButton";
 import TierKarte from "../TierKarte";
-import NextButton from "../../../layout/NextButton";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
 import { useContext } from "react";
 import DataContext from "../../../components/kontentAi/DataContext";
+import NextButton from "../../../layout/NextButton";
 
 const Wellensittiche = () => {
   const { data } = useContext(DataContext);
@@ -27,7 +27,6 @@ const Wellensittiche = () => {
       <Section>
         <H2>Wellensittiche </H2>
       </Section>
-      <NextButton />
 
       {data && budgies.length < 1 ? (
         <Section>
@@ -51,6 +50,7 @@ const Wellensittiche = () => {
         })
       )}
       <BackButton />
+      {data && <NextButton />}
     </>
   );
 };

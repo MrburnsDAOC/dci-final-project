@@ -31,7 +31,6 @@ const Home = () => {
   return (
     <div>
       <Carousel />
-      <NextBtn />
       <Section mt={0}>
         <h1 className="text-left py-3 text-2xl leading-10 font-bold">
           Tierschutzverein Dachau e.V.
@@ -178,6 +177,7 @@ const Home = () => {
           />
         </a>
       </Section>
+      {data && <NextBtn />}
     </div>
   );
 };

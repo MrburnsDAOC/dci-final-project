@@ -1,11 +1,11 @@
 import BackButton from "../../../layout/BackButton";
 import TierKarte from "../TierKarte";
-import NextButton from "../../../layout/NextButton";
 import Section from "../../../layout/Section";
 import H2 from "../../../layout/H2";
 
 import { useContext } from "react";
 import DataContext from "../../../components/kontentAi/DataContext";
+import NextButton from "../../../layout/NextButton";
 
 const VermittelteTiere = () => {
   const { data } = useContext(DataContext);
@@ -21,7 +21,6 @@ const VermittelteTiere = () => {
           uns doch einfach ein paar Bilder...
         </p>
       </Section>
-      <NextButton />
       {data &&
         data.map((entry) => {
           if (
@@ -47,6 +46,7 @@ const VermittelteTiere = () => {
           }
         })}
       <BackButton />
+      {data && <NextButton />}
     </>
   );
 };
