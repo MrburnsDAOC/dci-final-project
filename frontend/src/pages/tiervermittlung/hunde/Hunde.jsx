@@ -20,34 +20,33 @@ const Hunde = () => {
           Interesse haben, kontaktieren Sie uns über Email oder per Telefon.
         </p>
       </Section>
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 xl:mx-36">
-        {data &&
-          data.map((entry) => {
-            if (
-              entry.system.type.toLowerCase() === "tier" &&
-              // ? => if value undefined --> toLowerCase not working
-              entry.elements.tierart.value[0].name?.toLowerCase() === "hund" &&
-              entry.elements.vermittelt.value[0].name?.toLowerCase() ===
-                "nein" &&
-              entry.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
-                "nein"
-            ) {
-              return (
-                <TierKarte
-                  key={entry.system.id}
-                  id={entry.system.id}
-                  bilder={entry.elements.bilder.value}
-                  name={entry.elements.name.value}
-                  rasse={entry.elements.rasse.value}
-                  geboren={entry.elements.geboren.value}
-                  geschlecht={entry.elements.geschlecht.value[0].name}
-                  kastration={entry.elements.kastration.value[0].name}
-                  informationen={entry.elements.informationen.value}
-                />
-              );
-            }
-          })}
-      </div>
+      {/* <div className="grid"> */}
+      {data &&
+        data.map((entry) => {
+          if (
+            entry.system.type.toLowerCase() === "tier" &&
+            // ? => if value undefined --> toLowerCase not working
+            entry.elements.tierart.value[0].name?.toLowerCase() === "hund" &&
+            entry.elements.vermittelt.value[0].name?.toLowerCase() === "nein" &&
+            entry.elements.notfallvermittlung.value[0].name?.toLowerCase() ===
+              "nein"
+          ) {
+            return (
+              <TierKarte
+                key={entry.system.id}
+                id={entry.system.id}
+                bilder={entry.elements.bilder.value}
+                name={entry.elements.name.value}
+                rasse={entry.elements.rasse.value}
+                geboren={entry.elements.geboren.value}
+                geschlecht={entry.elements.geschlecht.value[0].name}
+                kastration={entry.elements.kastration.value[0].name}
+                informationen={entry.elements.informationen.value}
+              />
+            );
+          }
+        })}
+      {/* </div> */}
 
       {data && <NextButton />}
       <BackButton />
