@@ -31,7 +31,7 @@ function Navbar() {
   //"media queries"
   //listen to it when we drag the screen larger or smaller
   window.addEventListener("resize", (e) => {
-    if (e.target.innerWidth >= 1280) {
+    if (e.target.innerWidth > 1280) {
       //big screen => nav links
       setBurgerMenu(false);
       setNavLinks(true);
@@ -46,7 +46,7 @@ function Navbar() {
   //run at least once a mount
   //listen to it when we open the website
   useEffect(() => {
-    if (window.innerWidth >= 1280) {
+    if (window.innerWidth > 1280) {
       setBurgerMenu(false);
       setNavLinks(true);
     } else {
