@@ -7,7 +7,9 @@ export default withMT({
       md: "768px",
       lg: "1024px",
       xl: "1280px",
+      // custom: "830px",
     },
+
     colors: {
       transparent: "transparent",
       current: "currentColor",
