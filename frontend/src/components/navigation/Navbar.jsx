@@ -74,10 +74,10 @@ function Navbar() {
   return (
     <header
       id="header"
-      className="bg-mainBg py-3 px-3 flex justify-between sticky top-0 z-50 md:justify-center xl:justify-between md:flex-row-reverse md:flex-wrap md:gap-x-60 md:gap-y-3 text-secondText"
+      className="sticky top-0 z-50 flex justify-between bg-mainBg px-3 py-3 text-secondText md:flex-wrap md:justify-center md:gap-x-60 md:gap-y-3 xl:justify-between"
     >
       <button
-        className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer md:hover:shadow-md"
+        className="h-10 w-[95px] cursor-pointer rounded-lg bg-[#FE4A49] p-1.5 text-secondText md:hover:shadow-md "
         onClick={() => navigate("/spenden")}
       >
         Spenden
@@ -86,11 +86,11 @@ function Navbar() {
       {/* <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer md:hidden"> */}
 
       {(!showNavLinks || !showBurgerMenu) && (
-        <div className="w-[70px] h-[70px] xl:w-[80px] xl:h-[80px] bg-secondBg rounded-full flex justify-center cursor-pointer absolute top-[90%] left-1/2 translate-x-[-50%] translate-y-[-50%] md:top-[100%] shadow-xl z-50">
+        <div className="absolute left-1/2 top-[90%] z-50 flex h-[70px] w-[70px] translate-x-[-50%] translate-y-[-50%] cursor-pointer justify-center rounded-full border-2 bg-secondBg drop-shadow-md hover:drop-shadow-lg md:top-[100%] xl:h-[80px] xl:w-[80px]">
           <img
             src={tierschutzDachauLogo}
             alt="Tierschutz Dachau e.V."
-            className="w-[50px] h-[50px] xl:w-[65px] xl:h-[65px] rounded-2xl self-center"
+            className="h-[50px] w-[50px] self-center rounded-2xl xl:h-[65px] xl:w-[65px] "
             onClick={() => {
               navigate("/");
               window.scrollTo(0, 0);
@@ -99,24 +99,24 @@ function Navbar() {
         </div>
       )}
 
-      <div className="w-[95px] h-10 flex justify-end md:w-fit md:h-[65px] xl:h-[65px]">
+      <div className="flex h-10 w-[95px] justify-end md:h-[52.5px] md:w-fit xl:h-[56px]">
         {/* if showBurgerMenu true => we see the burger menu */}
         {showBurgerMenu && (
           <FontAwesomeIcon
             icon={showNavLinks ? faXmark : faBars}
             onClick={handleNavClick}
-            className="text-secondText text-3xl self-center cursor-pointer"
+            className="cursor-pointer self-center text-3xl text-secondText"
           />
         )}
         {/* if showNavLinks true => we see the nav links */}
         {showNavLinks && (
-          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[62.5px] text-2xl md:relative md:h-auto md:top-0">
-            <ul className="md:flex md:justify-start md:flex-wrap">
+          <nav className="absolute left-0 top-[62.5px] h-fit w-full bg-mainBg text-[25px] md:relative md:top-0 md:h-auto md:text-[22.5px] xl:text-[26px]">
+            <ul className="md:flex md:flex-wrap md:justify-start">
               {paths.map((path) => {
                 return (
                   <li
                     key={path.id}
-                    className="py-2 px-8 border-solid border-t-2 border-secondBg md:border-none md:py-1 md:min-w-fit md:px-2"
+                    className="border-t-2 border-solid border-secondBg px-8 py-2 md:min-w-fit md:border-none md:px-2 md:py-1"
                     onClick={handleNavClick}
                   >
                     <NavLink
