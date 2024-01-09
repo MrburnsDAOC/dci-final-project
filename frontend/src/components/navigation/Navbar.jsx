@@ -74,7 +74,7 @@ function Navbar() {
   return (
     <header
       id="header"
-      className="bg-mainBg py-3 px-3 flex justify-between items-center sticky top-0 z-50 md:justify-center md:flex-row-reverse md:flex-wrap md:gap-x-60 md:gap-y-3 text-secondText"
+      className="bg-mainBg py-3 px-3 flex justify-between sticky top-0 z-50 md:justify-center xl:justify-between md:flex-row-reverse md:flex-wrap md:gap-x-60 md:gap-y-3 text-secondText"
     >
       <button
         className="bg-[#FE4A49] w-[95px] h-10 p-1.5 text-secondText rounded-lg cursor-pointer md:hover:shadow-md"
@@ -83,18 +83,23 @@ function Navbar() {
         Spenden
       </button>
 
-      <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer md:hidden">
-        <img
-          src={tierschutzDachauLogo}
-          alt="Tierschutz Dachau e.V."
-          className="w-12 h-12 rounded-2xl self-center"
-          onClick={() => {
-            navigate("/");
-            window.scrollTo(0, 0);
-          }}
-        />
-      </div>
-      <div className="w-[95px] h-10 flex justify-end md:w-fit">
+      {/* <div className="w-[55px] h-[55px] bg-secondBg rounded-full flex justify-center cursor-pointer md:hidden"> */}
+
+      {(!showNavLinks || !showBurgerMenu) && (
+        <div className="w-[70px] h-[70px] xl:w-[80px] xl:h-[80px] bg-secondBg rounded-full flex justify-center cursor-pointer absolute top-[90%] left-1/2 translate-x-[-50%] translate-y-[-50%] md:top-[100%] shadow-xl z-50">
+          <img
+            src={tierschutzDachauLogo}
+            alt="Tierschutz Dachau e.V."
+            className="w-[50px] h-[50px] xl:w-[65px] xl:h-[65px] rounded-2xl self-center"
+            onClick={() => {
+              navigate("/");
+              window.scrollTo(0, 0);
+            }}
+          />
+        </div>
+      )}
+
+      <div className="w-[95px] h-10 flex justify-end md:w-fit md:h-[65px] xl:h-[65px]">
         {/* if showBurgerMenu true => we see the burger menu */}
         {showBurgerMenu && (
           <FontAwesomeIcon
@@ -105,8 +110,8 @@ function Navbar() {
         )}
         {/* if showNavLinks true => we see the nav links */}
         {showNavLinks && (
-          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[70px] text-2xl md:relative md:h-auto md:top-0">
-            <ul className="md:flex md:justify-start">
+          <nav className="bg-mainBg absolute h-fit w-full left-0 top-[62.5px] text-2xl md:relative md:h-auto md:top-0">
+            <ul className="md:flex md:justify-start md:flex-wrap">
               {paths.map((path) => {
                 return (
                   <li

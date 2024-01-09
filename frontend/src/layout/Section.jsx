@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
 const Section = ({ children, className = "", bg = "bg-secondBg", mt = 2 }) => {
   return (
