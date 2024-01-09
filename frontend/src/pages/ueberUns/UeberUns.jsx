@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
 import H2 from "../../layout/H2";
-// import H5 from "../../layout/H5";
-// import imgAktuellesOne from "../../assets/imgAktuellesOne.png";
-// import imgAktuellesTwo from "../../assets/imgAktuellesTwo.png";
-// import imgAktuellesThree from "../../assets/imgAktuellesThree.png";
 
 import Section from "../../layout/Section";
 import satzungPdf from "../../assets/ueber-uns/Satzung-pdf.pdf";
@@ -13,8 +9,6 @@ import imgUnserAnliegen from "../../assets/ueber-uns/imgUnserAnliegen.jpg";
 import imgUnsereAufgaben from "../../assets/ueber-uns/imgUnsereAufgaben.jpg";
 import imgUnserTierheim from "../../assets/ueber-uns/imgUnserTierheim.jpg";
 import imgUnserVorstand from "../../assets/ueber-uns/imgUnserVorstand.jpg";
-import imgSatzung from "../../assets/ueber-uns/imgSatzung.jpg";
-import imgMitglied from "../../assets/ueber-uns/imgMitglied.jpg";
 import imgDefault from "../../assets/ueber-uns/datz_head.jpg";
 
 const UeberUns = () => {
@@ -42,51 +36,41 @@ const UeberUns = () => {
     }
   };
 
-  
-
   return (
     <div>
       {/* Informationen */}
       <Section>
         <H2>Informationen</H2>
+        <ul className="sm:w-[70%] md:w-[60%]">
+          <a href={satzungPdf} target="_blank" rel="noopener noreferrer">
+            <li className="bg-mainBg sm:text-xl  text-secondText pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+              Satzung (PDF)
+            </li>
+          </a>
+          <a href={mitglied} target="_blank" rel="noopener noreferrer">
+            <li className="bg-mainBg sm:text-xl  text-secondText pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+              Mitglied werden
+            </li>
+          </a>
+        </ul>
       </Section>
 
-      <div className="m-auto bg-mainBg sm:flex sm:flex-wrap sm:justify-between sm:bg-thirdBg md:my-6 xl:mx-36">
-        <div className="text-white p-2 sm:p-0 border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:my-1 sm:w-[49.5%]  lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
-          <a
-            href={satzungPdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
-          >
-            <img
-              src={imgSatzung}
-              alt="Image for Satzung"
-              className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
-            />
-            <h6 className="sm:self-center sm:absolute sm:bottom-3 text-xl sm:text-2xl">
-              Satzung-Pdf
-            </h6>
-          </a>
-        </div>
-
-        {paths.map((path) => {
+      <div className="xl:mx-36 md:my-6 flex flex-wrap justify-center bg-mainBg sm:bg-thirdBg">
+        {paths.slice(0, -2).map((path) => {
           const imageSource = determineImageForPath(path.id);
+
           return (
             <div
               key={path.id}
-              className="text-white p-2 sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]"
+              className="w-full sm:w-[48%] lg:w-[32.5%]  mb-2 sm:mx-1 "
             >
-              <Link
-                to={path.to}
-                className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full"
-              >
+              <Link to={path.to} className="relative hover:opacity-75 block">
                 <img
                   src={imageSource}
                   alt={`Image for ${path.name}`}
-                  className="object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
+                  className="w-full h-full md:h-full md:w-full object-cover rounded-md brightness-90"
                 />
-                <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
+                <h6 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1">
                   {path.name}
                 </h6>
               </Link>
@@ -94,25 +78,24 @@ const UeberUns = () => {
           );
         })}
 
-        <div className="text-white p-2 sm:m-auto sm:p-0 text-xl sm:my-1 sm:text-2xl border-b-2 sm:border-none transition duration-300 ease-in-out hover:bg-blue-800 sm:hover:bg-transparent sm:w-[49.5%] lg:w-[33%] sm:h-[220px] lg:h-[250px] xl:h-[300px] 2xl:h-[370px]">
-          <a
-            href={mitglied}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="sm:flex sm:flex-col sm:items-center sm:relative w-full h-full  "
-          >
-            <img
-              src={imgMitglied}
-              alt="Image for Mitglied-Werden"
-              className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
-
-              // className=" object-cover w-full h-full hidden sm:rounded-md sm:block hover:opacity-75 transition duration-200 ease-in-out filter brightness-75"
-            />
-            <h6 className="text-xl sm:text-2xl sm:bottom-3 text-secondText sm:absolute">
-              Mitglied werden
-            </h6>
-          </a>
-        </div>
+        {/*Die letzten Elemente werden in der Mitte platziert */}
+        {paths.slice(-2).map((path) => (
+          <div key={path.id} className="sm:w-[48%] lg:w-[32.5%] mb-2 sm:mx-1">
+            <Link
+              to={path.to}
+              className=" w-full h-full relative hover:opacity-75 block"
+            >
+              <img
+                src={determineImageForPath(path.id)}
+                alt={`Image for ${path.name}`}
+                className="w-full h-full md:h-full md:w-full object-cover rounded-md brightness-90"
+              />
+              <h6 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1">
+                {path.name}
+              </h6>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
