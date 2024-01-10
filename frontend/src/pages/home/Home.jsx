@@ -47,17 +47,15 @@ const Home = () => {
     currentData = data.filter(
       (element) =>
         element.system.type.toLowerCase() === "termin" &&
-        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell"
+        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
     );
   }
-
-  console.log(currentData);
 
   return (
     <div>
       <Carousel />
       <Section mt={0}>
-        <h1 className="text-left py-3 text-3xl leading-10 font-bold">
+        <h1 className="py-3 text-left text-3xl font-bold leading-10">
           Tierschutzverein Dachau e.V.
         </h1>
         {/* Infotext Tierschutzverein Dachau e.V.: */}
@@ -82,7 +80,7 @@ const Home = () => {
           gestellt.
         </p>
         <Link to={"/über-uns"}>
-          <button className=" block mx-auto mt-2 w-fit bg-mainBg  border-white border-2 text-secondText p-3 rounded-full">
+          <button className=" mx-auto mt-2 block w-fit rounded-full  border-2 border-white bg-mainBg p-3 text-secondText">
             mehr erfahren
           </button>
         </Link>
@@ -106,10 +104,10 @@ const Home = () => {
                     return (
                       <div
                         key={entry.system.id}
-                        className={`min-w-full min-h-[200px] flex justify-around rounded-md`}
+                        className={`flex min-h-[200px] min-w-full justify-around rounded-md`}
                       >
                         <img
-                          className="w-1/2 object-cover rounded-md"
+                          className="w-1/2 rounded-md object-cover"
                           src={entry.elements.vorschaubild__home_.value[0].url}
                           alt={entry.elements.was_.value}
                         />
@@ -196,10 +194,10 @@ const Home = () => {
           {presse.map(({ id, img, title, to }) => (
             <Link to={to} key={id}>
               <div
-                className={`min-w-full min-h-[200px] max-h-[400px] bg- flex justify-around py-1 rounded-lg`}
+                className={`bg- flex max-h-[400px] min-h-[200px] min-w-full justify-around rounded-lg py-1`}
               >
-                <img className="w-1/2 h-52 object-cover" src={img} alt={img} />
-                <div className=" w-1/2 p-2 my-auto">
+                <img className="h-52 w-1/2 object-cover" src={img} alt={img} />
+                <div className=" my-auto w-1/2 p-2">
                   <H5>{title}</H5>
                 </div>
               </div>
