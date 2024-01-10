@@ -30,7 +30,7 @@ const sortSonstigeMedienberichteByDate = (data) => {
   return data
     .filter(
       (element) =>
-        element.system.type.toLowerCase() === "sonstiger_medienbericht"
+        element.system.type.toLowerCase() === "sonstiger_medienbericht",
     )
     .sort(compareDates)
     .reverse();
@@ -80,7 +80,7 @@ const Presse = () => {
     if (data) {
       const datzDataFromContext = data
         .filter(
-          (element) => element.system.type.toLowerCase() === "datz_ausgabe"
+          (element) => element.system.type.toLowerCase() === "datz_ausgabe",
         )
         .reverse();
       setDatzData(datzDataFromContext);
@@ -100,22 +100,22 @@ const Presse = () => {
           aller Publikationen und stellt keine Präferenz des Tierschutzvereins
           dar.
         </p>
-        <div className="bg-white break-words ">
+        <div className="break-words bg-white ">
           <div className="grid grid-cols-3 pt-4 ">
-            <div className="bg-mainBg text-white border p-3">
+            <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">Datum</p>
             </div>
-            <div className="bg-mainBg text-white border p-3">
+            <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">Medium</p>
             </div>
-            <div className="bg-mainBg text-white border p-3">
+            <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">Thema</p>
             </div>
           </div>
         </div>
         {pressestimmenDataSorted.map((stimmen) => (
-          <div key={stimmen.system.id} className="grid grid-cols-3 col-span-3">
-            <div className="border p-3 col-span-1 ">
+          <div key={stimmen.system.id} className="col-span-3 grid grid-cols-3">
+            <div className="col-span-1 border p-3 ">
               <p>
                 {stimmen.elements.datum.value
                   .slice(0, 10)
@@ -144,18 +144,18 @@ const Presse = () => {
           bereits wieder aus dem Angebot der jeweiligen Mediathek genommen
           wurden.
         </p>
-        <div className="bg-white my-2 break-words">
+        <div className="my-2 break-words bg-white">
           <div className="grid grid-cols-2  pt-4 ">
-            <div className="bg-mainBg text-white border p-3">
+            <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">Datum</p>
             </div>
-            <div className="bg-mainBg text-white border p-3">
+            <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">Thema</p>
             </div>
             {sonstigeMedienberichteDataSorted.map((sonstige) => (
               <div
                 key={sonstige.system.id}
-                className="grid grid-cols-2  col-span-2 "
+                className="col-span-2 grid  grid-cols-2 "
               >
                 <div className="border p-3">
                   <p>
@@ -223,7 +223,7 @@ const Presse = () => {
         </p>
         <div className="grid grid-cols-1">
           <div className="text-center">
-            <div className="bg-mainBg border text-white p-3">
+            <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">DATZ</p>
             </div>
            <Section>
