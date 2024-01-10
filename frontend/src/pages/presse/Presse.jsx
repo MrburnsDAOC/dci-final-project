@@ -226,7 +226,8 @@ const Presse = () => {
             <div className="bg-mainBg border text-white p-3">
               <p className="text-lg font-semibold">DATZ</p>
             </div>
-            {datzData.map((ausgabe) => (
+           <Section>
+           {datzData.map((ausgabe) => (
               <div className="border p-3" key={ausgabe.system.id}>
                 <a
                   href={ausgabe.elements.pdf_datei.value[0].url}
@@ -238,6 +239,7 @@ const Presse = () => {
                 </a>
               </div>
             ))}
+           </Section>
           </div>
         </div>
       </Section>
