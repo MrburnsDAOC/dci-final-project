@@ -74,10 +74,11 @@ function Navbar() {
   return (
     <header
       id="header"
-      className="sticky top-0 z-50 flex justify-between bg-mainBg px-3 py-3 text-secondText md:px-[32px] xl:justify-between xl:gap-x-10 xl:gap-y-3"
+      className="sticky top-0 z-50 flex justify-between bg-mainBg px-3 py-3 text-secondText md:px-[32px] xl:justify-between"
     >
       {(!showNavLinks || !showBurgerMenu) && (
-        <div className="absolute left-1/2 top-[90%] z-50 flex h-[65px] w-[65px] translate-x-[-50%] translate-y-[-50%] cursor-pointer justify-center rounded-full border-2 bg-secondBg drop-shadow-md hover:drop-shadow-lg xl:relative xl:left-0 xl:top-0 xl:translate-x-0 xl:translate-y-0">
+        //Logo
+        <div className="absolute left-1/2 top-[90%] z-50 flex h-[65px] min-w-[65px] translate-x-[-50%] translate-y-[-50%] cursor-pointer justify-center rounded-full border-2 bg-secondBg drop-shadow-md hover:drop-shadow-lg xl:relative xl:left-0 xl:top-0 xl:translate-x-0 xl:translate-y-0">
           <img
             src={tierschutzDachauLogo}
             alt="Tierschutz Dachau e.V."
@@ -90,9 +91,10 @@ function Navbar() {
         </div>
       )}
 
-      <div className="flex w-full justify-between xl:w-[90%] xl:items-center">
+      {/* Spendenbtn und Nav */}
+      <div className="flex w-full justify-between xl:ml-[36px] xl:flex-row-reverse xl:items-center">
         <button
-          className="h-10 w-[95px] cursor-pointer rounded-lg bg-[#FE4A49] p-1.5 text-secondText xl:hover:shadow-md "
+          className="h-10 w-[95px] cursor-pointer rounded-lg bg-[#FE4A49] p-1.5 text-xl font-bold text-secondText xl:hover:shadow-md "
           onClick={() => navigate("/spenden")}
         >
           Spenden
@@ -108,13 +110,13 @@ function Navbar() {
           )}
           {/* if showNavLinks true => we see the nav links */}
           {showNavLinks && (
-            <nav className="absolute left-0 top-[62.5px] h-fit w-full bg-mainBg text-[25px] xl:relative xl:top-0 xl:h-auto xl:self-center xl:text-[26px]">
+            <nav className="absolute left-0 top-[62.5px] h-fit w-full bg-mainBg text-2xl xl:relative xl:top-0 xl:h-auto xl:self-center">
               <ul className="xl:flex xl:justify-start">
                 {paths.map((path) => {
                   return (
                     <li
                       key={path.id}
-                      className="border-t-2 border-solid border-secondBg px-8 py-2 xl:min-w-fit xl:border-none xl:px-2 xl:py-1"
+                      className="border-t-2 border-solid border-secondBg px-8 py-2 xl:min-w-fit xl:border-none xl:px-3 xl:py-1"
                       onClick={handleNavClick}
                     >
                       <NavLink
