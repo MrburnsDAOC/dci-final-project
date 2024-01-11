@@ -17,6 +17,29 @@ import DataContext from "../../components/kontentAi/DataContext";
 import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
 import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
 import imgDatz from "../../assets/ueber-uns/datzImg.png";
+import H3 from "../../layout/H3";
+
+// Function to compare dates for sorting
+const compareDates = (a, b) => {
+  const dateA = new Date(a.elements.datum.value);
+  const dateB = new Date(b.elements.datum.value);
+
+  return dateA - dateB;
+};
+
+// Function to sort "aktuelle Meldungen" reports by date
+const sortAktuelleMeldungenByDate = (data) => {
+  if (!data) return [];
+
+  return data
+    .filter(
+      (element) =>
+        element.system.type.toLowerCase() === "termin" &&
+        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
+    )
+    .sort(compareDates)
+    .reverse();
+};
 
 const Home = () => {
   const presse = [
@@ -41,13 +64,15 @@ const Home = () => {
   ];
 
   const { data } = useContext(DataContext);
-  let currentData = [];
 
+  const aktuelleMeldungenDataSorted = sortAktuelleMeldungenByDate(data);
+
+  let jobs = [];
   if (data) {
-    currentData = data.filter(
-      (element) =>
-        element.system.type.toLowerCase() === "termin" &&
-        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
+
+    jobs = data.filter(
+      (element) => element.system.type.toLowerCase() === "offene_stellen",
+
     );
   }
 
@@ -88,7 +113,7 @@ const Home = () => {
 
       {/* Aktuelle Meldungen: */}
 
-      {data && currentData.length < 1 ? (
+      {data && aktuelleMeldungenDataSorted.length < 1 ? (
         <Section>
           <H2>Aktuelle Termine</H2>
           <p>Derzeit sind keine aktuellen Termine vorhanden.</p>
@@ -99,7 +124,7 @@ const Home = () => {
           <Link to="/termine">
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
               {data &&
-                currentData.map((entry) => {
+                aktuelleMeldungenDataSorted.map((entry) => {
                   if (entry.system.type.toLowerCase() === "termin") {
                     return (
                       <div
@@ -126,12 +151,31 @@ const Home = () => {
       )}
 
       {/* Tierpfleger/in gesucht! */}
-      <Section>
-        <H2>Tierpfleger/in gesucht!</H2>
+      {/* <Section> */}
+      {/* <H2>Tierpfleger/in gesucht!</H2>
         <Link to={"/kontakt"} className="underline">
           Bewerbungen bitte an unser Tierheim.
-        </Link>
-      </Section>
+        </Link> */}
+      {data && jobs.length >= 1 ? (
+        <Section>
+          <H2>Jobangebote</H2>
+          {jobs.map((job) => {
+            return (
+              <div key={job.system.id} className="mb-4">
+                <H3>{job.elements.stellenbeschreibung.value}</H3>
+                <p>{job.elements.anforderungen.value}</p>
+              </div>
+            );
+          })}
+        </Section>
+      ) : (
+        <Section>
+          <H2>Jobangebote</H2>
+          <p>Derzeit keine offenen Stellen zu vergeben.</p>
+        </Section>
+      )}
+
+      {/* </Section> */}
 
       {/* Bayer.Tierschutzpreis */}
       <Section>

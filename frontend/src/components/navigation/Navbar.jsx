@@ -74,11 +74,11 @@ function Navbar() {
   return (
     <header
       id="header"
-      className="sticky top-0 z-50 flex justify-between bg-mainBg px-3 py-3 text-secondText md:px-[32px] xl:justify-between"
+      className="sticky top-0 z-40 flex justify-between bg-mainBg px-3 py-3 text-secondText md:px-[32px] xl:justify-between"
     >
       {(!showNavLinks || !showBurgerMenu) && (
         //Logo
-        <div className="absolute left-1/2 top-[90%] z-50 flex h-[65px] min-w-[65px] translate-x-[-50%] translate-y-[-50%] cursor-pointer justify-center rounded-full border-2 bg-secondBg drop-shadow-md hover:drop-shadow-lg xl:relative xl:left-0 xl:top-0 xl:translate-x-0 xl:translate-y-0">
+        <div className="absolute left-1/2 top-[90%] z-40 flex h-[65px] min-w-[65px] translate-x-[-50%] translate-y-[-50%] cursor-pointer justify-center rounded-full border-2 bg-secondBg drop-shadow-md hover:drop-shadow-lg xl:relative xl:left-0 xl:top-0 xl:translate-x-0 xl:translate-y-0">
           <img
             src={tierschutzDachauLogo}
             alt="Tierschutz Dachau e.V."
