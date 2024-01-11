@@ -6,14 +6,15 @@ import DatzHead from "../../assets/ueber-uns/datz_head.jpg";
 import BackButton from "../../components/buttons/BackButton";
 
 import DataContext from "../../components/kontentAi/DataContext";
+import { compareDates } from "../../components/compareDates";
 
 // Function to compare dates for sorting
-const compareDates = (a, b) => {
-  const dateA = new Date(a.elements.datum.value);
-  const dateB = new Date(b.elements.datum.value);
+// const compareDates = (a, b) => {
+//   const dateA = new Date(a.elements.datum.value);
+//   const dateB = new Date(b.elements.datum.value);
 
-  return dateA - dateB;
-};
+//   return dateA - dateB;
+// };
 
 // Function to sort press articles by date
 const sortPressestimmenByDate = (data) => {
@@ -226,20 +227,20 @@ const Presse = () => {
             <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">DATZ</p>
             </div>
-           <Section>
-           {datzData.map((ausgabe) => (
-              <div className="border p-3" key={ausgabe.system.id}>
-                <a
-                  href={ausgabe.elements.pdf_datei.value[0].url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  {ausgabe.elements.name_der_ausgabe.value}
-                </a>
-              </div>
-            ))}
-           </Section>
+            <Section>
+              {datzData.map((ausgabe) => (
+                <div className="border p-3" key={ausgabe.system.id}>
+                  <a
+                    href={ausgabe.elements.pdf_datei.value[0].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    {ausgabe.elements.name_der_ausgabe.value}
+                  </a>
+                </div>
+              ))}
+            </Section>
           </div>
         </div>
       </Section>
