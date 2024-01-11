@@ -18,14 +18,15 @@ import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
 import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
 import imgDatz from "../../assets/ueber-uns/datzImg.png";
 import H3 from "../../layout/H3";
+import { compareDates } from "../../components/compareDates";
 
 // Function to compare dates for sorting
-const compareDates = (a, b) => {
-  const dateA = new Date(a.elements.datum.value);
-  const dateB = new Date(b.elements.datum.value);
+// const compareDates = (a, b) => {
+//   const dateA = new Date(a.elements.datum.value);
+//   const dateB = new Date(b.elements.datum.value);
 
-  return dateA - dateB;
-};
+//   return dateA - dateB;
+// };
 
 // Function to sort "aktuelle Meldungen" reports by date
 const sortAktuelleMeldungenByDate = (data) => {

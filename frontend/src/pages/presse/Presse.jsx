@@ -6,14 +6,15 @@ import DatzHead from "../../assets/ueber-uns/datz_head.jpg";
 import BackButton from "../../components/buttons/BackButton";
 
 import DataContext from "../../components/kontentAi/DataContext";
+import { compareDates } from "../../components/compareDates";
 
 // Function to compare dates for sorting
-const compareDates = (a, b) => {
-  const dateA = new Date(a.elements.datum.value);
-  const dateB = new Date(b.elements.datum.value);
+// const compareDates = (a, b) => {
+//   const dateA = new Date(a.elements.datum.value);
+//   const dateB = new Date(b.elements.datum.value);
 
-  return dateA - dateB;
-};
+//   return dateA - dateB;
+// };
 
 // Function to sort press articles by date
 const sortPressestimmenByDate = (data) => {
