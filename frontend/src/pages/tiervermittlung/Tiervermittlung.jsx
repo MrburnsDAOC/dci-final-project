@@ -69,7 +69,7 @@ const Tiervermittlung = () => {
         </p>
       </Section>
 
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 md:my-6 xl:mx-36 bg-mainBg md:bg-thirdBg">
+      <div className="grid grid-cols-1 gap-2 bg-mainBg md:my-6 md:grid-cols-2 md:bg-thirdBg xl:mx-36 xl:grid-cols-3">
         {sections.map((section) => {
           return (
             <Link
@@ -80,9 +80,9 @@ const Tiervermittlung = () => {
               <img
                 src={section.image}
                 alt={section.name}
-                className="h-full self-center md:object-cover md:rounded-md  brightness-90"
+                className="h-full self-center rounded-none brightness-90 md:rounded-md md:object-cover"
               />
-              <h6 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1 ">
+              <h6 className="absolute bottom-0 mb-1 w-full text-center text-2xl text-secondText ">
                 {section.name}
               </h6>
             </Link>

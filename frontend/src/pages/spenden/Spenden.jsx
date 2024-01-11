@@ -13,13 +13,13 @@ const Spenden = () => {
   const openDonateLink = () => {
     window.open(
       " https://www.paypal.com/donate?token=kS87dcPIslwYt1GZP9yDgt-XVsxlqgAgSd2mUcm513IHz26lzCtHXEpqG4a-xV4EaP-Uj3pxG8zTpkcc",
-      "_blank"
+      "_blank",
     );
   };
 
   return (
     <div className="xl:flex xl:flex-row-reverse">
-      <aside className="px-8 xl:px-20 xl:bg-thirdBg  xl:sticky xl:top-0  xl:w-2/5  ">
+      <aside className="px-8 xl:sticky xl:top-0  xl:w-2/5 xl:bg-thirdBg  xl:px-20  ">
         <div className="xl:sticky xl:top-1/4">
           <H2>Spenden</H2>
           <p className="mb-4 font-bold">
@@ -49,35 +49,35 @@ const Spenden = () => {
             Oder alternativ einfach per PayPal spenden:
           </p>
 
-          <div className="flex flex-col mb-4 w-40 h-15 mx-auto sm:mx-0">
+          <div className="h-15 mx-auto mb-4 flex w-40 flex-col sm:mx-0">
             <img
               src={Paypal}
               alt="paypal"
-              className=" cursor-pointer mx-auto md:mx-0 py-2"
+              className=" mx-auto cursor-pointer py-2 md:mx-0"
               onClick={openPaypalLink}
             />
             <img
               src={Btn}
               alt="spenden"
-              className=" cursor-pointer mx-auto py-2 md:mx-0"
+              className=" mx-auto cursor-pointer py-2 md:mx-0"
               onClick={openDonateLink}
             />
           </div>
           <p className="mt-4 font-bold">Vielen Dank für Ihre Unterstützung!</p>
         </div>
       </aside>
-      <div className="xl:w-3/5 bg-secondBg ">
+      <div className="bg-secondBg xl:w-3/5 ">
         <Section>
           <H2>Spenden</H2>
 
           <ul>
             <a href="#Futterspenden">
-              <li className="bg-mainBg  text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+              <li className="border-b-2  bg-mainBg py-2 pl-6 text-white transition duration-300 ease-in-out hover:bg-blue-800">
                 Futterspenden
               </li>
             </a>
             <a href="#Sachspenden">
-              <li className="bg-mainBg  text-white pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+              <li className="border-b-2  bg-mainBg py-2 pl-6 text-white transition duration-300 ease-in-out hover:bg-blue-800">
                 Sachspenden
               </li>
             </a>
@@ -101,95 +101,95 @@ const Spenden = () => {
 
             <H3>Futterspendenboxen im Tierheim Dachau</H3>
 
-            <table className="table-auto w-full mt-4">
+            <table className="mt-4 w-full table-auto">
               <thead>
                 <tr>
-                  <th className="bg-mainBg text-white px-4 py-2 border-r  ">
+                  <th className="border-r bg-mainBg px-4 py-2 text-white  ">
                     Standort
                   </th>
-                  <th className="bg-mainBg text-white px-4 py-2 border-l ">
+                  <th className="border-l bg-mainBg px-4 py-2 text-white ">
                     Adresse
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="px-4 py-2 border-b">Dachau AEZ</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Dachau AEZ</td>
+                  <td className="border-b px-4 py-2">
                     Fraunhofer Str. 1, 85221 Dachau
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Dachau Fressnapf</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Dachau Fressnapf</td>
+                  <td className="border-b px-4 py-2">
                     Frauenhofer Str. 9, 85221 Dachau
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Dachau OBI</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Dachau OBI</td>
+                  <td className="border-b px-4 py-2">
                     Kopernikusstr. 2, 85221 Dachau
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Dachau Kaufland</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Dachau Kaufland</td>
+                  <td className="border-b px-4 py-2">
                     Danziger Str. 1, 85221 Dachau
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Erdweg KuK Edeka</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Erdweg KuK Edeka</td>
+                  <td className="border-b px-4 py-2">
                     Danziger Str. 1, 85221 Dachau
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Karlsfeld Edeka</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Karlsfeld Edeka</td>
+                  <td className="border-b px-4 py-2">
                     Südenstr. 5,85253 Erdweg
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Karlsfeld Futterhaus</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Karlsfeld Futterhaus</td>
+                  <td className="border-b px-4 py-2">
                     Münchner Str. 206,85757 Karlsfeld
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Markt Indersdorf Rewe</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Markt Indersdorf Rewe</td>
+                  <td className="border-b px-4 py-2">
                     Münchner Str. 206, 85757 Karlsfeld
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">
                     Odelzhausen Futterstadl
                   </td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">
                     Gewerbestr. 6, 85229 Markt Indersdorf
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Petershausen Zoomarkt</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Petershausen Zoomarkt</td>
+                  <td className="border-b px-4 py-2">
                     Industriering 10, 85238 Petershausen
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Röhrmoos Edeka</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Röhrmoos Edeka</td>
+                  <td className="border-b px-4 py-2">
                     Industriering 10, 85238 Petershausen
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Vierkirchen Edeka</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Vierkirchen Edeka</td>
+                  <td className="border-b px-4 py-2">
                     Philipp-Reis-Str. 3, 85244 Röhrmoos
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 border-b">Vierkirchen Edeka</td>
-                  <td className="px-4 py-2 border-b">
+                  <td className="border-b px-4 py-2">Vierkirchen Edeka</td>
+                  <td className="border-b px-4 py-2">
                     Indersdorfer Str. 66, 85256 Vierkirchen
                   </td>
                 </tr>
@@ -209,7 +209,7 @@ const Spenden = () => {
             <p className="mb-2 font-bold">
               Was wir brauchen bzw. annehmen können:
             </p>
-            <ul className="list-disc list-inside mb-4">
+            <ul className="mb-4 list-inside list-disc">
               <li>Tierzubehör (Leinen, Geschirr, Näpfe)</li>
               <li>Hundedecken</li>
               <li>
@@ -222,7 +222,7 @@ const Spenden = () => {
               Was wir grundsätzlich brauchen könnten, aber derzeit genug „auf
               Lager“ haben:
             </p>
-            <ul className="list-disc list-inside mb-4">
+            <ul className="mb-4 list-inside list-disc">
               <li>Tiertransportboxen</li>
               <li>Kleintierkäfige</li>
             </ul>
@@ -239,7 +239,7 @@ const Spenden = () => {
                 href="https://www.verschenkmarkt-dachau.de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline font-bold"
+                className="font-bold underline"
               >
                 www.verschenkmarkt-dachau.de
               </a>

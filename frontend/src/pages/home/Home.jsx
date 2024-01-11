@@ -17,6 +17,29 @@ import DataContext from "../../components/kontentAi/DataContext";
 import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
 import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
 import imgDatz from "../../assets/ueber-uns/datzImg.png";
+import H3 from "../../layout/H3";
+
+// Function to compare dates for sorting
+const compareDates = (a, b) => {
+  const dateA = new Date(a.elements.datum.value);
+  const dateB = new Date(b.elements.datum.value);
+
+  return dateA - dateB;
+};
+
+// Function to sort "aktuelle Meldungen" reports by date
+const sortAktuelleMeldungenByDate = (data) => {
+  if (!data) return [];
+
+  return data
+    .filter(
+      (element) =>
+        element.system.type.toLowerCase() === "termin" &&
+        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
+    )
+    .sort(compareDates)
+    .reverse();
+};
 
 const Home = () => {
   const presse = [
@@ -41,23 +64,21 @@ const Home = () => {
   ];
 
   const { data } = useContext(DataContext);
-  let currentData = [];
 
+  const aktuelleMeldungenDataSorted = sortAktuelleMeldungenByDate(data);
+
+  let jobs = [];
   if (data) {
-    currentData = data.filter(
-      (element) =>
-        element.system.type.toLowerCase() === "termin" &&
-        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell"
+    jobs = data.filter(
+      (element) => element.system.type.toLowerCase() === "offene_stellen",
     );
   }
-
-  console.log(currentData);
 
   return (
     <div>
       <Carousel />
       <Section mt={0}>
-        <h1 className="text-left py-3 text-3xl leading-10 font-bold">
+        <h1 className="py-3 text-left text-3xl font-bold leading-10">
           Tierschutzverein Dachau e.V.
         </h1>
         {/* Infotext Tierschutzverein Dachau e.V.: */}
@@ -82,7 +103,7 @@ const Home = () => {
           gestellt.
         </p>
         <Link to={"/über-uns"}>
-          <button className=" block mx-auto mt-2 w-fit bg-mainBg  border-white border-2 text-secondText p-3 rounded-full">
+          <button className=" mx-auto mt-2 block w-fit rounded-full  border-2 border-white bg-mainBg p-3 text-secondText">
             mehr erfahren
           </button>
         </Link>
@@ -90,7 +111,7 @@ const Home = () => {
 
       {/* Aktuelle Meldungen: */}
 
-      {data && currentData.length < 1 ? (
+      {data && aktuelleMeldungenDataSorted.length < 1 ? (
         <Section>
           <H2>Aktuelle Termine</H2>
           <p>Derzeit sind keine aktuellen Termine vorhanden.</p>
@@ -101,15 +122,15 @@ const Home = () => {
           <Link to="/termine">
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3">
               {data &&
-                currentData.map((entry) => {
+                aktuelleMeldungenDataSorted.map((entry) => {
                   if (entry.system.type.toLowerCase() === "termin") {
                     return (
                       <div
                         key={entry.system.id}
-                        className={`min-w-full min-h-[200px] flex justify-around rounded-md`}
+                        className={`flex min-h-[200px] min-w-full justify-around rounded-md`}
                       >
                         <img
-                          className="w-1/2 object-cover rounded-md"
+                          className="w-1/2 rounded-md object-cover"
                           src={entry.elements.vorschaubild__home_.value[0].url}
                           alt={entry.elements.was_.value}
                         />
@@ -128,12 +149,31 @@ const Home = () => {
       )}
 
       {/* Tierpfleger/in gesucht! */}
-      <Section>
-        <H2>Tierpfleger/in gesucht!</H2>
+      {/* <Section> */}
+      {/* <H2>Tierpfleger/in gesucht!</H2>
         <Link to={"/kontakt"} className="underline">
           Bewerbungen bitte an unser Tierheim.
-        </Link>
-      </Section>
+        </Link> */}
+      {data && jobs.length >= 1 ? (
+        <Section>
+          <H2>Jobangebote</H2>
+          {jobs.map((job) => {
+            return (
+              <div key={job.system.id} className="mb-4">
+                <H3>{job.elements.stellenbeschreibung.value}</H3>
+                <p>{job.elements.anforderungen.value}</p>
+              </div>
+            );
+          })}
+        </Section>
+      ) : (
+        <Section>
+          <H2>Jobangebote</H2>
+          <p>Derzeit keine offenen Stellen zu vergeben.</p>
+        </Section>
+      )}
+
+      {/* </Section> */}
 
       {/* Bayer.Tierschutzpreis */}
       <Section>
@@ -196,10 +236,10 @@ const Home = () => {
           {presse.map(({ id, img, title, to }) => (
             <Link to={to} key={id}>
               <div
-                className={`min-w-full min-h-[200px] max-h-[400px] bg- flex justify-around py-1 rounded-lg`}
+                className={`bg- flex max-h-[400px] min-h-[200px] min-w-full justify-around rounded-lg py-1`}
               >
-                <img className="w-1/2 h-52 object-cover" src={img} alt={img} />
-                <div className=" w-1/2 p-2 my-auto">
+                <img className="h-52 w-1/2 object-cover" src={img} alt={img} />
+                <div className=" my-auto w-1/2 p-2">
                   <H5>{title}</H5>
                 </div>
               </div>
