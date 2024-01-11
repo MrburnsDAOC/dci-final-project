@@ -226,20 +226,20 @@ const Presse = () => {
             <div className="border bg-mainBg p-3 text-white">
               <p className="text-lg font-semibold">DATZ</p>
             </div>
-           <Section>
-           {datzData.map((ausgabe) => (
-              <div className="border p-3" key={ausgabe.system.id}>
-                <a
-                  href={ausgabe.elements.pdf_datei.value[0].url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  {ausgabe.elements.name_der_ausgabe.value}
-                </a>
-              </div>
-            ))}
-           </Section>
+            <Section>
+              {datzData.map((ausgabe) => (
+                <div className="border p-3" key={ausgabe.system.id}>
+                  <a
+                    href={ausgabe.elements.pdf_datei.value[0].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    {ausgabe.elements.name_der_ausgabe.value}
+                  </a>
+                </div>
+              ))}
+            </Section>
           </div>
         </div>
       </Section>
