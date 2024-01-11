@@ -69,8 +69,10 @@ const Home = () => {
 
   let jobs = [];
   if (data) {
+
     jobs = data.filter(
       (element) => element.system.type.toLowerCase() === "offene_stellen",
+
     );
   }
 
