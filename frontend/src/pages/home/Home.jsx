@@ -70,10 +70,8 @@ const Home = () => {
 
   let jobs = [];
   if (data) {
-
     jobs = data.filter(
       (element) => element.system.type.toLowerCase() === "offene_stellen",
-
     );
   }
 
@@ -98,8 +96,8 @@ const Home = () => {
           Pläne wurde im Jahr 1984 mit dem Bau des Tierheims begonnen. Geplant
           waren neben dem eigentlichen Tierheim mit Hundezwingern und Katzenhaus
           ein Kleintierhaus und ein Personalwohnhaus. Nach einer - immer wieder
-          durch finanzielle Engpässe unterbrochenen - Bauzeit von 3Jahren wurde
-          das Tierheim 1987 in Betrieb genommen. Der Wohnhausbau wurde aus
+          durch finanzielle Engpässe unterbrochenen - Bauzeit von drei Jahren
+          wurde das Tierheim 1987 in Betrieb genommen. Der Wohnhausbau wurde aus
           finanziellen Gründen „auf Eis" gelegt; der Bau des Kleintierhauses gar
           nicht begonnen. Das Wohnhaus wurde in der Folgezeit je nach
           finanzieller Lage „stückweise" weitergebaut und 1994 endgültig fertig
