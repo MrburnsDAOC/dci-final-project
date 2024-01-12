@@ -99,7 +99,7 @@ const TierKarte = ({
             if (bilder.length <= 1) {
               return (
                 <img
-                  className="w-full rounded-none object-cover"
+                  className="w-full rounded-none object-cover object-top"
                   key={bild.url}
                   src={bild.url}
                   alt={bild.name}
@@ -108,7 +108,7 @@ const TierKarte = ({
             } else {
               return (
                 <img
-                  className="w-1/2 rounded-none object-cover"
+                  className="w-1/2 rounded-none object-cover object-top"
                   key={bild.url}
                   src={bild.url}
                   alt={bild.name}

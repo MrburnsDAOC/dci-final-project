@@ -6,7 +6,7 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 function NextButton() {
   // Ref, um Referenzen zu jedem Abschnitt im Dokument zu speichern
   const sectionsRef = useRef([]);
-  
+
   // State, um festzustellen, ob sich der Benutzer am letzten Abschnitt der Seite befindet
   const [isLastSection, setIsLastSection] = useState(false);
 
@@ -70,16 +70,15 @@ function NextButton() {
 
   // Rendern der NextButton-Komponente
   return (
-    <div className="fixed top-3/4 right-0 -translate-y-1/2 text-right mr-1 xl:hidden">
+    <div className="fixed right-0 top-3/4 mr-1 -translate-y-1/2 text-right xl:hidden">
       <button
         onClick={isLastSection ? scrollToTop : scrollToNextSection}
-        className="w-7 h-7 border rounded-full shadow-md bg-secondBg"
+        className="h-7 w-7 rounded-full border bg-secondBg shadow-md"
       >
         <FontAwesomeIcon icon={isLastSection ? faChevronUp : faChevronDown} />
       </button>
     </div>
   );
 }
-
 
 export default NextButton;
