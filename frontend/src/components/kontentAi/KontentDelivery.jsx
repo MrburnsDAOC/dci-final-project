@@ -1,8 +1,15 @@
 import { createDeliveryClient } from "@kontent-ai/delivery-sdk";
 import { useEffect, useState } from "react";
 import DataContext from "./DataContext";
+// import { compareDates } from "../compareDates";
 
 // Kontent.ai data: used in Layout.jsx
+
+const compareDates = (a, b) => {
+  const dateA = new Date(a.elements.datum.value);
+  const dateB = new Date(b.elements.datum.value);
+  return dateA - dateB;
+};
 
 // eslint-disable-next-line react/prop-types
 const KontentDelivery = ({ children }) => {
@@ -24,8 +31,15 @@ const KontentDelivery = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const getSortedData = (filter) => {
+    if (!data) return [];
+    return data.filter(filter).sort(compareDates).reverse();
+  };
+
   return (
-    <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
+    <DataContext.Provider value={{ data, getSortedData }}>
+      {children}
+    </DataContext.Provider>
   );
 };
 
