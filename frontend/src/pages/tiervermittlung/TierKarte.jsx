@@ -86,7 +86,11 @@ const TierKarte = ({
         </p>
 
         <p className="italic">
-          {geboren.toLowerCase() === "keine angabe" ? "" : "Geb. " + geboren}
+          {geboren.toLowerCase() === "keine angabe" ? (
+            <br></br>
+          ) : (
+            "Geb. " + geboren
+          )}
         </p>
 
         {/* <div className="min-w-full min-h-[200px] flex justify-between py-1"> */}
@@ -99,7 +103,7 @@ const TierKarte = ({
             if (bilder.length <= 1) {
               return (
                 <img
-                  className="w-full rounded-none object-cover"
+                  className="w-full rounded-none object-cover object-top"
                   key={bild.url}
                   src={bild.url}
                   alt={bild.name}
@@ -108,7 +112,7 @@ const TierKarte = ({
             } else {
               return (
                 <img
-                  className="w-1/2 rounded-none object-cover"
+                  className="w-1/2 rounded-none object-cover object-top"
                   key={bild.url}
                   src={bild.url}
                   alt={bild.name}
