@@ -3,66 +3,20 @@ import DataContext from "../../components/kontentAi/DataContext";
 
 import H2 from "../../layout/H2";
 import Section from "../../layout/Section";
-import { compareDates } from "../../components/compareDates";
-
-// Function to compare dates for sorting
-
-// const compareDates = (a, b) => {
-//   const dateA = new Date(a.elements.datum.value);
-//   const dateB = new Date(b.elements.datum.value);
-
-//   return dateA - dateB;
-// };
-
-// Function to sort "aktuelle Meldungen" by date
-const sortAktuelleMeldungenByDate = (data) => {
-  if (!data) return [];
-
-  return data
-    .filter(
-      (element) =>
-        element.system.type.toLowerCase() === "termin" &&
-        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
-    )
-    .sort(compareDates)
-    .reverse();
-};
-
-// Function to sort "archivierte Meldungen" by date
-const sortArchivierteMeldungenByDate = (data) => {
-  if (!data) return [];
-
-  return data
-    .filter(
-      (element) =>
-        element.system.type.toLowerCase() === "termin" &&
-        element.elements.archiv.value[0].name?.toLowerCase() === "archiv",
-    )
-    .sort(compareDates)
-    .reverse();
-};
 
 const Termine = () => {
-  const { data } = useContext(DataContext);
-  const aktuelleMeldungenDataSorted = sortAktuelleMeldungenByDate(data);
-  const archivierteMeldungenDataSorted = sortArchivierteMeldungenByDate(data);
+  const { data, getSortedData } = useContext(DataContext);
+  const aktuelleMeldungenDataSorted = getSortedData(
+    (element) =>
+      element.system.type.toLowerCase() === "termin" &&
+      element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
+  );
 
-  // let archivedData = [];
-  // currentData = [];
-
-  // if (data) {
-  //   archivedData = data.filter(
-  //     (element) =>
-  //       element.system.type.toLowerCase() === "termin" &&
-  //       element.elements.archiv.value[0].name?.toLowerCase() === "archiv",
-  //   );
-
-  // currentData = data.filter(
-  //   (element) =>
-  //     element.system.type.toLowerCase() === "termin" &&
-  //     element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
-  // );
-  // }
+  const archivierteMeldungenDataSorted = getSortedData(
+    (element) =>
+      element.system.type.toLowerCase() === "termin" &&
+      element.elements.archiv.value[0].name?.toLowerCase() === "archiv",
+  );
 
   return (
     <>
