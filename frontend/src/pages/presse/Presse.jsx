@@ -17,13 +17,13 @@ import { compareDates } from "../../components/compareDates";
 // };
 
 // Function to sort press articles by date
-const sortPressestimmenByDate = (data) => {
-  if (!data) return [];
-  return data
-    .filter((element) => element.system.type.toLowerCase() === "pressestimme")
-    .sort(compareDates)
-    .reverse();
-};
+// const sortPressestimmenByDate = (data) => {
+//   if (!data) return [];
+//   return data
+//     .filter((element) => element.system.type.toLowerCase() === "pressestimme")
+//     .sort(compareDates)
+//     .reverse();
+// };
 
 // Function to sort other media reports by date
 const sortSonstigeMedienberichteByDate = (data) => {
@@ -38,10 +38,12 @@ const sortSonstigeMedienberichteByDate = (data) => {
 };
 
 const Presse = () => {
-  const { data } = useContext(DataContext);
+  const { data, getSortedData } = useContext(DataContext);
   const [datzData, setDatzData] = useState([]);
 
-  const pressestimmenDataSorted = sortPressestimmenByDate(data);
+  const pressestimmenDataSorted = getSortedData(
+    (element) => element.system.type.toLowerCase() === "pressestimme",
+  );
   const sonstigeMedienberichteDataSorted =
     sortSonstigeMedienberichteByDate(data);
 
