@@ -18,29 +18,6 @@ import imgWochenpresse from "../../assets/ueber-uns/newImg.jpeg";
 import imgSonstigeMedien from "../../assets/ueber-uns/sonstigeNewsImg.webp";
 import imgDatz from "../../assets/ueber-uns/datzImg.png";
 import H3 from "../../layout/H3";
-import { compareDates } from "../../components/compareDates";
-
-// Function to compare dates for sorting
-// const compareDates = (a, b) => {
-//   const dateA = new Date(a.elements.datum.value);
-//   const dateB = new Date(b.elements.datum.value);
-
-//   return dateA - dateB;
-// };
-
-// Function to sort "aktuelle Meldungen" reports by date
-const sortAktuelleMeldungenByDate = (data) => {
-  if (!data) return [];
-
-  return data
-    .filter(
-      (element) =>
-        element.system.type.toLowerCase() === "termin" &&
-        element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
-    )
-    .sort(compareDates)
-    .reverse();
-};
 
 const Home = () => {
   const presse = [
@@ -64,9 +41,13 @@ const Home = () => {
     },
   ];
 
-  const { data } = useContext(DataContext);
+  const { data, getSortedData } = useContext(DataContext);
 
-  const aktuelleMeldungenDataSorted = sortAktuelleMeldungenByDate(data);
+  const aktuelleMeldungenDataSorted = getSortedData(
+    (element) =>
+      element.system.type.toLowerCase() === "termin" &&
+      element.elements.archiv.value[0].name?.toLowerCase() === "aktuell",
+  );
 
   let jobs = [];
   if (data) {
@@ -149,12 +130,8 @@ const Home = () => {
         </Section>
       )}
 
-      {/* Tierpfleger/in gesucht! */}
-      {/* <Section> */}
-      {/* <H2>Tierpfleger/in gesucht!</H2>
-        <Link to={"/kontakt"} className="underline">
-          Bewerbungen bitte an unser Tierheim.
-        </Link> */}
+      {/* Jobs */}
+
       {data && jobs.length >= 1 ? (
         <Section>
           <H2>Jobangebote</H2>
@@ -173,8 +150,6 @@ const Home = () => {
           <p>Derzeit keine offenen Stellen zu vergeben.</p>
         </Section>
       )}
-
-      {/* </Section> */}
 
       {/* Bayer.Tierschutzpreis */}
       <Section>

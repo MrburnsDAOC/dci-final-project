@@ -6,64 +6,21 @@ import DatzHead from "../../assets/ueber-uns/datz_head.jpg";
 import BackButton from "../../components/buttons/BackButton";
 
 import DataContext from "../../components/kontentAi/DataContext";
-import { compareDates } from "../../components/compareDates";
-
-// Function to compare dates for sorting
-// const compareDates = (a, b) => {
-//   const dateA = new Date(a.elements.datum.value);
-//   const dateB = new Date(b.elements.datum.value);
-
-//   return dateA - dateB;
-// };
-
-// Function to sort press articles by date
-// const sortPressestimmenByDate = (data) => {
-//   if (!data) return [];
-//   return data
-//     .filter((element) => element.system.type.toLowerCase() === "pressestimme")
-//     .sort(compareDates)
-//     .reverse();
-// };
-
-// Function to sort other media reports by date
-const sortSonstigeMedienberichteByDate = (data) => {
-  if (!data) return [];
-  return data
-    .filter(
-      (element) =>
-        element.system.type.toLowerCase() === "sonstiger_medienbericht",
-    )
-    .sort(compareDates)
-    .reverse();
-};
 
 const Presse = () => {
   const { data, getSortedData } = useContext(DataContext);
   const [datzData, setDatzData] = useState([]);
 
+  //sort
   const pressestimmenDataSorted = getSortedData(
     (element) => element.system.type.toLowerCase() === "pressestimme",
   );
-  const sonstigeMedienberichteDataSorted =
-    sortSonstigeMedienberichteByDate(data);
+  const sonstigeMedienberichteDataSorted = getSortedData(
+    (element) =>
+      element.system.type.toLowerCase() === "sonstiger_medienbericht",
+  );
 
-  // let pressestimmenData, sonstigeMedienberichteData;
-  // datzData = [];
-
-  // if (data) {
-  //   pressestimmenData = data.filter(
-  //     (element) => element.system.type.toLowerCase() === "pressestimme"
-  //   );
-
-  //   sonstigeMedienberichteData = data.filter(
-  //     (element) =>
-  //       element.system.type.toLowerCase() === "sonstiger_medienbericht"
-  //   );
-
-  //   datzData = data
-  //     .filter((element) => element.system.type.toLowerCase() === "datz_ausgabe")
-  //     .reverse();
-  // }
+  //
 
   useEffect(() => {
     const url = window.location.href;
