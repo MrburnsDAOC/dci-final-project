@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 4rem;
+}
+
 img {
   border-radius: 6px;
 }

@@ -19,7 +19,7 @@ const Spenden = () => {
 
   return (
     <div className="xl:flex xl:flex-row-reverse">
-      <aside className="px-8 xl:sticky xl:top-0  xl:w-2/5 xl:bg-thirdBg  xl:px-20  ">
+      <aside className="px-8 xl:sticky xl:top-0  xl:w-2/5 xl:bg-thirdBg xl:px-20">
         <div className="xl:sticky xl:top-1/4">
           <H2>Spenden</H2>
           <p className="mb-4 font-bold">
