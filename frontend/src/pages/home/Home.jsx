@@ -25,19 +25,19 @@ const Home = () => {
       id: 1,
       img: imgWochenpresse,
       title: "Tages-/ Wochenpresse",
-      to: "/über-uns/presse/#Pressestimmen",
+      to: "/presse/#Pressestimmen",
     },
     {
       id: 2,
       img: imgSonstigeMedien,
       title: "Sonstige Medien",
-      to: "/über-uns/presse/#Sonstige-Medien",
+      to: "/presse/#Sonstige-Medien",
     },
     {
       id: 3,
       img: imgDatz,
       title: "DATZ",
-      to: "/über-uns/presse/#DATZ",
+      to: "/presse/#DATZ",
     },
   ];
 
