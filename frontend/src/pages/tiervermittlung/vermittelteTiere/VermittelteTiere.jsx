@@ -21,7 +21,7 @@ const VermittelteTiere = () => {
           uns doch einfach ein paar Bilder...
         </p>
       </Section>
-      <div className="xl:mx-36 xl:grid xl:grid-cols-3">
+      <div className="md:grid md:grid-cols-2 xl:mx-36 xl:grid-cols-3">
         {data &&
           data.map((entry) => {
             if (

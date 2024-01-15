@@ -34,9 +34,9 @@ const SonstigeTiere = () => {
           Außenhaltung gerüstet.
         </p>
       </Section>
-      <div className="xl:mx-36 xl:grid xl:grid-cols-3">
+      <div className="md:grid md:grid-cols-2 xl:mx-36 xl:grid-cols-3">
         {data && otherAnimalsArr.length < 1 ? (
-          <div className="mt-2 break-words bg-secondBg  px-8 py-3 xl:col-span-3 ">
+          <div className="mt-2 break-words bg-secondBg  px-8 py-3 md:col-span-2 xl:col-span-3 ">
             <p>Momentan keine Tiere da.</p>
           </div>
         ) : (
