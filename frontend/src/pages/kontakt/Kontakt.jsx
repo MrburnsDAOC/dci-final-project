@@ -9,16 +9,16 @@ const Kontakt = () => {
   return (
     <div>
       <NextButton />
-      <div className="break-words min-h-[89vh] xl:flex bg-secondBg ">
+      <div className="min-h-[85vh] break-words bg-secondBg xl:flex ">
         <Section className="xl:w-4/5">
           <H2>Kontakt</H2>
-          <div id="coronaHinweis" className="text-alertText my-3">
+          <div id="coronaHinweis" className="my-3 text-alertText">
             <p>
               Aufgrund der anhaltenden Corona-Situation sehen wir uns leider
               gezwungen das Tierheim Dachau bis auf weiteres für Besucher
               geschlossen zu halten.
             </p>
-            <p className="mt-3 xl:w-">
+            <p className="xl:w- mt-3">
               Tiervermittlungen finden jedoch statt allerdings nur mit
               terminlicher Absprache.
             </p>
@@ -27,14 +27,14 @@ const Kontakt = () => {
           <GoogleMapLocation />
         </Section>
 
-        <aside className="px-10 xl:bg-thirdBg xl:sticky xl:top-0 xl:w-1/5">
+        <aside className="px-10 xl:sticky xl:top-0 xl:w-1/5 xl:bg-thirdBg">
           {/* Container content to stick text: */}
           <div className="xl:sticky xl:top-1/4">
             <section>
               {/* className="xl:sticky xl:top-24" */}
               <H3>Notfälle und Fundtierannahme</H3>
               <p>Ganzjährig, rund um die Uhr, auch an Sonn- und Feiertagen.</p>
-              <p className=" text-alertText my-3">
+              <p className=" my-3 text-alertText">
                 Bitte rufen Sie <span className="font-semibold">außerhalb</span>{" "}
                 der Öffnungszeiten immer zuerst unsere{" "}
                 <span className="font-semibold">Notfallnummer</span> an. Es ist
