@@ -87,7 +87,7 @@ const TierKarte = ({
 
         {/* Bilder */}
 
-        <div className="mt-1 flex md:h-[300px]">
+        <div className="mt-1 flex max-h-[250px] md:h-[300px]">
           {bilder.map((bild) => {
             if (bilder.length <= 1) {
               return (
@@ -101,7 +101,7 @@ const TierKarte = ({
             } else {
               return (
                 <img
-                  className="w-1/2 rounded-none object-cover object-top"
+                  className="w-1/2 rounded-none object-cover object-top "
                   key={bild.url}
                   src={bild.url}
                   alt={bild.name}
@@ -145,7 +145,7 @@ const TierKarte = ({
               {bilder.map((bild) => {
                 return (
                   <img
-                    className="max-h-[450px] object-cover "
+                    className="max-h-[450px] object-cover md:max-w-[350px] "
                     key={bild.url}
                     src={bild.url}
                     alt={bild.name}
@@ -178,7 +178,7 @@ const TierKarte = ({
           )}
 
           <p
-            className="bg-mainBg p-2 text-justify  text-secondText md:w-1/2 md:bg-transparent md:p-0 md:text-mainText
+            className="bg-mainBg p-2 text-justify  text-secondText md:bg-transparent md:p-0 md:text-mainText 
           "
             dangerouslySetInnerHTML={{ __html: informationen }}
           />
