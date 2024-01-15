@@ -28,10 +28,10 @@ const TierKarte = ({
   const handleShowMoreOrLessBtn = () => setSection(!showSection);
 
   useEffect(() => {
-    if (showSection && modalImg && document.body.style.overflow == "scroll") {
-      document.body.style.overflow = "hidden";
+    if (showSection && modalImg && document.body.style.overflowY == "scroll") {
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
     }
 
     //close modal with "esc"
