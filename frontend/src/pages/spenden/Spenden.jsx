@@ -53,7 +53,7 @@ const Spenden = () => {
             <img
               src={Paypal}
               alt="paypal"
-              className=" mx-auto cursor-pointer py-2 md:mx-0"
+              className="mx-auto cursor-pointer py-2 md:mx-0"
               onClick={openPaypalLink}
             />
             <img
