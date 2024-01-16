@@ -43,34 +43,34 @@ const UeberUns = () => {
         <H2>Informationen</H2>
         <ul className="sm:w-[70%] md:w-[60%]">
           <a href={satzungPdf} target="_blank" rel="noopener noreferrer">
-            <li className="bg-mainBg sm:text-xl  text-secondText pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+            <li className="border-b-2 bg-mainBg  py-2 pl-6 text-secondText transition duration-300 ease-in-out hover:bg-blue-800 sm:text-xl">
               Satzung (PDF)
             </li>
           </a>
           <a href={mitglied} target="_blank" rel="noopener noreferrer">
-            <li className="bg-mainBg sm:text-xl  text-secondText pl-6 py-2 border-b-2 transition duration-300 ease-in-out hover:bg-blue-800">
+            <li className="border-b-2 bg-mainBg  py-2 pl-6 text-secondText transition duration-300 ease-in-out hover:bg-blue-800 sm:text-xl">
               Mitglied werden
             </li>
           </a>
         </ul>
       </Section>
 
-      <div className="xl:mx-36 md:my-6 flex flex-wrap justify-center bg-mainBg sm:bg-thirdBg">
+      <div className="flex flex-wrap justify-center bg-mainBg sm:bg-thirdBg md:my-6 xl:mx-36">
         {paths.slice(0, -2).map((path) => {
           const imageSource = determineImageForPath(path.id);
 
           return (
             <div
               key={path.id}
-              className="w-full sm:w-[48%] lg:w-[32.5%]  mb-2 sm:mx-1 "
+              className="mb-2 w-full sm:mx-1  sm:w-[48%] lg:w-[32.5%] "
             >
-              <Link to={path.to} className="relative hover:opacity-75 block">
+              <Link to={path.to} className="relative block hover:opacity-75">
                 <img
                   src={imageSource}
                   alt={`Image for ${path.name}`}
-                  className="w-full h-full md:h-full md:w-full object-cover rounded-md brightness-90"
+                  className="h-full w-full rounded-md object-cover brightness-90 md:h-full md:w-full"
                 />
-                <h6 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1">
+                <h6 className="absolute bottom-0 mb-1 w-full text-center text-2xl text-secondText">
                   {path.name}
                 </h6>
               </Link>
@@ -80,17 +80,17 @@ const UeberUns = () => {
 
         {/*Die letzten Elemente werden in der Mitte platziert */}
         {paths.slice(-2).map((path) => (
-          <div key={path.id} className="sm:w-[48%] lg:w-[32.5%] mb-2 sm:mx-1">
+          <div key={path.id} className="mb-2 sm:mx-1 sm:w-[48%] lg:w-[32.5%]">
             <Link
               to={path.to}
-              className=" w-full h-full relative hover:opacity-75 block"
+              className=" relative block h-full w-full hover:opacity-75"
             >
               <img
                 src={determineImageForPath(path.id)}
                 alt={`Image for ${path.name}`}
-                className="w-full h-full md:h-full md:w-full object-cover rounded-md brightness-90"
+                className="h-full w-full rounded-md object-cover brightness-90 md:h-full md:w-full"
               />
-              <h6 className="w-full text-center absolute bottom-0 text-secondText text-2xl mb-1">
+              <h6 className="absolute bottom-0 mb-1 w-full text-center text-2xl text-secondText">
                 {path.name}
               </h6>
             </Link>

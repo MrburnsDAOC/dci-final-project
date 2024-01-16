@@ -92,6 +92,7 @@ const TierKarte = ({
             if (bilder.length <= 1) {
               return (
                 <img
+                  loading="lazy"
                   className="w-full rounded-none object-cover object-top"
                   key={bild.url}
                   src={bild.url}
