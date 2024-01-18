@@ -1,6 +1,7 @@
 # DCI finales Teamprojekt - Tierschutzverein Dachau e.V
 
-Link: <a href="https://tierheim-dachau.onrender.com/" target="_blank">unsere Webseite</a>
+Link: [unsere Webseite](https://tierheim-dachau.onrender.com/)
+
 <a name="inhaltsverzeichnis"></a>
 ## Inhaltsverzeichnis
 
