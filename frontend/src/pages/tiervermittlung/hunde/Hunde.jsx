@@ -35,7 +35,7 @@ const Hunde = () => {
 
       <div className="md:grid md:grid-cols-2 xl:mx-36 xl:grid-cols-3">
         {data && dogs.length < 1 ? (
-          <div className="mt-2 break-words bg-secondBg px-8 py-3 md:col-span-2 xl:col-span-3 ">
+          <div className="mt-2 break-words bg-secondBg px-8 py-3 md:col-span-2 xl:col-span-3">
             <p>Momentan keine Tiere da.</p>
           </div>
         ) : (

@@ -87,7 +87,7 @@ const TierKarte = ({
 
         {/* Bilder */}
 
-        <div className="mt-1 flex max-h-[250px] md:h-[300px]">
+        <div className="mt-1 flex max-h-[250px] md:h-[300px] md:max-h-none xl:h-[350px]">
           {bilder.map((bild) => {
             if (bilder.length <= 1) {
               return (
